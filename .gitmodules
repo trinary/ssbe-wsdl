@@ -1,0 +1,15 @@
+[submodule "vendor/plugins/ssbe_kernel_consumer"]
+	path = vendor/plugins/ssbe_kernel_consumer
+	url = ssh://git.dev.api.local/git/rails-plugins/ssbe_kernel_consumer
+[submodule "vendor/plugins/json_for_active_resource"]
+	path = vendor/plugins/json_for_active_resource
+	url = ssh://git.dev.api.local/git/rails-plugins/json_for_active_resource
+[submodule "vendor/plugins/semi_hierarchical_resources"]
+	path = vendor/plugins/semi_hierarchical_resources
+	url = ssh://git.dev.api.local/git/rails-plugins/semi_hierarchical_resources
+[submodule "vendor/plugins/system_shepherd"]
+	path = vendor/plugins/system_shepherd
+	url = ssh://git.dev.api.local/git/rails-plugins/system_shepherd
+[submodule "vendor/plugins/active_rest"]
+	path = vendor/plugins/active_rest
+	url = ssh://git.dev.api.local/git/rails-plugins/active_rest

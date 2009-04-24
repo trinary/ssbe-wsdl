@@ -4,7 +4,7 @@ class SsbeController < ApplicationController
   web_service_scaffold :invocation if Rails.env == 'development'
 
   def get_clients
-    ["Client 1","Client 2"]
+    Client.get(:all)
   end
   def get_hosts
     ["host 1","host 2"]

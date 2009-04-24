@@ -600,3 +600,687 @@ Web Service Response (0.002370): => ["host that belongss to foobar"]
 Sending data 
 Rendering /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/templates/scaffolds/layout.html.erb
 Completed in 32ms (View: 2, DB: 0) | 200 OK [http:///ssbe/invocation_submit]
+
+
+Processing SsbeController#invocation (for 127.0.0.1 at 2009-04-23 18:40:32) [GET]
+Rendering /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/templates/scaffolds/layout.html.erb
+Completed in 16ms (View: 3, DB: 0) | 200 OK [http://localhost/ssbe/invocation]
+
+
+Processing SsbeController#invocation (for 127.0.0.1 at 2009-04-23 18:42:25) [GET]
+Rendering /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/templates/scaffolds/layout.html.erb
+Completed in 14ms (View: 2, DB: 0) | 200 OK [http://localhost/ssbe/invocation]
+
+
+Processing SsbeController#invocation_method_params (for 127.0.0.1 at 2009-04-23 18:42:28) [GET]
+  Parameters: {"method"=>"GetClients", "service"=>"ssbe"}
+Rendering /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/templates/scaffolds/layout.html.erb
+Completed in 13ms (View: 1, DB: 0) | 200 OK [http://localhost/ssbe/invocation_method_params?method=GetClients&service=ssbe]
+
+
+Processing SsbeController#invocation_submit (for 127.0.0.1 at 2009-04-23 18:42:30) [POST]
+  Parameters: {"commit"=>"Invoke", "service"=>"ssbe", "method"=>"GetClients", "authenticity_token"=>"1Xr9m2/LAA0RhRKXKQbzHqgpYotf62+Cg4WsU2nOYgE=", "protocol"=>"soap"}
+
+Web Service Request: GetClients() Entrypoint: invocation_submit
+  <?xml version="1.0" encoding="utf-8" ?>
+  <env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:env="http://schemas.xmlsoap.org/soap/envelope/">
+    <env:Body>
+      <n1:GetClients xmlns:n1="urn:ActionWebService"
+          env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      </n1:GetClients>
+    </env:Body>
+  </env:Envelope>
+
+NameError (uninitialized constant SsbeController::Clients):
+  app/controllers/ssbe_controller.rb:7:in `get_clients'
+  /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/invocation.rb:141:in `send'
+  /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/invocation.rb:141:in `perform_invocation_without_interception'
+  /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/invocation.rb:135:in `perform_invocation'
+  /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/dispatcher/abstract.rb:46:in `web_service_filtered_invoke'
+  /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/dispatcher/abstract.rb:37:in `web_service_direct_invoke_without_controller'
+  /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/dispatcher/action_controller_dispatcher.rb:112:in `web_service_direct_invoke'
+  /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/dispatcher/abstract.rb:58:in `web_service_invoke'
+  /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/dispatcher/abstract.rb:25:in `invoke_web_service_request'
+  /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/dispatcher/action_controller_dispatcher.rb:58:in `dispatch_web_service_request'
+  /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/dispatcher/action_controller_dispatcher.rb:56:in `dispatch_web_service_request'
+  /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/scaffolding.rb:83:in `invocation_submit'
+  /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/scaffolding.rb:67:in `invocation_submit'
+
+
+Web Service Response: => #<NameError: uninitialized constant SsbeController::Clients>
+  <?xml version="1.0" encoding="UTF-8" ?>
+  <env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:env="http://schemas.xmlsoap.org/soap/envelope/">
+    <env:Body>
+      <env:Fault xmlns:n1="http://schemas.xmlsoap.org/soap/encoding/"
+          env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+        <faultcode xsi:type="xsd:QName">env:Server</faultcode>
+        <faultstring xsi:type="xsd:string">uninitialized constant SsbeController::Clients</faultstring>
+        <faultactor xsi:type="xsd:string">ActionWebService::Protocol::Soap::SoapProtocol</faultactor>
+        <detail xmlns:n2="http://www.ruby-lang.org/xmlns/ruby/type/custom"
+            xsi:type="n2:SOAPException">
+          <excn_type_name xsi:type="xsd:string">NameError</excn_type_name>
+          <cause n4:ivars="#id69858195794360"
+              xmlns:n3="http://www.ruby-lang.org/xmlns/ruby/type/1.6"
+              xmlns:n4="http://www.ruby-lang.org/xmlns/ruby/type-instance"
+              xsi:type="n3:NameError">
+            <message xsi:type="xsd:string">uninitialized constant SsbeController::Clients</message>
+            <backtrace xsi:type="n1:Array"
+                n1:arrayType="xsd:anyType[76]">
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/activesupport/lib/active_support/dependencies.rb:105:in `const_missing&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/app/controllers/ssbe_controller.rb:7:in `get_clients&apos;</item>
+              <item xsi:type="xsd:string">/usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/invocation.rb:141:in `send&apos;</item>
+              <item xsi:type="xsd:string">/usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/invocation.rb:141:in `perform_invocation_without_interception&apos;</item>
+              <item xsi:type="xsd:string">/usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/invocation.rb:135:in `perform_invocation&apos;</item>
+              <item xsi:type="xsd:string">/usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/dispatcher/abstract.rb:46:in `web_service_filtered_invoke&apos;</item>
+              <item xsi:type="xsd:string">/usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/dispatcher/abstract.rb:37:in `web_service_direct_invoke_without_controller&apos;</item>
+              <item xsi:type="xsd:string">/usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/dispatcher/action_controller_dispatcher.rb:112:in `web_service_direct_invoke&apos;</item>
+              <item xsi:type="xsd:string">/usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/dispatcher/abstract.rb:58:in `web_service_invoke&apos;</item>
+              <item xsi:type="xsd:string">/usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/dispatcher/abstract.rb:25:in `invoke_web_service_request&apos;</item>
+              <item xsi:type="xsd:string">/usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/dispatcher/action_controller_dispatcher.rb:58:in `dispatch_web_service_request&apos;</item>
+              <item xsi:type="xsd:string">/usr/lib/ruby/1.8/benchmark.rb:293:in `measure&apos;</item>
+              <item xsi:type="xsd:string">/usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/dispatcher/action_controller_dispatcher.rb:56:in `dispatch_web_service_request&apos;</item>
+              <item xsi:type="xsd:string">/usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/scaffolding.rb:83:in `invocation_submit&apos;</item>
+              <item xsi:type="xsd:string">/usr/lib/ruby/1.8/benchmark.rb:293:in `measure&apos;</item>
+              <item xsi:type="xsd:string">/usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/scaffolding.rb:67:in `invocation_submit&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/base.rb:1322:in `send&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/base.rb:1322:in `perform_action_without_filters&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/filters.rb:617:in `call_filters&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/activesupport/lib/active_support/core_ext/benchmark.rb:17:in `ms&apos;</item>
+              <item xsi:type="xsd:string">/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/activesupport/lib/active_support/core_ext/benchmark.rb:17:in `ms&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/rescue.rb:160:in `perform_action_without_flash&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/flash.rb:141:in `perform_action&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/base.rb:523:in `send&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/base.rb:523:in `process_without_filters&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/filters.rb:606:in `process&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/base.rb:391:in `process&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/base.rb:386:in `call&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/routing/route_set.rb:433:in `call&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/dispatcher.rb:88:in `dispatch&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/dispatcher.rb:111:in `_call&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/dispatcher.rb:82:in `initialize&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/activerecord/lib/active_record/query_cache.rb:29:in `call&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/activerecord/lib/active_record/query_cache.rb:29:in `call&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/activerecord/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/activerecord/lib/active_record/query_cache.rb:9:in `cache&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/activerecord/lib/active_record/query_cache.rb:28:in `call&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/activerecord/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/vendor/rack-1.0/rack/head.rb:9:in `call&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/vendor/rack-1.0/rack/methodoverride.rb:24:in `call&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/params_parser.rb:15:in `call&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/rewindable_input.rb:25:in `call&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/session/cookie_store.rb:93:in `call&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/reloader.rb:9:in `call&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/failsafe.rb:11:in `call&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `call&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `synchronize&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `call&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/dispatcher.rb:106:in `call&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/railties/lib/rails/rack/static.rb:31:in `call&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:46:in `call&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:40:in `each&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:40:in `call&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/railties/lib/rails/rack/log_tailer.rb:17:in `call&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/vendor/rack-1.0/rack/content_length.rb:13:in `call&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/vendor/rack-1.0/rack/chunked.rb:15:in `call&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/vendor/rack-1.0/rack/handler/mongrel.rb:61:in `process&apos;</item>
+              <item xsi:type="xsd:string">/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client&apos;</item>
+              <item xsi:type="xsd:string">/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each&apos;</item>
+              <item xsi:type="xsd:string">/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client&apos;</item>
+              <item xsi:type="xsd:string">/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run&apos;</item>
+              <item xsi:type="xsd:string">/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize&apos;</item>
+              <item xsi:type="xsd:string">/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new&apos;</item>
+              <item xsi:type="xsd:string">/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run&apos;</item>
+              <item xsi:type="xsd:string">/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize&apos;</item>
+              <item xsi:type="xsd:string">/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new&apos;</item>
+              <item xsi:type="xsd:string">/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/vendor/rack-1.0/rack/handler/mongrel.rb:34:in `run&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/railties/lib/commands/server.rb:111</item>
+              <item xsi:type="xsd:string">/usr/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require&apos;</item>
+              <item xsi:type="xsd:string">/usr/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require&apos;</item>
+              <item xsi:type="xsd:string">./script/server:3</item>
+            </backtrace>
+          </cause>
+        </detail>
+      </env:Fault>
+      <ivars href="#id69858195794360"></ivars>
+      <ivars id="id69858195794360"
+          env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+        <blamed_files n5:arrayType="xsd:anyType[0]"
+            xmlns:n5="http://schemas.xmlsoap.org/soap/encoding/"
+            xsi:type="n5:Array">
+        </blamed_files>
+      </ivars>
+    </env:Body>
+  </env:Envelope>
+Sending data 
+
+NameError (uninitialized constant SsbeController::Clients):
+  app/controllers/ssbe_controller.rb:7:in `get_clients'
+  /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/invocation.rb:141:in `send'
+  /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/invocation.rb:141:in `perform_invocation_without_interception'
+  /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/invocation.rb:135:in `perform_invocation'
+  /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/dispatcher/abstract.rb:46:in `web_service_filtered_invoke'
+  /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/dispatcher/abstract.rb:37:in `web_service_direct_invoke_without_controller'
+  /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/dispatcher/action_controller_dispatcher.rb:112:in `web_service_direct_invoke'
+  /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/dispatcher/abstract.rb:58:in `web_service_invoke'
+  /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/dispatcher/abstract.rb:25:in `invoke_web_service_request'
+  /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/dispatcher/action_controller_dispatcher.rb:58:in `dispatch_web_service_request'
+  /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/dispatcher/action_controller_dispatcher.rb:56:in `dispatch_web_service_request'
+  /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/scaffolding.rb:83:in `invocation_submit'
+  /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/scaffolding.rb:67:in `invocation_submit'
+
+Rendered rescues/_trace (83.0ms)
+Rendered rescues/_request_and_response (2.1ms)
+Rendering rescues/layout (internal_server_error)
+Completed in 334ms (View: 1, DB: 0) | 500 Internal Server Error [http:///ssbe/invocation_submit]
+
+
+Processing SsbeController#invocation_method_params (for 127.0.0.1 at 2009-04-23 18:43:05) [GET]
+  Parameters: {"method"=>"GetClients", "service"=>"ssbe"}
+Rendering /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/templates/scaffolds/layout.html.erb
+Completed in 15ms (View: 2, DB: 0) | 200 OK [http://localhost/ssbe/invocation_method_params?method=GetClients&service=ssbe]
+
+
+Processing SsbeController#invocation_submit (for 127.0.0.1 at 2009-04-23 18:43:07) [POST]
+  Parameters: {"commit"=>"Invoke", "service"=>"ssbe", "method"=>"GetClients", "authenticity_token"=>"1Xr9m2/LAA0RhRKXKQbzHqgpYotf62+Cg4WsU2nOYgE=", "protocol"=>"soap"}
+
+Web Service Request: GetClients() Entrypoint: invocation_submit
+  <?xml version="1.0" encoding="utf-8" ?>
+  <env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:env="http://schemas.xmlsoap.org/soap/envelope/">
+    <env:Body>
+      <n1:GetClients xmlns:n1="urn:ActionWebService"
+          env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      </n1:GetClients>
+    </env:Body>
+  </env:Envelope>
+
+NameError (uninitialized constant ActiveRest):
+  app/models/client.rb:1
+  app/controllers/ssbe_controller.rb:7:in `get_clients'
+  /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/invocation.rb:141:in `send'
+  /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/invocation.rb:141:in `perform_invocation_without_interception'
+  /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/invocation.rb:135:in `perform_invocation'
+  /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/dispatcher/abstract.rb:46:in `web_service_filtered_invoke'
+  /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/dispatcher/abstract.rb:37:in `web_service_direct_invoke_without_controller'
+  /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/dispatcher/action_controller_dispatcher.rb:112:in `web_service_direct_invoke'
+  /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/dispatcher/abstract.rb:58:in `web_service_invoke'
+  /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/dispatcher/abstract.rb:25:in `invoke_web_service_request'
+  /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/dispatcher/action_controller_dispatcher.rb:58:in `dispatch_web_service_request'
+  /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/dispatcher/action_controller_dispatcher.rb:56:in `dispatch_web_service_request'
+  /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/scaffolding.rb:83:in `invocation_submit'
+  /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/scaffolding.rb:67:in `invocation_submit'
+
+
+Web Service Response: => #<NameError: uninitialized constant ActiveRest>
+  <?xml version="1.0" encoding="UTF-8" ?>
+  <env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:env="http://schemas.xmlsoap.org/soap/envelope/">
+    <env:Body>
+      <env:Fault xmlns:n1="http://schemas.xmlsoap.org/soap/encoding/"
+          env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+        <faultcode xsi:type="xsd:QName">env:Server</faultcode>
+        <faultstring xsi:type="xsd:string">uninitialized constant ActiveRest</faultstring>
+        <faultactor xsi:type="xsd:string">ActionWebService::Protocol::Soap::SoapProtocol</faultactor>
+        <detail xmlns:n2="http://www.ruby-lang.org/xmlns/ruby/type/custom"
+            xsi:type="n2:SOAPException">
+          <excn_type_name xsi:type="xsd:string">NameError</excn_type_name>
+          <cause xmlns:n3="http://www.ruby-lang.org/xmlns/ruby/type/1.6"
+              xsi:type="n3:NameError">
+            <message xsi:type="xsd:string">uninitialized constant ActiveRest</message>
+            <backtrace xsi:type="n1:Array"
+                n1:arrayType="xsd:anyType[89]">
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/activesupport/lib/active_support/dependencies.rb:443:in `load_missing_constant&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/activesupport/lib/active_support/dependencies.rb:80:in `const_missing&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/activesupport/lib/active_support/dependencies.rb:92:in `const_missing&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/app/models/client.rb:1</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/activesupport/lib/active_support/dependencies.rb:380:in `load_without_new_constant_marking&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/activesupport/lib/active_support/dependencies.rb:380:in `load_file&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/activesupport/lib/active_support/dependencies.rb:521:in `new_constants_in&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/activesupport/lib/active_support/dependencies.rb:379:in `load_file&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/activesupport/lib/active_support/dependencies.rb:259:in `require_or_load&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/activesupport/lib/active_support/dependencies.rb:425:in `load_missing_constant&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/activesupport/lib/active_support/dependencies.rb:80:in `const_missing&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/activesupport/lib/active_support/dependencies.rb:92:in `const_missing&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/activesupport/lib/active_support/dependencies.rb:98:in `send&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/activesupport/lib/active_support/dependencies.rb:98:in `const_missing&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/app/controllers/ssbe_controller.rb:7:in `get_clients&apos;</item>
+              <item xsi:type="xsd:string">/usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/invocation.rb:141:in `send&apos;</item>
+              <item xsi:type="xsd:string">/usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/invocation.rb:141:in `perform_invocation_without_interception&apos;</item>
+              <item xsi:type="xsd:string">/usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/invocation.rb:135:in `perform_invocation&apos;</item>
+              <item xsi:type="xsd:string">/usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/dispatcher/abstract.rb:46:in `web_service_filtered_invoke&apos;</item>
+              <item xsi:type="xsd:string">/usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/dispatcher/abstract.rb:37:in `web_service_direct_invoke_without_controller&apos;</item>
+              <item xsi:type="xsd:string">/usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/dispatcher/action_controller_dispatcher.rb:112:in `web_service_direct_invoke&apos;</item>
+              <item xsi:type="xsd:string">/usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/dispatcher/abstract.rb:58:in `web_service_invoke&apos;</item>
+              <item xsi:type="xsd:string">/usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/dispatcher/abstract.rb:25:in `invoke_web_service_request&apos;</item>
+              <item xsi:type="xsd:string">/usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/dispatcher/action_controller_dispatcher.rb:58:in `dispatch_web_service_request&apos;</item>
+              <item xsi:type="xsd:string">/usr/lib/ruby/1.8/benchmark.rb:293:in `measure&apos;</item>
+              <item xsi:type="xsd:string">/usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/dispatcher/action_controller_dispatcher.rb:56:in `dispatch_web_service_request&apos;</item>
+              <item xsi:type="xsd:string">/usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/scaffolding.rb:83:in `invocation_submit&apos;</item>
+              <item xsi:type="xsd:string">/usr/lib/ruby/1.8/benchmark.rb:293:in `measure&apos;</item>
+              <item xsi:type="xsd:string">/usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/scaffolding.rb:67:in `invocation_submit&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/base.rb:1322:in `send&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/base.rb:1322:in `perform_action_without_filters&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/filters.rb:617:in `call_filters&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/activesupport/lib/active_support/core_ext/benchmark.rb:17:in `ms&apos;</item>
+              <item xsi:type="xsd:string">/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/activesupport/lib/active_support/core_ext/benchmark.rb:17:in `ms&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/rescue.rb:160:in `perform_action_without_flash&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/flash.rb:141:in `perform_action&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/base.rb:523:in `send&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/base.rb:523:in `process_without_filters&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/filters.rb:606:in `process&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/base.rb:391:in `process&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/base.rb:386:in `call&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/routing/route_set.rb:433:in `call&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/dispatcher.rb:88:in `dispatch&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/dispatcher.rb:111:in `_call&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/dispatcher.rb:82:in `initialize&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/activerecord/lib/active_record/query_cache.rb:29:in `call&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/activerecord/lib/active_record/query_cache.rb:29:in `call&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/activerecord/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/activerecord/lib/active_record/query_cache.rb:9:in `cache&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/activerecord/lib/active_record/query_cache.rb:28:in `call&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/activerecord/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/vendor/rack-1.0/rack/head.rb:9:in `call&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/vendor/rack-1.0/rack/methodoverride.rb:24:in `call&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/params_parser.rb:15:in `call&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/rewindable_input.rb:25:in `call&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/session/cookie_store.rb:93:in `call&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/reloader.rb:9:in `call&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/failsafe.rb:11:in `call&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `call&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `synchronize&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `call&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/dispatcher.rb:106:in `call&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/railties/lib/rails/rack/static.rb:31:in `call&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:46:in `call&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:40:in `each&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:40:in `call&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/railties/lib/rails/rack/log_tailer.rb:17:in `call&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/vendor/rack-1.0/rack/content_length.rb:13:in `call&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/vendor/rack-1.0/rack/chunked.rb:15:in `call&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/vendor/rack-1.0/rack/handler/mongrel.rb:61:in `process&apos;</item>
+              <item xsi:type="xsd:string">/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client&apos;</item>
+              <item xsi:type="xsd:string">/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each&apos;</item>
+              <item xsi:type="xsd:string">/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client&apos;</item>
+              <item xsi:type="xsd:string">/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run&apos;</item>
+              <item xsi:type="xsd:string">/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize&apos;</item>
+              <item xsi:type="xsd:string">/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new&apos;</item>
+              <item xsi:type="xsd:string">/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run&apos;</item>
+              <item xsi:type="xsd:string">/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize&apos;</item>
+              <item xsi:type="xsd:string">/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new&apos;</item>
+              <item xsi:type="xsd:string">/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/vendor/rack-1.0/rack/handler/mongrel.rb:34:in `run&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/railties/lib/commands/server.rb:111</item>
+              <item xsi:type="xsd:string">/usr/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require&apos;</item>
+              <item xsi:type="xsd:string">/usr/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require&apos;</item>
+              <item xsi:type="xsd:string">./script/server:3</item>
+            </backtrace>
+          </cause>
+        </detail>
+      </env:Fault>
+    </env:Body>
+  </env:Envelope>
+Sending data 
+
+NameError (uninitialized constant ActiveRest):
+  app/models/client.rb:1
+  app/controllers/ssbe_controller.rb:7:in `get_clients'
+  /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/invocation.rb:141:in `send'
+  /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/invocation.rb:141:in `perform_invocation_without_interception'
+  /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/invocation.rb:135:in `perform_invocation'
+  /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/dispatcher/abstract.rb:46:in `web_service_filtered_invoke'
+  /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/dispatcher/abstract.rb:37:in `web_service_direct_invoke_without_controller'
+  /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/dispatcher/action_controller_dispatcher.rb:112:in `web_service_direct_invoke'
+  /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/dispatcher/abstract.rb:58:in `web_service_invoke'
+  /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/dispatcher/abstract.rb:25:in `invoke_web_service_request'
+  /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/dispatcher/action_controller_dispatcher.rb:58:in `dispatch_web_service_request'
+  /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/dispatcher/action_controller_dispatcher.rb:56:in `dispatch_web_service_request'
+  /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/scaffolding.rb:83:in `invocation_submit'
+  /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/scaffolding.rb:67:in `invocation_submit'
+
+Rendered rescues/_trace (211.3ms)
+Rendered rescues/_request_and_response (2.0ms)
+Rendering rescues/layout (internal_server_error)
+Completed in 371ms (View: 1, DB: 0) | 500 Internal Server Error [http:///ssbe/invocation_submit]
+/!\ FAILSAFE /!\  Thu Apr 23 18:46:12 -0600 2009
+  Status: 500 Internal Server Error
+  no such file to load -- active_rest
+    /usr/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /usr/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    /home/ewc/git/rails-ws/vendor/rails/activesupport/lib/active_support/dependencies.rb:156:in `require'
+    /home/ewc/git/rails-ws/vendor/rails/activesupport/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /home/ewc/git/rails-ws/vendor/rails/activesupport/lib/active_support/dependencies.rb:156:in `require'
+    /home/ewc/git/rails-ws/app/controllers/application_controller.rb:4
+    /home/ewc/git/rails-ws/vendor/rails/activesupport/lib/active_support/dependencies.rb:380:in `load_without_new_constant_marking'
+    /home/ewc/git/rails-ws/vendor/rails/activesupport/lib/active_support/dependencies.rb:380:in `load_file'
+    /home/ewc/git/rails-ws/vendor/rails/activesupport/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /home/ewc/git/rails-ws/vendor/rails/activesupport/lib/active_support/dependencies.rb:379:in `load_file'
+    /home/ewc/git/rails-ws/vendor/rails/activesupport/lib/active_support/dependencies.rb:259:in `require_or_load'
+    /home/ewc/git/rails-ws/vendor/rails/activesupport/lib/active_support/dependencies.rb:425:in `load_missing_constant'
+    /home/ewc/git/rails-ws/vendor/rails/activesupport/lib/active_support/dependencies.rb:80:in `const_missing'
+    /home/ewc/git/rails-ws/vendor/rails/activesupport/lib/active_support/dependencies.rb:92:in `const_missing'
+    /home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/dispatcher.rb:90:in `dispatch'
+    /home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/dispatcher.rb:111:in `_call'
+    /home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/dispatcher.rb:82:in `initialize'
+    /home/ewc/git/rails-ws/vendor/rails/activerecord/lib/active_record/query_cache.rb:29:in `call'
+    /home/ewc/git/rails-ws/vendor/rails/activerecord/lib/active_record/query_cache.rb:29:in `call'
+    /home/ewc/git/rails-ws/vendor/rails/activerecord/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    /home/ewc/git/rails-ws/vendor/rails/activerecord/lib/active_record/query_cache.rb:9:in `cache'
+    /home/ewc/git/rails-ws/vendor/rails/activerecord/lib/active_record/query_cache.rb:28:in `call'
+    /home/ewc/git/rails-ws/vendor/rails/activerecord/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    /home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/vendor/rack-1.0/rack/head.rb:9:in `call'
+    /home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/vendor/rack-1.0/rack/methodoverride.rb:24:in `call'
+    /home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/params_parser.rb:15:in `call'
+    /home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/rewindable_input.rb:25:in `call'
+    /home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/session/cookie_store.rb:93:in `call'
+    /home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/reloader.rb:9:in `call'
+    /home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/failsafe.rb:11:in `call'
+    /home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `call'
+    /home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `synchronize'
+    /home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `call'
+    /home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/dispatcher.rb:106:in `call'
+    /home/ewc/git/rails-ws/vendor/rails/railties/lib/rails/rack/static.rb:31:in `call'
+    /home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:46:in `call'
+    /home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:40:in `each'
+    /home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:40:in `call'
+    /home/ewc/git/rails-ws/vendor/rails/railties/lib/rails/rack/log_tailer.rb:17:in `call'
+    /home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/vendor/rack-1.0/rack/content_length.rb:13:in `call'
+    /home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/vendor/rack-1.0/rack/chunked.rb:15:in `call'
+    /home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/vendor/rack-1.0/rack/handler/mongrel.rb:61:in `process'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+    /home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/vendor/rack-1.0/rack/handler/mongrel.rb:34:in `run'
+    /home/ewc/git/rails-ws/vendor/rails/railties/lib/commands/server.rb:111
+    /usr/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /usr/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    ./script/server:3
+
+
+Processing SsbeController#invocation_method_params (for 127.0.0.1 at 2009-04-23 18:51:43) [GET]
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.public_name) on line #1 of /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/templates/scaffolds/parameters.html.erb:
+1: <h4>Method Invocation Details for <em><%= @scaffold_service %>#<%= @scaffold_method.public_name %></em></h4>
+2: 
+3: <% form_tag(:action => @scaffold_action_name + '_submit') do  -%>
+4: <%= hidden_field_tag "service", @scaffold_service.name %>
+
+    /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/templates/scaffolds/parameters.html.erb:1
+    /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/scaffolding.rb:112:in `render_invocation_scaffold'
+    /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/scaffolding.rb:53:in `invocation_method_params'
+
+Rendered rescues/_trace (184.4ms)
+Rendered rescues/_request_and_response (2.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing SsbeController#index (for 127.0.0.1 at 2009-04-23 18:51:44) [GET]
+
+ActionController::UnknownAction (No action responded to index. Actions: api, get_clients, get_hosts, get_hosts_for_client, get_metrics, get_observations, invocation, invocation_method_params, invocation_submit, and wsdl):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing SsbeController#index (for 127.0.0.1 at 2009-04-23 18:51:47) [GET]
+
+ActionController::UnknownAction (No action responded to index. Actions: api, get_clients, get_hosts, get_hosts_for_client, get_metrics, get_observations, invocation, invocation_method_params, invocation_submit, and wsdl):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing SsbeController#invocation (for 127.0.0.1 at 2009-04-23 18:51:54) [GET]
+Rendering /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/templates/scaffolds/layout.html.erb
+Completed in 14ms (View: 2, DB: 0) | 200 OK [http://localhost/ssbe/invocation]
+
+
+Processing SsbeController#invocation_method_params (for 127.0.0.1 at 2009-04-23 18:51:58) [GET]
+  Parameters: {"method"=>"GetClients", "service"=>"ssbe"}
+Rendering /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/templates/scaffolds/layout.html.erb
+Completed in 11ms (View: 1, DB: 0) | 200 OK [http://localhost/ssbe/invocation_method_params?method=GetClients&service=ssbe]
+
+
+Processing SsbeController#invocation_submit (for 127.0.0.1 at 2009-04-23 18:52:00) [POST]
+  Parameters: {"commit"=>"Invoke", "service"=>"ssbe", "method"=>"GetClients", "authenticity_token"=>"1Xr9m2/LAA0RhRKXKQbzHqgpYotf62+Cg4WsU2nOYgE=", "protocol"=>"soap"}
+
+Web Service Request: GetClients() Entrypoint: invocation_submit
+  <?xml version="1.0" encoding="utf-8" ?>
+  <env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:env="http://schemas.xmlsoap.org/soap/envelope/">
+    <env:Body>
+      <n1:GetClients xmlns:n1="urn:ActionWebService"
+          env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      </n1:GetClients>
+    </env:Body>
+  </env:Envelope>
+
+NoMethodError (undefined method `find' for Client:Class):
+  app/controllers/ssbe_controller.rb:7:in `get_clients'
+  /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/invocation.rb:141:in `send'
+  /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/invocation.rb:141:in `perform_invocation_without_interception'
+  /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/invocation.rb:135:in `perform_invocation'
+  /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/dispatcher/abstract.rb:46:in `web_service_filtered_invoke'
+  /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/dispatcher/abstract.rb:37:in `web_service_direct_invoke_without_controller'
+  /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/dispatcher/action_controller_dispatcher.rb:112:in `web_service_direct_invoke'
+  /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/dispatcher/abstract.rb:58:in `web_service_invoke'
+  /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/dispatcher/abstract.rb:25:in `invoke_web_service_request'
+  /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/dispatcher/action_controller_dispatcher.rb:58:in `dispatch_web_service_request'
+  /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/dispatcher/action_controller_dispatcher.rb:56:in `dispatch_web_service_request'
+  /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/scaffolding.rb:83:in `invocation_submit'
+  /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/scaffolding.rb:67:in `invocation_submit'
+
+
+Web Service Response: => #<NoMethodError: undefined method `find' for Client:Class>
+  <?xml version="1.0" encoding="UTF-8" ?>
+  <env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:env="http://schemas.xmlsoap.org/soap/envelope/">
+    <env:Body>
+      <env:Fault xmlns:n1="http://schemas.xmlsoap.org/soap/encoding/"
+          env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+        <faultcode xsi:type="xsd:QName">env:Server</faultcode>
+        <faultstring xsi:type="xsd:string">undefined method `find&apos; for Client:Class</faultstring>
+        <faultactor xsi:type="xsd:string">ActionWebService::Protocol::Soap::SoapProtocol</faultactor>
+        <detail xmlns:n2="http://www.ruby-lang.org/xmlns/ruby/type/custom"
+            xsi:type="n2:SOAPException">
+          <excn_type_name xsi:type="xsd:string">NoMethodError</excn_type_name>
+          <cause xmlns:n3="http://www.ruby-lang.org/xmlns/ruby/type/1.6"
+              xsi:type="n3:NoMethodError">
+            <message xsi:type="xsd:string">undefined method `find&apos; for Client:Class</message>
+            <backtrace xsi:type="n1:Array"
+                n1:arrayType="xsd:anyType[75]">
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/app/controllers/ssbe_controller.rb:7:in `get_clients&apos;</item>
+              <item xsi:type="xsd:string">/usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/invocation.rb:141:in `send&apos;</item>
+              <item xsi:type="xsd:string">/usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/invocation.rb:141:in `perform_invocation_without_interception&apos;</item>
+              <item xsi:type="xsd:string">/usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/invocation.rb:135:in `perform_invocation&apos;</item>
+              <item xsi:type="xsd:string">/usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/dispatcher/abstract.rb:46:in `web_service_filtered_invoke&apos;</item>
+              <item xsi:type="xsd:string">/usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/dispatcher/abstract.rb:37:in `web_service_direct_invoke_without_controller&apos;</item>
+              <item xsi:type="xsd:string">/usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/dispatcher/action_controller_dispatcher.rb:112:in `web_service_direct_invoke&apos;</item>
+              <item xsi:type="xsd:string">/usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/dispatcher/abstract.rb:58:in `web_service_invoke&apos;</item>
+              <item xsi:type="xsd:string">/usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/dispatcher/abstract.rb:25:in `invoke_web_service_request&apos;</item>
+              <item xsi:type="xsd:string">/usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/dispatcher/action_controller_dispatcher.rb:58:in `dispatch_web_service_request&apos;</item>
+              <item xsi:type="xsd:string">/usr/lib/ruby/1.8/benchmark.rb:293:in `measure&apos;</item>
+              <item xsi:type="xsd:string">/usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/dispatcher/action_controller_dispatcher.rb:56:in `dispatch_web_service_request&apos;</item>
+              <item xsi:type="xsd:string">/usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/scaffolding.rb:83:in `invocation_submit&apos;</item>
+              <item xsi:type="xsd:string">/usr/lib/ruby/1.8/benchmark.rb:293:in `measure&apos;</item>
+              <item xsi:type="xsd:string">/usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/scaffolding.rb:67:in `invocation_submit&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/base.rb:1322:in `send&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/base.rb:1322:in `perform_action_without_filters&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/filters.rb:617:in `call_filters&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/activesupport/lib/active_support/core_ext/benchmark.rb:17:in `ms&apos;</item>
+              <item xsi:type="xsd:string">/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/activesupport/lib/active_support/core_ext/benchmark.rb:17:in `ms&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/rescue.rb:160:in `perform_action_without_flash&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/flash.rb:141:in `perform_action&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/base.rb:523:in `send&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/base.rb:523:in `process_without_filters&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/filters.rb:606:in `process&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/base.rb:391:in `process&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/base.rb:386:in `call&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/routing/route_set.rb:433:in `call&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/dispatcher.rb:88:in `dispatch&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/dispatcher.rb:111:in `_call&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/dispatcher.rb:82:in `initialize&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/activerecord/lib/active_record/query_cache.rb:29:in `call&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/activerecord/lib/active_record/query_cache.rb:29:in `call&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/activerecord/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/activerecord/lib/active_record/query_cache.rb:9:in `cache&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/activerecord/lib/active_record/query_cache.rb:28:in `call&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/activerecord/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/vendor/rack-1.0/rack/head.rb:9:in `call&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/vendor/rack-1.0/rack/methodoverride.rb:24:in `call&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/params_parser.rb:15:in `call&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/rewindable_input.rb:25:in `call&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/session/cookie_store.rb:93:in `call&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/reloader.rb:9:in `call&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/failsafe.rb:11:in `call&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `call&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `synchronize&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `call&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/dispatcher.rb:106:in `call&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/railties/lib/rails/rack/static.rb:31:in `call&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:46:in `call&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:40:in `each&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:40:in `call&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/railties/lib/rails/rack/log_tailer.rb:17:in `call&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/vendor/rack-1.0/rack/content_length.rb:13:in `call&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/vendor/rack-1.0/rack/chunked.rb:15:in `call&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/vendor/rack-1.0/rack/handler/mongrel.rb:61:in `process&apos;</item>
+              <item xsi:type="xsd:string">/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client&apos;</item>
+              <item xsi:type="xsd:string">/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each&apos;</item>
+              <item xsi:type="xsd:string">/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client&apos;</item>
+              <item xsi:type="xsd:string">/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run&apos;</item>
+              <item xsi:type="xsd:string">/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize&apos;</item>
+              <item xsi:type="xsd:string">/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new&apos;</item>
+              <item xsi:type="xsd:string">/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run&apos;</item>
+              <item xsi:type="xsd:string">/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize&apos;</item>
+              <item xsi:type="xsd:string">/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new&apos;</item>
+              <item xsi:type="xsd:string">/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/vendor/rack-1.0/rack/handler/mongrel.rb:34:in `run&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/railties/lib/commands/server.rb:111</item>
+              <item xsi:type="xsd:string">/usr/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require&apos;</item>
+              <item xsi:type="xsd:string">/usr/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require&apos;</item>
+              <item xsi:type="xsd:string">./script/server:3</item>
+            </backtrace>
+          </cause>
+        </detail>
+      </env:Fault>
+    </env:Body>
+  </env:Envelope>
+Sending data 
+
+NoMethodError (undefined method `find' for Client:Class):
+  app/controllers/ssbe_controller.rb:7:in `get_clients'
+  /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/invocation.rb:141:in `send'
+  /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/invocation.rb:141:in `perform_invocation_without_interception'
+  /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/invocation.rb:135:in `perform_invocation'
+  /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/dispatcher/abstract.rb:46:in `web_service_filtered_invoke'
+  /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/dispatcher/abstract.rb:37:in `web_service_direct_invoke_without_controller'
+  /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/dispatcher/action_controller_dispatcher.rb:112:in `web_service_direct_invoke'
+  /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/dispatcher/abstract.rb:58:in `web_service_invoke'
+  /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/dispatcher/abstract.rb:25:in `invoke_web_service_request'
+  /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/dispatcher/action_controller_dispatcher.rb:58:in `dispatch_web_service_request'
+  /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/dispatcher/action_controller_dispatcher.rb:56:in `dispatch_web_service_request'
+  /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/scaffolding.rb:83:in `invocation_submit'
+  /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/scaffolding.rb:67:in `invocation_submit'
+
+Rendered rescues/_trace (82.8ms)
+Rendered rescues/_request_and_response (0.6ms)
+Rendering rescues/layout (internal_server_error)
+Completed in 213ms (View: 1, DB: 0) | 500 Internal Server Error [http:///ssbe/invocation_submit]
+  GET [http://core.ssbe.localhost/service_descriptors]
+  -> Returned 200 in 2.2181s
+  GET [http://core.ssbe.localhost/service_descriptors/kernel]
+  -> Returned 200 in 0.2175s
+  GET [http://core.ssbe.localhost/service_descriptors]
+    Retrieved from cache
+  -> Returned 200 in 0.0012s
+  GET [http://core.ssbe.localhost/service_descriptors/kernel]
+    Retrieved from cache
+  -> Returned 200 in 0.0009s
+  GET [http://core.ssbe.localhost/clients]
+Authentication Required. Retrying with auth info
+  -> Returned 200 in 0.2072s
+
+
+Processing SsbeController#invocation (for 127.0.0.1 at 2009-04-23 18:57:26) [GET]
+Rendering /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/templates/scaffolds/layout.html.erb
+Completed in 13ms (View: 2, DB: 0) | 200 OK [http://localhost/ssbe/invocation]
+
+
+Processing SsbeController#invocation_method_params (for 127.0.0.1 at 2009-04-23 18:57:28) [GET]
+  Parameters: {"method"=>"GetClients", "service"=>"ssbe"}
+Rendering /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/templates/scaffolds/layout.html.erb
+Completed in 14ms (View: 1, DB: 0) | 200 OK [http://localhost/ssbe/invocation_method_params?method=GetClients&service=ssbe]
+
+
+Processing SsbeController#invocation_submit (for 127.0.0.1 at 2009-04-23 18:57:30) [POST]
+  Parameters: {"commit"=>"Invoke", "service"=>"ssbe", "method"=>"GetClients", "authenticity_token"=>"1Xr9m2/LAA0RhRKXKQbzHqgpYotf62+Cg4WsU2nOYgE=", "protocol"=>"soap"}
+  GET [http://core.ssbe.localhost/service_descriptors]
+  -> Returned 200 in 0.0178s
+  GET [http://core.ssbe.localhost/service_descriptors/kernel]
+  -> Returned 200 in 0.0203s
+  GET [http://core.ssbe.localhost/clients]
+Authentication Required. Retrying with auth info
+  -> Returned 200 in 0.1611s
+
+Web Service Request: GetClients() Entrypoint: invocation_submit
+  <?xml version="1.0" encoding="utf-8" ?>
+  <env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:env="http://schemas.xmlsoap.org/soap/envelope/">
+    <env:Body>
+      <n1:GetClients xmlns:n1="urn:ActionWebService"
+          env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      </n1:GetClients>
+    </env:Body>
+  </env:Envelope>
+
+Web Service Response (0.209286): => ["API", "child"]
+  <?xml version="1.0" encoding="UTF-8" ?>
+  <env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:env="http://schemas.xmlsoap.org/soap/envelope/">
+    <env:Body>
+      <n1:GetClientsResponse xmlns:n1="urn:ActionWebService"
+          env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+        <return n2:arrayType="xsd:string[2]"
+            xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+            xsi:type="n2:Array">
+          <item>API</item>
+          <item>child</item>
+        </return>
+      </n1:GetClientsResponse>
+    </env:Body>
+  </env:Envelope>
+Sending data 
+Rendering /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/templates/scaffolds/layout.html.erb
+Completed in 238ms (View: 1, DB: 0) | 200 OK [http:///ssbe/invocation_submit]
