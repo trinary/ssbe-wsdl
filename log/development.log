@@ -1,0 +1,602 @@
+/!\ FAILSAFE /!\  Thu Apr 23 17:37:58 -0600 2009
+  Status: 500 Internal Server Error
+  no such file to load -- sqlite3
+    /usr/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /usr/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    /home/ewc/git/rails-ws/vendor/rails/activesupport/lib/active_support/dependencies.rb:156:in `require'
+    /home/ewc/git/rails-ws/vendor/rails/activesupport/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /home/ewc/git/rails-ws/vendor/rails/activesupport/lib/active_support/dependencies.rb:156:in `require'
+    /home/ewc/git/rails-ws/vendor/rails/activesupport/lib/active_support/core_ext/kernel/requires.rb:7:in `require_library_or_gem'
+    /home/ewc/git/rails-ws/vendor/rails/activesupport/lib/active_support/core_ext/kernel/reporting.rb:11:in `silence_warnings'
+    /home/ewc/git/rails-ws/vendor/rails/activesupport/lib/active_support/core_ext/kernel/requires.rb:5:in `require_library_or_gem'
+    /home/ewc/git/rails-ws/vendor/rails/activerecord/lib/active_record/connection_adapters/sqlite3_adapter.rb:10:in `sqlite3_connection'
+    /home/ewc/git/rails-ws/vendor/rails/activerecord/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `send'
+    /home/ewc/git/rails-ws/vendor/rails/activerecord/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `new_connection'
+    /home/ewc/git/rails-ws/vendor/rails/activerecord/lib/active_record/connection_adapters/abstract/connection_pool.rb:245:in `checkout_new_connection'
+    /home/ewc/git/rails-ws/vendor/rails/activerecord/lib/active_record/connection_adapters/abstract/connection_pool.rb:188:in `checkout'
+    /home/ewc/git/rails-ws/vendor/rails/activerecord/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `loop'
+    /home/ewc/git/rails-ws/vendor/rails/activerecord/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `checkout'
+    /usr/lib/ruby/1.8/monitor.rb:242:in `synchronize'
+    /home/ewc/git/rails-ws/vendor/rails/activerecord/lib/active_record/connection_adapters/abstract/connection_pool.rb:183:in `checkout'
+    /home/ewc/git/rails-ws/vendor/rails/activerecord/lib/active_record/connection_adapters/abstract/connection_pool.rb:98:in `connection'
+    /home/ewc/git/rails-ws/vendor/rails/activerecord/lib/active_record/connection_adapters/abstract/connection_pool.rb:326:in `retrieve_connection'
+    /home/ewc/git/rails-ws/vendor/rails/activerecord/lib/active_record/connection_adapters/abstract/connection_specification.rb:123:in `retrieve_connection'
+    /home/ewc/git/rails-ws/vendor/rails/activerecord/lib/active_record/connection_adapters/abstract/connection_specification.rb:115:in `connection'
+    /home/ewc/git/rails-ws/vendor/rails/activerecord/lib/active_record/query_cache.rb:9:in `cache'
+    /home/ewc/git/rails-ws/vendor/rails/activerecord/lib/active_record/query_cache.rb:28:in `call'
+    /home/ewc/git/rails-ws/vendor/rails/activerecord/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    /home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/vendor/rack-1.0/rack/head.rb:9:in `call'
+    /home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/vendor/rack-1.0/rack/methodoverride.rb:24:in `call'
+    /home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/params_parser.rb:15:in `call'
+    /home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/rewindable_input.rb:25:in `call'
+    /home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/session/cookie_store.rb:93:in `call'
+    /home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/reloader.rb:9:in `call'
+    /home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/failsafe.rb:11:in `call'
+    /home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `call'
+    /home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `synchronize'
+    /home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `call'
+    /home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/dispatcher.rb:106:in `call'
+    /home/ewc/git/rails-ws/vendor/rails/railties/lib/rails/rack/static.rb:31:in `call'
+    /home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:46:in `call'
+    /home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:40:in `each'
+    /home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:40:in `call'
+    /home/ewc/git/rails-ws/vendor/rails/railties/lib/rails/rack/log_tailer.rb:17:in `call'
+    /home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/vendor/rack-1.0/rack/content_length.rb:13:in `call'
+    /home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/vendor/rack-1.0/rack/chunked.rb:15:in `call'
+    /home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/vendor/rack-1.0/rack/handler/mongrel.rb:61:in `process'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+    /home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/vendor/rack-1.0/rack/handler/mongrel.rb:34:in `run'
+    /home/ewc/git/rails-ws/vendor/rails/railties/lib/commands/server.rb:111
+    /usr/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /usr/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    ./script/server:3
+
+
+Processing SsbeController#index (for 127.0.0.1 at 2009-04-23 17:40:45) [GET]
+
+ActionController::UnknownAction (No action responded to index. Actions: api, get_clients, get_hosts, get_metrics, get_observations, invocation, invocation_method_params, invocation_submit, and wsdl):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing SsbeController#get_clients (for 127.0.0.1 at 2009-04-23 17:41:01) [GET]
+
+ActionView::MissingTemplate (Missing template ssbe/get_clients.erb in view path app/views):
+  
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing SsbeController#invocation (for 127.0.0.1 at 2009-04-23 17:41:18) [GET]
+Rendering /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/templates/scaffolds/layout.html.erb
+Completed in 19ms (View: 5, DB: 0) | 200 OK [http://localhost/ssbe/invocation]
+
+
+Processing SsbeController#invocation_method_params (for 127.0.0.1 at 2009-04-23 17:41:21) [GET]
+  Parameters: {"method"=>"GetHosts", "service"=>"ssbe"}
+Rendering /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/templates/scaffolds/layout.html.erb
+Completed in 23ms (View: 1, DB: 0) | 200 OK [http://localhost/ssbe/invocation_method_params?method=GetHosts&service=ssbe]
+
+
+Processing SsbeController#invocation_submit (for 127.0.0.1 at 2009-04-23 17:41:25) [POST]
+  Parameters: {"commit"=>"Invoke", "service"=>"ssbe", "method"=>"GetHosts", "authenticity_token"=>"1Xr9m2/LAA0RhRKXKQbzHqgpYotf62+Cg4WsU2nOYgE=", "protocol"=>"soap"}
+
+Web Service Request: GetHosts() Entrypoint: invocation_submit
+  <?xml version="1.0" encoding="utf-8" ?>
+  <env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:env="http://schemas.xmlsoap.org/soap/envelope/">
+    <env:Body>
+      <n1:GetHosts xmlns:n1="urn:ActionWebService"
+          env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      </n1:GetHosts>
+    </env:Body>
+  </env:Envelope>
+
+Web Service Response (0.002379): => ["host 1", "host 2"]
+  <?xml version="1.0" encoding="UTF-8" ?>
+  <env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:env="http://schemas.xmlsoap.org/soap/envelope/">
+    <env:Body>
+      <n1:GetHostsResponse xmlns:n1="urn:ActionWebService"
+          env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+        <return n2:arrayType="xsd:string[2]"
+            xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+            xsi:type="n2:Array">
+          <item>host 1</item>
+          <item>host 2</item>
+        </return>
+      </n1:GetHostsResponse>
+    </env:Body>
+  </env:Envelope>
+Sending data 
+Rendering /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/templates/scaffolds/layout.html.erb
+Completed in 42ms (View: 1, DB: 0) | 200 OK [http:///ssbe/invocation_submit]
+
+
+Processing SsbeController#wsdl (for 127.0.0.1 at 2009-04-23 17:41:43) [GET]
+Sending data 
+Completed in 27ms (View: 1, DB: 0) | 200 OK [http://localhost/ssbe/wsdl]
+
+
+Processing SsbeController#wsdl (for 192.168.10.138 at 2009-04-23 17:43:12) [GET]
+Sending data 
+Completed in 26ms (View: 1, DB: 0) | 200 OK [http://192.168.1.175/ssbe/wsdl]
+
+
+Processing SsbeController#api (for 192.168.10.138 at 2009-04-23 17:56:51) [POST]
+  Parameters: {"envelope"=>{"xmlns:n0"=>"urn:ActionWebService", "xmlns:soap"=>"http://schemas.xmlsoap.org/soap/envelope/", "body"=>{"soap:encoding_style"=>"http://schemas.xmlsoap.org/soap/encoding/", "get_clients"=>nil}, "xmlns:xsd"=>"http://www.w3.org/2001/XMLSchema", "header"=>nil, "xmlns:xsi"=>"http://www.w3.org/2001/XMLSchema-instance", "xmlns:soapenc"=>"http://schemas.xmlsoap.org/soap/encoding/"}}
+
+Web Service Request: GetClients() Entrypoint: api
+  <?xml version="1.0" encoding="UTF-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:n0="urn:ActionWebService" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"><soap:Header /><soap:Body soap:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><n0:GetClients /></soap:Body></soap:Envelope>
+
+Web Service Response (0.002307): => ["Client 1", "Client 2"]
+  <?xml version="1.0" encoding="UTF-8" ?>
+  <env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:env="http://schemas.xmlsoap.org/soap/envelope/">
+    <env:Body>
+      <n1:GetClientsResponse xmlns:n1="urn:ActionWebService"
+          env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+        <return n2:arrayType="xsd:string[2]"
+            xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+            xsi:type="n2:Array">
+          <item>Client 1</item>
+          <item>Client 2</item>
+        </return>
+      </n1:GetClientsResponse>
+    </env:Body>
+  </env:Envelope>
+Sending data 
+Completed in 12ms (View: 1, DB: 0) | 200 OK [http://192.168.1.175/ssbe/api]
+
+
+Processing SsbeController#api (for 192.168.10.138 at 2009-04-23 17:56:52) [POST]
+  Parameters: {"envelope"=>{"xmlns:n0"=>"urn:ActionWebService", "xmlns:soap"=>"http://schemas.xmlsoap.org/soap/envelope/", "body"=>{"soap:encoding_style"=>"http://schemas.xmlsoap.org/soap/encoding/", "get_clients"=>nil}, "xmlns:xsd"=>"http://www.w3.org/2001/XMLSchema", "header"=>nil, "xmlns:xsi"=>"http://www.w3.org/2001/XMLSchema-instance", "xmlns:soapenc"=>"http://schemas.xmlsoap.org/soap/encoding/"}}
+
+Web Service Request: GetClients() Entrypoint: api
+  <?xml version="1.0" encoding="UTF-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:n0="urn:ActionWebService" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"><soap:Header /><soap:Body soap:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><n0:GetClients /></soap:Body></soap:Envelope>
+
+Web Service Response (0.002572): => ["Client 1", "Client 2"]
+  <?xml version="1.0" encoding="UTF-8" ?>
+  <env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:env="http://schemas.xmlsoap.org/soap/envelope/">
+    <env:Body>
+      <n1:GetClientsResponse xmlns:n1="urn:ActionWebService"
+          env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+        <return n2:arrayType="xsd:string[2]"
+            xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+            xsi:type="n2:Array">
+          <item>Client 1</item>
+          <item>Client 2</item>
+        </return>
+      </n1:GetClientsResponse>
+    </env:Body>
+  </env:Envelope>
+Sending data 
+Completed in 12ms (View: 1, DB: 0) | 200 OK [http://192.168.1.175/ssbe/api]
+
+
+Processing SsbeController#api (for 192.168.10.138 at 2009-04-23 17:56:56) [POST]
+  Parameters: {"envelope"=>{"xmlns:n0"=>"urn:ActionWebService", "xmlns:soap"=>"http://schemas.xmlsoap.org/soap/envelope/", "body"=>{"soap:encoding_style"=>"http://schemas.xmlsoap.org/soap/encoding/", "get_clients"=>nil}, "xmlns:xsd"=>"http://www.w3.org/2001/XMLSchema", "header"=>nil, "xmlns:xsi"=>"http://www.w3.org/2001/XMLSchema-instance", "xmlns:soapenc"=>"http://schemas.xmlsoap.org/soap/encoding/"}}
+
+Web Service Request: GetClients() Entrypoint: api
+  <?xml version="1.0" encoding="UTF-8"?><soap:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:n0="urn:ActionWebService"><soap:Header /><soap:Body soap:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><n0:GetClients /></soap:Body></soap:Envelope>
+
+Web Service Response (0.002501): => ["Client 1", "Client 2"]
+  <?xml version="1.0" encoding="UTF-8" ?>
+  <env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:env="http://schemas.xmlsoap.org/soap/envelope/">
+    <env:Body>
+      <n1:GetClientsResponse xmlns:n1="urn:ActionWebService"
+          env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+        <return n2:arrayType="xsd:string[2]"
+            xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+            xsi:type="n2:Array">
+          <item>Client 1</item>
+          <item>Client 2</item>
+        </return>
+      </n1:GetClientsResponse>
+    </env:Body>
+  </env:Envelope>
+Sending data 
+Completed in 14ms (View: 1, DB: 0) | 200 OK [http://192.168.1.175/ssbe/api]
+
+
+Processing SsbeController#api (for 192.168.10.138 at 2009-04-23 17:56:58) [POST]
+  Parameters: {"envelope"=>{"xmlns:n0"=>"urn:ActionWebService", "xmlns:soap"=>"http://schemas.xmlsoap.org/soap/envelope/", "body"=>{"soap:encoding_style"=>"http://schemas.xmlsoap.org/soap/encoding/", "get_clients"=>nil}, "xmlns:xsd"=>"http://www.w3.org/2001/XMLSchema", "header"=>nil, "xmlns:xsi"=>"http://www.w3.org/2001/XMLSchema-instance", "xmlns:soapenc"=>"http://schemas.xmlsoap.org/soap/encoding/"}}
+
+Web Service Request: GetClients() Entrypoint: api
+  <?xml version="1.0" encoding="UTF-8"?><soap:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:n0="urn:ActionWebService"><soap:Header /><soap:Body soap:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><n0:GetClients /></soap:Body></soap:Envelope>
+
+Web Service Response (0.002573): => ["Client 1", "Client 2"]
+  <?xml version="1.0" encoding="UTF-8" ?>
+  <env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:env="http://schemas.xmlsoap.org/soap/envelope/">
+    <env:Body>
+      <n1:GetClientsResponse xmlns:n1="urn:ActionWebService"
+          env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+        <return n2:arrayType="xsd:string[2]"
+            xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+            xsi:type="n2:Array">
+          <item>Client 1</item>
+          <item>Client 2</item>
+        </return>
+      </n1:GetClientsResponse>
+    </env:Body>
+  </env:Envelope>
+Sending data 
+Completed in 13ms (View: 1, DB: 0) | 200 OK [http://192.168.1.175/ssbe/api]
+
+
+Processing SsbeController#api (for 192.168.10.138 at 2009-04-23 17:57:20) [POST]
+  Parameters: {"envelope"=>{"xmlns:n0"=>"urn:ActionWebService", "xmlns:soap"=>"http://schemas.xmlsoap.org/soap/envelope/", "body"=>{"soap:encoding_style"=>"http://schemas.xmlsoap.org/soap/encoding/", "get_clients"=>nil}, "xmlns:xsd"=>"http://www.w3.org/2001/XMLSchema", "header"=>nil, "xmlns:xsi"=>"http://www.w3.org/2001/XMLSchema-instance", "xmlns:soapenc"=>"http://schemas.xmlsoap.org/soap/encoding/"}}
+
+Web Service Request: GetClients() Entrypoint: api
+  <?xml version="1.0" encoding="UTF-8"?><soap:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:n0="urn:ActionWebService"><soap:Header /><soap:Body soap:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><n0:GetClients /></soap:Body></soap:Envelope>
+
+Web Service Response (0.002427): => ["Client 1", "Client 2"]
+  <?xml version="1.0" encoding="UTF-8" ?>
+  <env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:env="http://schemas.xmlsoap.org/soap/envelope/">
+    <env:Body>
+      <n1:GetClientsResponse xmlns:n1="urn:ActionWebService"
+          env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+        <return n2:arrayType="xsd:string[2]"
+            xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+            xsi:type="n2:Array">
+          <item>Client 1</item>
+          <item>Client 2</item>
+        </return>
+      </n1:GetClientsResponse>
+    </env:Body>
+  </env:Envelope>
+Sending data 
+Completed in 12ms (View: 1, DB: 0) | 200 OK [http://192.168.1.175/ssbe/api]
+
+
+Processing SsbeController#invocation (for 127.0.0.1 at 2009-04-23 18:04:12) [GET]
+Rendering /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/templates/scaffolds/layout.html.erb
+Completed in 12ms (View: 2, DB: 0) | 200 OK [http://localhost/ssbe/invocation]
+
+
+Processing SsbeController#invocation_method_params (for 127.0.0.1 at 2009-04-23 18:04:15) [GET]
+  Parameters: {"method"=>"GetMetrics", "service"=>"ssbe"}
+Rendering /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/templates/scaffolds/layout.html.erb
+Completed in 12ms (View: 2, DB: 0) | 200 OK [http://localhost/ssbe/invocation_method_params?method=GetMetrics&service=ssbe]
+
+
+Processing SsbeController#invocation_submit (for 127.0.0.1 at 2009-04-23 18:04:17) [POST]
+  Parameters: {"commit"=>"Invoke", "service"=>"ssbe", "method"=>"GetMetrics", "authenticity_token"=>"1Xr9m2/LAA0RhRKXKQbzHqgpYotf62+Cg4WsU2nOYgE=", "protocol"=>"soap"}
+
+Web Service Request: GetMetrics() Entrypoint: invocation_submit
+  <?xml version="1.0" encoding="utf-8" ?>
+  <env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:env="http://schemas.xmlsoap.org/soap/envelope/">
+    <env:Body>
+      <n1:GetMetrics xmlns:n1="urn:ActionWebService"
+          env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      </n1:GetMetrics>
+    </env:Body>
+  </env:Envelope>
+
+Web Service Response (0.002245): => ["metric 1", "metric 2"]
+  <?xml version="1.0" encoding="UTF-8" ?>
+  <env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:env="http://schemas.xmlsoap.org/soap/envelope/">
+    <env:Body>
+      <n1:GetMetricsResponse xmlns:n1="urn:ActionWebService"
+          env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+        <return n2:arrayType="xsd:string[2]"
+            xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+            xsi:type="n2:Array">
+          <item>metric 1</item>
+          <item>metric 2</item>
+        </return>
+      </n1:GetMetricsResponse>
+    </env:Body>
+  </env:Envelope>
+Sending data 
+Rendering /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/templates/scaffolds/layout.html.erb
+Completed in 27ms (View: 1, DB: 0) | 200 OK [http:///ssbe/invocation_submit]
+
+
+Processing SsbeController#invocation_submit (for 127.0.0.1 at 2009-04-23 18:04:22) [POST]
+  Parameters: {"commit"=>"Invoke", "service"=>"ssbe", "method"=>"GetMetrics", "authenticity_token"=>"1Xr9m2/LAA0RhRKXKQbzHqgpYotf62+Cg4WsU2nOYgE=", "protocol"=>"xmlrpc"}
+
+Web Service Request: GetMetrics() Entrypoint: invocation_submit
+  <?xml version="1.0" ?><methodCall><methodName>GetMetrics</methodName><params/></methodCall>
+
+Web Service Response (0.000754): => ["metric 1", "metric 2"]
+  <?xml version="1.0" ?><methodResponse><params><param><value><array><data><value><string>metric 1</string></value><value><string>metric 2</string></value></data></array></value></param></params></methodResponse>
+Sending data 
+Rendering /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/templates/scaffolds/layout.html.erb
+Completed in 136ms (View: 1, DB: 0) | 200 OK [http:///ssbe/invocation_submit]
+
+
+Processing SsbeController#invocation_method_params (for 127.0.0.1 at 2009-04-23 18:04:52) [GET]
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.public_name) on line #1 of /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/templates/scaffolds/parameters.html.erb:
+1: <h4>Method Invocation Details for <em><%= @scaffold_service %>#<%= @scaffold_method.public_name %></em></h4>
+2: 
+3: <% form_tag(:action => @scaffold_action_name + '_submit') do  -%>
+4: <%= hidden_field_tag "service", @scaffold_service.name %>
+
+    /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/templates/scaffolds/parameters.html.erb:1
+    /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/scaffolding.rb:112:in `render_invocation_scaffold'
+    /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/scaffolding.rb:53:in `invocation_method_params'
+
+Rendered rescues/_trace (73.4ms)
+Rendered rescues/_request_and_response (1.8ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing SsbeController#invocation (for 127.0.0.1 at 2009-04-23 18:05:10) [GET]
+Rendering /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/templates/scaffolds/layout.html.erb
+Completed in 12ms (View: 2, DB: 0) | 200 OK [http://localhost/ssbe/invocation]
+
+
+Processing SsbeController#invocation_method_params (for 127.0.0.1 at 2009-04-23 18:06:47) [GET]
+  Parameters: {"method"=>"GetObservations", "service"=>"ssbe"}
+Rendering /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/templates/scaffolds/layout.html.erb
+Completed in 11ms (View: 1, DB: 0) | 200 OK [http://localhost/ssbe/invocation_method_params?method=GetObservations&service=ssbe]
+
+
+Processing SsbeController#invocation_submit (for 127.0.0.1 at 2009-04-23 18:06:51) [POST]
+  Parameters: {"commit"=>"Invoke", "service"=>"ssbe", "method"=>"GetObservations", "authenticity_token"=>"1Xr9m2/LAA0RhRKXKQbzHqgpYotf62+Cg4WsU2nOYgE=", "protocol"=>"soap"}
+
+Web Service Request: GetObservations() Entrypoint: invocation_submit
+  <?xml version="1.0" encoding="utf-8" ?>
+  <env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:env="http://schemas.xmlsoap.org/soap/envelope/">
+    <env:Body>
+      <n1:GetObservations xmlns:n1="urn:ActionWebService"
+          env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      </n1:GetObservations>
+    </env:Body>
+  </env:Envelope>
+
+Web Service Response (0.002466): => ["obs 1", "obs 2"]
+  <?xml version="1.0" encoding="UTF-8" ?>
+  <env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:env="http://schemas.xmlsoap.org/soap/envelope/">
+    <env:Body>
+      <n1:GetObservationsResponse xmlns:n1="urn:ActionWebService"
+          env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+        <return n2:arrayType="xsd:string[2]"
+            xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+            xsi:type="n2:Array">
+          <item>obs 1</item>
+          <item>obs 2</item>
+        </return>
+      </n1:GetObservationsResponse>
+    </env:Body>
+  </env:Envelope>
+Sending data 
+Rendering /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/templates/scaffolds/layout.html.erb
+Completed in 134ms (View: 1, DB: 0) | 200 OK [http:///ssbe/invocation_submit]
+
+
+Processing ApplicationController#invocation (for 127.0.0.1 at 2009-04-23 18:13:50) [GET]
+
+ActionWebService::ActionWebServiceError (Expected signature to be an Array):
+  /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/support/signature_types.rb:19:in `canonical_signature'
+  /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/api.rb:79:in `api_method'
+  app/services/ssbe_api.rb:4
+  /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/container/action_controller_container.rb:62:in `require_web_service_api'
+  /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/container/action_controller_container.rb:48:in `web_service_api'
+  /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/container/action_controller_container.rb:85:in `inherited_without_action_controller'
+  /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/dispatcher/action_controller_dispatcher.rb:32:in `inherited'
+  app/controllers/ssbe_controller.rb:1
+
+Rendered rescues/_trace (79.9ms)
+Rendered rescues/_request_and_response (2.9ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing SsbeController#invocation (for 127.0.0.1 at 2009-04-23 18:14:23) [GET]
+Rendering /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/templates/scaffolds/layout.html.erb
+Completed in 13ms (View: 2, DB: 0) | 200 OK [http://localhost/ssbe/invocation]
+
+
+Processing SsbeController#invocation_method_params (for 127.0.0.1 at 2009-04-23 18:14:25) [GET]
+  Parameters: {"method"=>"GetHostsForClient", "service"=>"ssbe"}
+Rendering /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/templates/scaffolds/layout.html.erb
+Completed in 13ms (View: 1, DB: 0) | 200 OK [http://localhost/ssbe/invocation_method_params?method=GetHostsForClient&service=ssbe]
+
+
+Processing SsbeController#invocation_submit (for 127.0.0.1 at 2009-04-23 18:14:28) [POST]
+  Parameters: {"commit"=>"Invoke", "service"=>"ssbe", "method"=>"GetHostsForClient", "authenticity_token"=>"1Xr9m2/LAA0RhRKXKQbzHqgpYotf62+Cg4WsU2nOYgE=", "protocol"=>"soap", "method_params"=>{"0"=>"foobar"}}
+
+Web Service Request: GetHostsForClient("foobar") Entrypoint: invocation_submit
+  <?xml version="1.0" encoding="utf-8" ?>
+  <env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:env="http://schemas.xmlsoap.org/soap/envelope/">
+    <env:Body>
+      <n1:GetHostsForClient xmlns:n1="urn:ActionWebService"
+          env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+        <param0 xsi:type="xsd:string">foobar</param0>
+      </n1:GetHostsForClient>
+    </env:Body>
+  </env:Envelope>
+
+ActionWebService::Dispatcher::DispatcherError (no such method 'GetHostsForClient' on API SsbeApi (get_hosts_for_client)):
+  /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/dispatcher/abstract.rb:167:in `exception'
+  /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/dispatcher/abstract.rb:167:in `raise'
+  /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/dispatcher/abstract.rb:167:in `web_service_invocation'
+  /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/dispatcher/abstract.rb:21:in `invoke_web_service_request'
+  /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/dispatcher/action_controller_dispatcher.rb:58:in `dispatch_web_service_request'
+  /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/dispatcher/action_controller_dispatcher.rb:56:in `dispatch_web_service_request'
+  /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/scaffolding.rb:83:in `invocation_submit'
+  /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/scaffolding.rb:67:in `invocation_submit'
+
+
+Web Service Response: => #<ActionWebService::Dispatcher::DispatcherError: no such method 'GetHostsForClient' on API SsbeApi (get_hosts_for_client)>
+  <?xml version="1.0" encoding="UTF-8" ?>
+  <env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:env="http://schemas.xmlsoap.org/soap/envelope/">
+    <env:Body>
+      <env:Fault xmlns:n1="http://schemas.xmlsoap.org/soap/encoding/"
+          env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+        <faultcode xsi:type="xsd:QName">env:Server</faultcode>
+        <faultstring xsi:type="xsd:string">no such method &apos;GetHostsForClient&apos; on API SsbeApi (get_hosts_for_client)</faultstring>
+        <faultactor xsi:type="xsd:string">ActionWebService::Protocol::Soap::SoapProtocol</faultactor>
+        <detail xmlns:n2="http://www.ruby-lang.org/xmlns/ruby/type/custom"
+            xsi:type="n2:SOAPException">
+          <excn_type_name xsi:type="xsd:string">ActionWebService..Dispatcher..DispatcherError</excn_type_name>
+          <cause xmlns:n3="http://www.ruby-lang.org/xmlns/ruby/type/1.6"
+              xsi:type="n3:ActionWebService..Dispatcher..DispatcherError">
+            <message xsi:type="xsd:string">no such method &apos;GetHostsForClient&apos; on API SsbeApi (get_hosts_for_client)</message>
+            <backtrace xsi:type="n1:Array"
+                n1:arrayType="xsd:anyType[70]">
+              <item xsi:type="xsd:string">/usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/dispatcher/abstract.rb:167:in `exception&apos;</item>
+              <item xsi:type="xsd:string">/usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/dispatcher/abstract.rb:167:in `raise&apos;</item>
+              <item xsi:type="xsd:string">/usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/dispatcher/abstract.rb:167:in `web_service_invocation&apos;</item>
+              <item xsi:type="xsd:string">/usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/dispatcher/abstract.rb:21:in `invoke_web_service_request&apos;</item>
+              <item xsi:type="xsd:string">/usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/dispatcher/action_controller_dispatcher.rb:58:in `dispatch_web_service_request&apos;</item>
+              <item xsi:type="xsd:string">/usr/lib/ruby/1.8/benchmark.rb:293:in `measure&apos;</item>
+              <item xsi:type="xsd:string">/usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/dispatcher/action_controller_dispatcher.rb:56:in `dispatch_web_service_request&apos;</item>
+              <item xsi:type="xsd:string">/usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/scaffolding.rb:83:in `invocation_submit&apos;</item>
+              <item xsi:type="xsd:string">/usr/lib/ruby/1.8/benchmark.rb:293:in `measure&apos;</item>
+              <item xsi:type="xsd:string">/usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/scaffolding.rb:67:in `invocation_submit&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/base.rb:1322:in `send&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/base.rb:1322:in `perform_action_without_filters&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/filters.rb:617:in `call_filters&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/activesupport/lib/active_support/core_ext/benchmark.rb:17:in `ms&apos;</item>
+              <item xsi:type="xsd:string">/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/activesupport/lib/active_support/core_ext/benchmark.rb:17:in `ms&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/rescue.rb:160:in `perform_action_without_flash&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/flash.rb:141:in `perform_action&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/base.rb:523:in `send&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/base.rb:523:in `process_without_filters&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/filters.rb:606:in `process&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/base.rb:391:in `process&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/base.rb:386:in `call&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/routing/route_set.rb:433:in `call&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/dispatcher.rb:88:in `dispatch&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/dispatcher.rb:111:in `_call&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/dispatcher.rb:82:in `initialize&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/activerecord/lib/active_record/query_cache.rb:29:in `call&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/activerecord/lib/active_record/query_cache.rb:29:in `call&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/activerecord/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/activerecord/lib/active_record/query_cache.rb:9:in `cache&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/activerecord/lib/active_record/query_cache.rb:28:in `call&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/activerecord/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/vendor/rack-1.0/rack/head.rb:9:in `call&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/vendor/rack-1.0/rack/methodoverride.rb:24:in `call&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/params_parser.rb:15:in `call&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/rewindable_input.rb:25:in `call&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/session/cookie_store.rb:93:in `call&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/reloader.rb:9:in `call&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/failsafe.rb:11:in `call&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `call&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `synchronize&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `call&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/dispatcher.rb:106:in `call&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/railties/lib/rails/rack/static.rb:31:in `call&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:46:in `call&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:40:in `each&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:40:in `call&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/railties/lib/rails/rack/log_tailer.rb:17:in `call&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/vendor/rack-1.0/rack/content_length.rb:13:in `call&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/vendor/rack-1.0/rack/chunked.rb:15:in `call&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/vendor/rack-1.0/rack/handler/mongrel.rb:61:in `process&apos;</item>
+              <item xsi:type="xsd:string">/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client&apos;</item>
+              <item xsi:type="xsd:string">/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each&apos;</item>
+              <item xsi:type="xsd:string">/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client&apos;</item>
+              <item xsi:type="xsd:string">/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run&apos;</item>
+              <item xsi:type="xsd:string">/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize&apos;</item>
+              <item xsi:type="xsd:string">/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new&apos;</item>
+              <item xsi:type="xsd:string">/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run&apos;</item>
+              <item xsi:type="xsd:string">/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize&apos;</item>
+              <item xsi:type="xsd:string">/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new&apos;</item>
+              <item xsi:type="xsd:string">/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/actionpack/lib/action_controller/vendor/rack-1.0/rack/handler/mongrel.rb:34:in `run&apos;</item>
+              <item xsi:type="xsd:string">/home/ewc/git/rails-ws/vendor/rails/railties/lib/commands/server.rb:111</item>
+              <item xsi:type="xsd:string">/usr/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require&apos;</item>
+              <item xsi:type="xsd:string">/usr/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require&apos;</item>
+              <item xsi:type="xsd:string">./script/server:3</item>
+            </backtrace>
+          </cause>
+        </detail>
+      </env:Fault>
+    </env:Body>
+  </env:Envelope>
+Sending data 
+
+ActionWebService::Dispatcher::DispatcherError (no such method 'GetHostsForClient' on API SsbeApi (get_hosts_for_client)):
+  /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/dispatcher/abstract.rb:167:in `exception'
+  /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/dispatcher/abstract.rb:167:in `raise'
+  /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/dispatcher/abstract.rb:167:in `web_service_invocation'
+  /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/dispatcher/abstract.rb:21:in `invoke_web_service_request'
+  /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/dispatcher/action_controller_dispatcher.rb:58:in `dispatch_web_service_request'
+  /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/dispatcher/action_controller_dispatcher.rb:56:in `dispatch_web_service_request'
+  /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/scaffolding.rb:83:in `invocation_submit'
+  /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/scaffolding.rb:67:in `invocation_submit'
+
+Rendered rescues/_trace (74.5ms)
+Rendered rescues/_request_and_response (2.1ms)
+Rendering rescues/layout (internal_server_error)
+Completed in 301ms (View: 1, DB: 0) | 500 Internal Server Error [http:///ssbe/invocation_submit]
+
+
+Processing SsbeController#invocation_submit (for 127.0.0.1 at 2009-04-23 18:14:47) [POST]
+  Parameters: {"commit"=>"Invoke", "service"=>"ssbe", "method"=>"GetHostsForClient", "authenticity_token"=>"1Xr9m2/LAA0RhRKXKQbzHqgpYotf62+Cg4WsU2nOYgE=", "protocol"=>"soap", "method_params"=>{"0"=>"foobar"}}
+
+Web Service Request: GetHostsForClient(param0=>"foobar") Entrypoint: invocation_submit
+  <?xml version="1.0" encoding="utf-8" ?>
+  <env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:env="http://schemas.xmlsoap.org/soap/envelope/">
+    <env:Body>
+      <n1:GetHostsForClient xmlns:n1="urn:ActionWebService"
+          env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+        <param0 xsi:type="xsd:string">foobar</param0>
+      </n1:GetHostsForClient>
+    </env:Body>
+  </env:Envelope>
+
+Web Service Response (0.002370): => ["host that belongss to foobar"]
+  <?xml version="1.0" encoding="UTF-8" ?>
+  <env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:env="http://schemas.xmlsoap.org/soap/envelope/">
+    <env:Body>
+      <n1:GetHostsForClientResponse xmlns:n1="urn:ActionWebService"
+          env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+        <return n2:arrayType="xsd:string[1]"
+            xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+            xsi:type="n2:Array">
+          <item>host that belongss to foobar</item>
+        </return>
+      </n1:GetHostsForClientResponse>
+    </env:Body>
+  </env:Envelope>
+Sending data 
+Rendering /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/templates/scaffolds/layout.html.erb
+Completed in 32ms (View: 2, DB: 0) | 200 OK [http:///ssbe/invocation_submit]
