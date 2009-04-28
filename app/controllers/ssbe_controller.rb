@@ -6,6 +6,9 @@ class SsbeController < ApplicationController
   def get_clients
     Client.get(:all)
   end
+  def get_client(name)
+    Client.get(:all).find{|c| c.name == name}
+  end
   def get_hosts
     ["host 1","host 2"]
   end
