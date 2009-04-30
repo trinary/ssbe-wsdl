@@ -27263,3 +27263,1853 @@ Web Service Response (1.217542): => [#<HistoricalObservation::WsType:0x7f96d9c90
 Sending data 
 Rendering /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/templates/scaffolds/layout.html.erb
 Completed in 2230ms (View: 2, DB: 0) | 200 OK [http:///ssbe/invocation_submit]
+
+
+Processing SsbeController#invocation (for 192.168.1.127 at 2009-04-30 14:14:16) [GET]
+Rendering /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/templates/scaffolds/layout.html.erb
+Completed in 16ms (View: 2, DB: 0) | 200 OK [http://192.168.1.175/ssbe/invocation]
+
+
+Processing SsbeController#wsdl (for 192.168.10.201 at 2009-04-30 14:14:19) [GET]
+Sending data 
+Completed in 60ms (View: 1, DB: 0) | 200 OK [http://192.168.1.175/ssbe/wsdl]
+
+
+Processing SsbeController#invocation_method_params (for 192.168.1.127 at 2009-04-30 14:14:22) [GET]
+  Parameters: {"method"=>"GetClients", "service"=>"ssbe"}
+Rendering /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/templates/scaffolds/layout.html.erb
+Completed in 31ms (View: 1, DB: 0) | 200 OK [http://192.168.1.175/ssbe/invocation_method_params?method=GetClients&service=ssbe]
+
+
+Processing SsbeController#invocation_submit (for 192.168.1.127 at 2009-04-30 14:14:23) [POST]
+  Parameters: {"commit"=>"Invoke", "service"=>"ssbe", "method"=>"GetClients", "authenticity_token"=>"ktFgww05ac9fdcB+8PgFFIUUw8jEaPS1FzpnnXN0Ndg=", "protocol"=>"soap"}
+  GET [http://core.deltaplex.dev.api.local/service_descriptors]
+  -> Returned 200 in 0.0188s
+  GET [http://core.deltaplex.dev.api.local/service_descriptors/kernel]
+  -> Returned 200 in 0.0301s
+  GET [http://core.deltaplex.dev.api.local/clients]
+  -> Returned 200 in 0.0392s
+
+Web Service Request: GetClients() Entrypoint: invocation_submit
+  <?xml version="1.0" encoding="utf-8" ?>
+  <env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:env="http://schemas.xmlsoap.org/soap/envelope/">
+    <env:Body>
+      <n1:GetClients xmlns:n1="urn:ActionWebService"
+          env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      </n1:GetClients>
+    </env:Body>
+  </env:Envelope>
+
+Web Service Response (0.105395): => [#<Client::WsType:0x7f96d9be3e18 @id="406022bb-d80a-4fe4-8be8-ed35a2c2d1f6", @hosts_href="http://core.deltaplex.dev.api.local/clients/API/hosts", @href="http://core.deltaplex.dev.api.local/clients/API", @name="API">, #<Client::WsType:0x7f96d9be3170 @id="ebc4bbd2-c93a-4dbd-a27e-b07847fed382", @hosts_href="http://core.deltaplex.dev.api.local/clients/Hornet/hosts", @href="http://core.deltaplex.dev.api.local/clients/Hornet", @name="Hornet">, #<Client::WsType:0x7f96d9bdf520 @id="dfd1f1e3-d9eb-42e0-ad91-702c6739b9fd", @hosts_href="http://core.deltaplex.dev.api.local/clients/Lexington/hosts", @href="http://core.deltaplex.dev.api.local/clients/Lexington", @name="Lexington">, #<Client::WsType:0x7f96d9bda6b0 @id="d6238263-5bdb-4443-91e3-de22f99473b4", @hosts_href="http://core.deltaplex.dev.api.local/clients/Yorktown/hosts", @href="http://core.deltaplex.dev.api.local/clients/Yorktown", @name="Yorktown">, #<Client::WsType:0x7f96d9bd7f78 @id="995b7864-13ae-47ea-afe9-8757f7d468bc", @hosts_href="http://core.deltaplex.dev.api.local/clients/Wasp/hosts", @href="http://core.deltaplex.dev.api.local/clients/Wasp", @name="Wasp">, #<Client::WsType:0x7f96d9bd69c0 @id="04714655-1097-41f7-9574-85b9583f86c4", @hosts_href="http://core.deltaplex.dev.api.local/clients/Midway/hosts", @href="http://core.deltaplex.dev.api.local/clients/Midway", @name="Midway">]
+  <?xml version="1.0" encoding="UTF-8" ?>
+  <env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:env="http://schemas.xmlsoap.org/soap/envelope/">
+    <env:Body>
+      <n1:GetClientsResponse xmlns:n1="urn:ActionWebService"
+          env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+        <return n2:arrayType="n1:Client..WsType[6]"
+            xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+            xsi:type="n2:Array">
+          <item>
+            <id xsi:type="xsd:string">406022bb-d80a-4fe4-8be8-ed35a2c2d1f6</id>
+            <hosts_href xsi:type="xsd:string">http://core.deltaplex.dev.api.local/clients/API/hosts</hosts_href>
+            <href xsi:type="xsd:string">http://core.deltaplex.dev.api.local/clients/API</href>
+            <name xsi:type="xsd:string">API</name>
+          </item>
+          <item>
+            <id xsi:type="xsd:string">ebc4bbd2-c93a-4dbd-a27e-b07847fed382</id>
+            <hosts_href xsi:type="xsd:string">http://core.deltaplex.dev.api.local/clients/Hornet/hosts</hosts_href>
+            <href xsi:type="xsd:string">http://core.deltaplex.dev.api.local/clients/Hornet</href>
+            <name xsi:type="xsd:string">Hornet</name>
+          </item>
+          <item>
+            <id xsi:type="xsd:string">dfd1f1e3-d9eb-42e0-ad91-702c6739b9fd</id>
+            <hosts_href xsi:type="xsd:string">http://core.deltaplex.dev.api.local/clients/Lexington/hosts</hosts_href>
+            <href xsi:type="xsd:string">http://core.deltaplex.dev.api.local/clients/Lexington</href>
+            <name xsi:type="xsd:string">Lexington</name>
+          </item>
+          <item>
+            <id xsi:type="xsd:string">d6238263-5bdb-4443-91e3-de22f99473b4</id>
+            <hosts_href xsi:type="xsd:string">http://core.deltaplex.dev.api.local/clients/Yorktown/hosts</hosts_href>
+            <href xsi:type="xsd:string">http://core.deltaplex.dev.api.local/clients/Yorktown</href>
+            <name xsi:type="xsd:string">Yorktown</name>
+          </item>
+          <item>
+            <id xsi:type="xsd:string">995b7864-13ae-47ea-afe9-8757f7d468bc</id>
+            <hosts_href xsi:type="xsd:string">http://core.deltaplex.dev.api.local/clients/Wasp/hosts</hosts_href>
+            <href xsi:type="xsd:string">http://core.deltaplex.dev.api.local/clients/Wasp</href>
+            <name xsi:type="xsd:string">Wasp</name>
+          </item>
+          <item>
+            <id xsi:type="xsd:string">04714655-1097-41f7-9574-85b9583f86c4</id>
+            <hosts_href xsi:type="xsd:string">http://core.deltaplex.dev.api.local/clients/Midway/hosts</hosts_href>
+            <href xsi:type="xsd:string">http://core.deltaplex.dev.api.local/clients/Midway</href>
+            <name xsi:type="xsd:string">Midway</name>
+          </item>
+        </return>
+      </n1:GetClientsResponse>
+    </env:Body>
+  </env:Envelope>
+Sending data 
+Rendering /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/templates/scaffolds/layout.html.erb
+Completed in 159ms (View: 2, DB: 0) | 200 OK [http:///ssbe/invocation_submit]
+
+
+Processing SsbeController#invocation (for 192.168.10.201 at 2009-04-30 14:14:37) [GET]
+Rendering /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/templates/scaffolds/layout.html.erb
+Completed in 12ms (View: 1, DB: 0) | 200 OK [http://192.168.1.175/ssbe/invocation]
+
+
+Processing SsbeController#invocation_method_params (for 192.168.10.201 at 2009-04-30 14:14:48) [GET]
+  Parameters: {"method"=>"GetHistoricalObservationsForMetric", "service"=>"ssbe"}
+Rendering /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/templates/scaffolds/layout.html.erb
+Completed in 13ms (View: 1, DB: 0) | 200 OK [http://192.168.1.175/ssbe/invocation_method_params?method=GetHistoricalObservationsForMetric&service=ssbe]
+
+
+Processing SsbeController#invocation_method_params (for 192.168.1.127 at 2009-04-30 14:15:40) [GET]
+  Parameters: {"method"=>"GetClient", "service"=>"ssbe"}
+Rendering /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/templates/scaffolds/layout.html.erb
+Completed in 12ms (View: 1, DB: 0) | 200 OK [http://192.168.1.175/ssbe/invocation_method_params?method=GetClient&service=ssbe]
+
+
+Processing SsbeController#invocation_submit (for 192.168.1.127 at 2009-04-30 14:15:43) [POST]
+  Parameters: {"commit"=>"Invoke", "service"=>"ssbe", "method"=>"GetClient", "authenticity_token"=>"ktFgww05ac9fdcB+8PgFFIUUw8jEaPS1FzpnnXN0Ndg=", "protocol"=>"soap", "method_params"=>{"0"=>"API"}}
+  GET [http://core.deltaplex.dev.api.local/service_descriptors]
+    Retrieved from cache
+  -> Returned 200 in 0.0013s
+  GET [http://core.deltaplex.dev.api.local/service_descriptors/kernel]
+    Retrieved from cache
+  -> Returned 200 in 0.0009s
+  GET [http://core.deltaplex.dev.api.local/clients]
+    Retrieved from cache
+    Cache entry is stale
+    Resource not modified
+  -> Returned 200 in 0.0206s
+
+Web Service Request: GetClient(name=>"API") Entrypoint: invocation_submit
+  <?xml version="1.0" encoding="utf-8" ?>
+  <env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:env="http://schemas.xmlsoap.org/soap/envelope/">
+    <env:Body>
+      <n1:GetClient xmlns:n1="urn:ActionWebService"
+          env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+        <name xsi:type="xsd:string">API</name>
+      </n1:GetClient>
+    </env:Body>
+  </env:Envelope>
+
+Web Service Response (0.030924): => #<Client::WsType:0x7f96da062f70 @id="406022bb-d80a-4fe4-8be8-ed35a2c2d1f6", @hosts_href="http://core.deltaplex.dev.api.local/clients/API/hosts", @href="http://core.deltaplex.dev.api.local/clients/API", @name="API">
+  <?xml version="1.0" encoding="UTF-8" ?>
+  <env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:env="http://schemas.xmlsoap.org/soap/envelope/">
+    <env:Body>
+      <n1:GetClientResponse xmlns:n1="urn:ActionWebService"
+          env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+        <return xsi:type="n1:Client..WsType">
+          <id xsi:type="xsd:string">406022bb-d80a-4fe4-8be8-ed35a2c2d1f6</id>
+          <hosts_href xsi:type="xsd:string">http://core.deltaplex.dev.api.local/clients/API/hosts</hosts_href>
+          <href xsi:type="xsd:string">http://core.deltaplex.dev.api.local/clients/API</href>
+          <name xsi:type="xsd:string">API</name>
+        </return>
+      </n1:GetClientResponse>
+    </env:Body>
+  </env:Envelope>
+Sending data 
+Rendering /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/templates/scaffolds/layout.html.erb
+Completed in 173ms (View: 1, DB: 0) | 200 OK [http:///ssbe/invocation_submit]
+
+
+Processing SsbeController#invocation (for 192.168.1.127 at 2009-04-30 14:48:28) [GET]
+Rendering /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/templates/scaffolds/layout.html.erb
+Completed in 13ms (View: 1, DB: 0) | 200 OK [http://192.168.1.175/ssbe/invocation]
+
+
+Processing SsbeController#invocation_method_params (for 192.168.1.127 at 2009-04-30 14:48:32) [GET]
+  Parameters: {"method"=>"GetClients", "service"=>"ssbe"}
+Rendering /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/templates/scaffolds/layout.html.erb
+Completed in 12ms (View: 1, DB: 0) | 200 OK [http://192.168.1.175/ssbe/invocation_method_params?method=GetClients&service=ssbe]
+
+
+Processing SsbeController#invocation_submit (for 192.168.1.127 at 2009-04-30 14:48:36) [POST]
+  Parameters: {"commit"=>"Invoke", "service"=>"ssbe", "method"=>"GetClients", "authenticity_token"=>"ktFgww05ac9fdcB+8PgFFIUUw8jEaPS1FzpnnXN0Ndg=", "protocol"=>"xmlrpc"}
+  GET [http://core.deltaplex.dev.api.local/service_descriptors]
+    Retrieved from cache
+  -> Returned 200 in 0.0013s
+  GET [http://core.deltaplex.dev.api.local/service_descriptors/kernel]
+    Retrieved from cache
+  -> Returned 200 in 0.0010s
+  GET [http://core.deltaplex.dev.api.local/clients]
+    Retrieved from cache
+    Cache entry is stale
+    Resource not modified
+  -> Returned 200 in 0.0239s
+
+Web Service Request: GetClients() Entrypoint: invocation_submit
+  <?xml version="1.0" ?><methodCall><methodName>GetClients</methodName><params/></methodCall>
+
+Web Service Response (0.033922): => [{"name"=>"API", "href"=>"http://core.deltaplex.dev.api.local/clients/API", "id"=>"406022bb-d80a-4fe4-8be8-ed35a2c2d1f6", "hosts_href"=>"http://core.deltaplex.dev.api.local/clients/API/hosts"}, {"name"=>"Hornet", "href"=>"http://core.deltaplex.dev.api.local/clients/Hornet", "id"=>"ebc4bbd2-c93a-4dbd-a27e-b07847fed382", "hosts_href"=>"http://core.deltaplex.dev.api.local/clients/Hornet/hosts"}, {"name"=>"Lexington", "href"=>"http://core.deltaplex.dev.api.local/clients/Lexington", "id"=>"dfd1f1e3-d9eb-42e0-ad91-702c6739b9fd", "hosts_href"=>"http://core.deltaplex.dev.api.local/clients/Lexington/hosts"}, {"name"=>"Yorktown", "href"=>"http://core.deltaplex.dev.api.local/clients/Yorktown", "id"=>"d6238263-5bdb-4443-91e3-de22f99473b4", "hosts_href"=>"http://core.deltaplex.dev.api.local/clients/Yorktown/hosts"}, {"name"=>"Wasp", "href"=>"http://core.deltaplex.dev.api.local/clients/Wasp", "id"=>"995b7864-13ae-47ea-afe9-8757f7d468bc", "hosts_href"=>"http://core.deltaplex.dev.api.local/clients/Wasp/hosts"}, {"name"=>"Midway", "href"=>"http://core.deltaplex.dev.api.local/clients/Midway", "id"=>"04714655-1097-41f7-9574-85b9583f86c4", "hosts_href"=>"http://core.deltaplex.dev.api.local/clients/Midway/hosts"}]
+  <?xml version="1.0" ?><methodResponse><params><param><value><array><data><value><struct><member><name>name</name><value><string>API</string></value></member><member><name>href</name><value><string>http://core.deltaplex.dev.api.local/clients/API</string></value></member><member><name>id</name><value><string>406022bb-d80a-4fe4-8be8-ed35a2c2d1f6</string></value></member><member><name>hosts_href</name><value><string>http://core.deltaplex.dev.api.local/clients/API/hosts</string></value></member></struct></value><value><struct><member><name>name</name><value><string>Hornet</string></value></member><member><name>href</name><value><string>http://core.deltaplex.dev.api.local/clients/Hornet</string></value></member><member><name>id</name><value><string>ebc4bbd2-c93a-4dbd-a27e-b07847fed382</string></value></member><member><name>hosts_href</name><value><string>http://core.deltaplex.dev.api.local/clients/Hornet/hosts</string></value></member></struct></value><value><struct><member><name>name</name><value><string>Lexington</string></value></member><member><name>href</name><value><string>http://core.deltaplex.dev.api.local/clients/Lexington</string></value></member><member><name>id</name><value><string>dfd1f1e3-d9eb-42e0-ad91-702c6739b9fd</string></value></member><member><name>hosts_href</name><value><string>http://core.deltaplex.dev.api.local/clients/Lexington/hosts</string></value></member></struct></value><value><struct><member><name>name</name><value><string>Yorktown</string></value></member><member><name>href</name><value><string>http://core.deltaplex.dev.api.local/clients/Yorktown</string></value></member><member><name>id</name><value><string>d6238263-5bdb-4443-91e3-de22f99473b4</string></value></member><member><name>hosts_href</name><value><string>http://core.deltaplex.dev.api.local/clients/Yorktown/hosts</string></value></member></struct></value><value><struct><member><name>name</name><value><string>Wasp</string></value></member><member><name>href</name><value><string>http://core.deltaplex.dev.api.local/clients/Wasp</string></value></member><member><name>id</name><value><string>995b7864-13ae-47ea-afe9-8757f7d468bc</string></value></member><member><name>hosts_href</name><value><string>http://core.deltaplex.dev.api.local/clients/Wasp/hosts</string></value></member></struct></value><value><struct><member><name>name</name><value><string>Midway</string></value></member><member><name>href</name><value><string>http://core.deltaplex.dev.api.local/clients/Midway</string></value></member><member><name>id</name><value><string>04714655-1097-41f7-9574-85b9583f86c4</string></value></member><member><name>hosts_href</name><value><string>http://core.deltaplex.dev.api.local/clients/Midway/hosts</string></value></member></struct></value></data></array></value></param></params></methodResponse>
+Sending data 
+Rendering /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/templates/scaffolds/layout.html.erb
+Completed in 87ms (View: 2, DB: 0) | 200 OK [http:///ssbe/invocation_submit]
+
+
+Processing SsbeController#invocation_submit (for 192.168.1.127 at 2009-04-30 15:30:55) [POST]
+  Parameters: {"commit"=>"Invoke", "service"=>"ssbe", "method"=>"GetClients", "authenticity_token"=>"ktFgww05ac9fdcB+8PgFFIUUw8jEaPS1FzpnnXN0Ndg=", "protocol"=>"soap"}
+  GET [http://core.deltaplex.dev.api.local/service_descriptors]
+  -> Returned 200 in 0.0163s
+  GET [http://core.deltaplex.dev.api.local/service_descriptors/kernel]
+  -> Returned 200 in 0.0273s
+  GET [http://core.deltaplex.dev.api.local/clients]
+Authentication Required. Retrying with auth info
+  -> Returned 200 in 0.0374s
+
+Web Service Request: GetClients() Entrypoint: invocation_submit
+  <?xml version="1.0" encoding="utf-8" ?>
+  <env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:env="http://schemas.xmlsoap.org/soap/envelope/">
+    <env:Body>
+      <n1:GetClients xmlns:n1="urn:ActionWebService"
+          env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      </n1:GetClients>
+    </env:Body>
+  </env:Envelope>
+
+Web Service Response (0.098177): => [#<Client::WsType:0x7f020160cea8 @hosts_href="http://core.deltaplex.dev.api.local/clients/API/hosts", @id="406022bb-d80a-4fe4-8be8-ed35a2c2d1f6", @href="http://core.deltaplex.dev.api.local/clients/API", @name="API">, #<Client::WsType:0x7f020160ccf0 @hosts_href="http://core.deltaplex.dev.api.local/clients/Hornet/hosts", @id="ebc4bbd2-c93a-4dbd-a27e-b07847fed382", @href="http://core.deltaplex.dev.api.local/clients/Hornet", @name="Hornet">, #<Client::WsType:0x7f020160cb10 @hosts_href="http://core.deltaplex.dev.api.local/clients/Lexington/hosts", @id="dfd1f1e3-d9eb-42e0-ad91-702c6739b9fd", @href="http://core.deltaplex.dev.api.local/clients/Lexington", @name="Lexington">, #<Client::WsType:0x7f020160c930 @hosts_href="http://core.deltaplex.dev.api.local/clients/Yorktown/hosts", @id="d6238263-5bdb-4443-91e3-de22f99473b4", @href="http://core.deltaplex.dev.api.local/clients/Yorktown", @name="Yorktown">, #<Client::WsType:0x7f020160c750 @hosts_href="http://core.deltaplex.dev.api.local/clients/Wasp/hosts", @id="995b7864-13ae-47ea-afe9-8757f7d468bc", @href="http://core.deltaplex.dev.api.local/clients/Wasp", @name="Wasp">, #<Client::WsType:0x7f020160c570 @hosts_href="http://core.deltaplex.dev.api.local/clients/Midway/hosts", @id="04714655-1097-41f7-9574-85b9583f86c4", @href="http://core.deltaplex.dev.api.local/clients/Midway", @name="Midway">]
+  <?xml version="1.0" encoding="UTF-8" ?>
+  <env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:env="http://schemas.xmlsoap.org/soap/envelope/">
+    <env:Body>
+      <n1:GetClientsResponse xmlns:n1="urn:ActionWebService"
+          env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+        <return n2:arrayType="n1:Client..WsType[6]"
+            xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+            xsi:type="n2:Array">
+          <item>
+            <hosts_href xsi:type="xsd:string">http://core.deltaplex.dev.api.local/clients/API/hosts</hosts_href>
+            <id xsi:type="xsd:string">406022bb-d80a-4fe4-8be8-ed35a2c2d1f6</id>
+            <href xsi:type="xsd:string">http://core.deltaplex.dev.api.local/clients/API</href>
+            <name xsi:type="xsd:string">API</name>
+          </item>
+          <item>
+            <hosts_href xsi:type="xsd:string">http://core.deltaplex.dev.api.local/clients/Hornet/hosts</hosts_href>
+            <id xsi:type="xsd:string">ebc4bbd2-c93a-4dbd-a27e-b07847fed382</id>
+            <href xsi:type="xsd:string">http://core.deltaplex.dev.api.local/clients/Hornet</href>
+            <name xsi:type="xsd:string">Hornet</name>
+          </item>
+          <item>
+            <hosts_href xsi:type="xsd:string">http://core.deltaplex.dev.api.local/clients/Lexington/hosts</hosts_href>
+            <id xsi:type="xsd:string">dfd1f1e3-d9eb-42e0-ad91-702c6739b9fd</id>
+            <href xsi:type="xsd:string">http://core.deltaplex.dev.api.local/clients/Lexington</href>
+            <name xsi:type="xsd:string">Lexington</name>
+          </item>
+          <item>
+            <hosts_href xsi:type="xsd:string">http://core.deltaplex.dev.api.local/clients/Yorktown/hosts</hosts_href>
+            <id xsi:type="xsd:string">d6238263-5bdb-4443-91e3-de22f99473b4</id>
+            <href xsi:type="xsd:string">http://core.deltaplex.dev.api.local/clients/Yorktown</href>
+            <name xsi:type="xsd:string">Yorktown</name>
+          </item>
+          <item>
+            <hosts_href xsi:type="xsd:string">http://core.deltaplex.dev.api.local/clients/Wasp/hosts</hosts_href>
+            <id xsi:type="xsd:string">995b7864-13ae-47ea-afe9-8757f7d468bc</id>
+            <href xsi:type="xsd:string">http://core.deltaplex.dev.api.local/clients/Wasp</href>
+            <name xsi:type="xsd:string">Wasp</name>
+          </item>
+          <item>
+            <hosts_href xsi:type="xsd:string">http://core.deltaplex.dev.api.local/clients/Midway/hosts</hosts_href>
+            <id xsi:type="xsd:string">04714655-1097-41f7-9574-85b9583f86c4</id>
+            <href xsi:type="xsd:string">http://core.deltaplex.dev.api.local/clients/Midway</href>
+            <name xsi:type="xsd:string">Midway</name>
+          </item>
+        </return>
+      </n1:GetClientsResponse>
+    </env:Body>
+  </env:Envelope>
+Sending data 
+Rendering /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/templates/scaffolds/layout.html.erb
+Completed in 153ms (View: 2, DB: 0) | 200 OK [http:///ssbe/invocation_submit]
+
+
+Processing SsbeController#invocation_method_params (for 127.0.0.1 at 2009-04-30 15:31:21) [GET]
+  Parameters: {"method"=>"GetHistoricalObservationsForMetric", "service"=>"ssbe"}
+Rendering /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/templates/scaffolds/layout.html.erb
+Completed in 14ms (View: 1, DB: 0) | 200 OK [http://localhost/ssbe/invocation_method_params?method=GetHistoricalObservationsForMetric&service=ssbe]
+
+
+Processing ApplicationController#invocation (for 127.0.0.1 at 2009-04-30 15:32:22) [GET]
+
+NameError (undefined local variable or method `string' for SsbeApi:Class):
+  app/services/ssbe_api.rb:5
+  /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/container/action_controller_container.rb:62:in `require_web_service_api'
+  /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/container/action_controller_container.rb:48:in `web_service_api'
+  /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/container/action_controller_container.rb:85:in `inherited_without_action_controller'
+  /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/dispatcher/action_controller_dispatcher.rb:32:in `inherited'
+  app/controllers/ssbe_controller.rb:1
+
+Rendered rescues/_trace (79.8ms)
+Rendered rescues/_request_and_response (1.9ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing SsbeController#invocation (for 127.0.0.1 at 2009-04-30 15:32:51) [GET]
+Rendering /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/templates/scaffolds/layout.html.erb
+Completed in 15ms (View: 3, DB: 0) | 200 OK [http://localhost/ssbe/invocation]
+
+
+Processing SsbeController#invocation (for 127.0.0.1 at 2009-04-30 15:33:05) [GET]
+Rendering /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/templates/scaffolds/layout.html.erb
+Completed in 12ms (View: 1, DB: 0) | 200 OK [http://localhost/ssbe/invocation]
+
+
+Processing SsbeController#invocation (for 127.0.0.1 at 2009-04-30 15:33:29) [GET]
+Rendering /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/templates/scaffolds/layout.html.erb
+Completed in 15ms (View: 3, DB: 0) | 200 OK [http://localhost/ssbe/invocation]
+
+
+Processing SsbeController#invocation (for 127.0.0.1 at 2009-04-30 15:34:37) [GET]
+Rendering /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/templates/scaffolds/layout.html.erb
+Completed in 15ms (View: 3, DB: 0) | 200 OK [http://localhost/ssbe/invocation]
+
+
+Processing SsbeController#invocation (for 127.0.0.1 at 2009-04-30 15:34:38) [GET]
+Rendering /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/templates/scaffolds/layout.html.erb
+Completed in 12ms (View: 1, DB: 0) | 200 OK [http://localhost/ssbe/invocation]
+
+
+Processing SsbeController#invocation (for 127.0.0.1 at 2009-04-30 15:35:07) [GET]
+Rendering /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/templates/scaffolds/layout.html.erb
+Completed in 14ms (View: 2, DB: 0) | 200 OK [http://localhost/ssbe/invocation]
+
+
+Processing SsbeController#invocation (for 127.0.0.1 at 2009-04-30 15:35:33) [GET]
+Rendering /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/templates/scaffolds/layout.html.erb
+Completed in 12ms (View: 1, DB: 0) | 200 OK [http://localhost/ssbe/invocation]
+
+
+Processing SsbeController#invocation_method_params (for 127.0.0.1 at 2009-04-30 15:35:40) [GET]
+  Parameters: {"method"=>"GetHistoricalObservationsForMetric", "service"=>"ssbe"}
+Rendering /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/templates/scaffolds/layout.html.erb
+Completed in 14ms (View: 1, DB: 0) | 200 OK [http://localhost/ssbe/invocation_method_params?method=GetHistoricalObservationsForMetric&service=ssbe]
+
+
+Processing SsbeController#invocation_submit (for 127.0.0.1 at 2009-04-30 15:36:10) [POST]
+  Parameters: {"commit"=>"Invoke", "service"=>"ssbe", "method"=>"GetHistoricalObservationsForMetric", "authenticity_token"=>"tu+qf8iTLWR8wmekg0YN4lOhdcFpfrESn2JhwF7b62E=", "protocol"=>"soap", "method_params"=>{"0"=>"http://core.deltaplex.dev.api.local/metrics/10", "1"=>"", "2"=>""}}
+  GET [http://core.deltaplex.dev.api.local/metrics/10]
+Authentication Required. Retrying with auth info
+  -> Returned 200 in 0.0562s
+  GET [http://core.deltaplex.dev.api.local/metrics/10/observations?start=&end=]
+  -> Returned 200 in 0.0866s
+
+Web Service Request: GetHistoricalObservationsForMetric(metric_href=>"http://core.deltaplex.dev.api.local/metrics/10", begin_time=>"", end_time=>"") Entrypoint: invocation_submit
+  <?xml version="1.0" encoding="utf-8" ?>
+  <env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:env="http://schemas.xmlsoap.org/soap/envelope/">
+    <env:Body>
+      <n1:GetHistoricalObservationsForMetric xmlns:n1="urn:ActionWebService"
+          env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+        <metric_href xsi:type="xsd:string">http://core.deltaplex.dev.api.local/metrics/10</metric_href>
+        <begin_time xsi:type="xsd:string"></begin_time>
+        <end_time xsi:type="xsd:string"></end_time>
+      </n1:GetHistoricalObservationsForMetric>
+    </env:Body>
+  </env:Envelope>
+
+Web Service Response (0.149468): => []
+  <?xml version="1.0" encoding="UTF-8" ?>
+  <env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:env="http://schemas.xmlsoap.org/soap/envelope/">
+    <env:Body>
+      <n1:GetHistoricalObservationsForMetricResponse xmlns:n1="urn:ActionWebService"
+          env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+        <return n2:arrayType="n1:HistoricalObservation..WsType[0]"
+            xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+            xsi:type="n2:Array">
+        </return>
+      </n1:GetHistoricalObservationsForMetricResponse>
+    </env:Body>
+  </env:Envelope>
+Sending data 
+Rendering /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/templates/scaffolds/layout.html.erb
+Completed in 183ms (View: 1, DB: 0) | 200 OK [http:///ssbe/invocation_submit]
+
+
+Processing SsbeController#invocation_submit (for 127.0.0.1 at 2009-04-30 15:36:57) [POST]
+  Parameters: {"commit"=>"Invoke", "service"=>"ssbe", "method"=>"GetHistoricalObservationsForMetric", "authenticity_token"=>"tu+qf8iTLWR8wmekg0YN4lOhdcFpfrESn2JhwF7b62E=", "protocol"=>"soap", "method_params"=>{"0"=>"http://core.deltaplex.dev.api.local/metrics/10", "1"=>"", "2"=>""}}
+  GET [http://core.deltaplex.dev.api.local/metrics/10]
+Authentication Required. Retrying with auth info
+  -> Returned 200 in 0.2101s
+  GET [http://core.deltaplex.dev.api.local/metrics/10/observations?start=&end=]
+  -> Returned 200 in 0.2007s
+
+Web Service Request: GetHistoricalObservationsForMetric(metric_href=>"http://core.deltaplex.dev.api.local/metrics/10", begin_time=>"", end_time=>"") Entrypoint: invocation_submit
+  <?xml version="1.0" encoding="utf-8" ?>
+  <env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:env="http://schemas.xmlsoap.org/soap/envelope/">
+    <env:Body>
+      <n1:GetHistoricalObservationsForMetric xmlns:n1="urn:ActionWebService"
+          env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+        <metric_href xsi:type="xsd:string">http://core.deltaplex.dev.api.local/metrics/10</metric_href>
+        <begin_time xsi:type="xsd:string"></begin_time>
+        <end_time xsi:type="xsd:string"></end_time>
+      </n1:GetHistoricalObservationsForMetric>
+    </env:Body>
+  </env:Envelope>
+
+Web Service Response (0.417895): => []
+  <?xml version="1.0" encoding="UTF-8" ?>
+  <env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:env="http://schemas.xmlsoap.org/soap/envelope/">
+    <env:Body>
+      <n1:GetHistoricalObservationsForMetricResponse xmlns:n1="urn:ActionWebService"
+          env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+        <return n2:arrayType="n1:HistoricalObservation..WsType[0]"
+            xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+            xsi:type="n2:Array">
+        </return>
+      </n1:GetHistoricalObservationsForMetricResponse>
+    </env:Body>
+  </env:Envelope>
+Sending data 
+Rendering /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/templates/scaffolds/layout.html.erb
+Completed in 454ms (View: 2, DB: 0) | 200 OK [http:///ssbe/invocation_submit]
+
+
+Processing SsbeController#invocation_submit (for 127.0.0.1 at 2009-04-30 15:37:40) [POST]
+  Parameters: {"commit"=>"Invoke", "service"=>"ssbe", "method"=>"GetHistoricalObservationsForMetric", "authenticity_token"=>"tu+qf8iTLWR8wmekg0YN4lOhdcFpfrESn2JhwF7b62E=", "protocol"=>"soap", "method_params"=>{"0"=>"http://core.deltaplex.dev.api.local/metrics/10", "1"=>"", "2"=>""}}
+  GET [http://core.deltaplex.dev.api.local/metrics/10]
+Authentication Required. Retrying with auth info
+  -> Returned 200 in 0.0536s
+  GET [http://core.deltaplex.dev.api.local/metrics/10/observations/historical?start=&end=]
+  -> Returned 200 in 0.2079s
+
+Web Service Request: GetHistoricalObservationsForMetric(metric_href=>"http://core.deltaplex.dev.api.local/metrics/10", begin_time=>"", end_time=>"") Entrypoint: invocation_submit
+  <?xml version="1.0" encoding="utf-8" ?>
+  <env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:env="http://schemas.xmlsoap.org/soap/envelope/">
+    <env:Body>
+      <n1:GetHistoricalObservationsForMetric xmlns:n1="urn:ActionWebService"
+          env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+        <metric_href xsi:type="xsd:string">http://core.deltaplex.dev.api.local/metrics/10</metric_href>
+        <begin_time xsi:type="xsd:string"></begin_time>
+        <end_time xsi:type="xsd:string"></end_time>
+      </n1:GetHistoricalObservationsForMetric>
+    </env:Body>
+  </env:Envelope>
+
+Web Service Response (0.268583): => []
+  <?xml version="1.0" encoding="UTF-8" ?>
+  <env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:env="http://schemas.xmlsoap.org/soap/envelope/">
+    <env:Body>
+      <n1:GetHistoricalObservationsForMetricResponse xmlns:n1="urn:ActionWebService"
+          env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+        <return n2:arrayType="n1:HistoricalObservation..WsType[0]"
+            xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+            xsi:type="n2:Array">
+        </return>
+      </n1:GetHistoricalObservationsForMetricResponse>
+    </env:Body>
+  </env:Envelope>
+Sending data 
+Rendering /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/templates/scaffolds/layout.html.erb
+Completed in 303ms (View: 2, DB: 0) | 200 OK [http:///ssbe/invocation_submit]
+
+
+Processing SsbeController#invocation_submit (for 127.0.0.1 at 2009-04-30 15:40:49) [POST]
+  Parameters: {"commit"=>"Invoke", "service"=>"ssbe", "method"=>"GetHistoricalObservationsForMetric", "authenticity_token"=>"tu+qf8iTLWR8wmekg0YN4lOhdcFpfrESn2JhwF7b62E=", "protocol"=>"soap", "method_params"=>{"0"=>"http://core.deltaplex.dev.api.local/metrics/10", "1"=>"", "2"=>""}}
+  GET [http://core.deltaplex.dev.api.local/metrics/10]
+Authentication Required. Retrying with auth info
+  -> Returned 200 in 0.0903s
+  GET [http://core.deltaplex.dev.api.local/metrics/10/observations/historical?start=&end=]
+  -> Returned 200 in 0.2601s
+
+Web Service Request: GetHistoricalObservationsForMetric(metric_href=>"http://core.deltaplex.dev.api.local/metrics/10", begin_time=>"", end_time=>"") Entrypoint: invocation_submit
+  <?xml version="1.0" encoding="utf-8" ?>
+  <env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:env="http://schemas.xmlsoap.org/soap/envelope/">
+    <env:Body>
+      <n1:GetHistoricalObservationsForMetric xmlns:n1="urn:ActionWebService"
+          env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+        <metric_href xsi:type="xsd:string">http://core.deltaplex.dev.api.local/metrics/10</metric_href>
+        <begin_time xsi:type="xsd:string"></begin_time>
+        <end_time xsi:type="xsd:string"></end_time>
+      </n1:GetHistoricalObservationsForMetric>
+    </env:Body>
+  </env:Envelope>
+
+Web Service Response (0.356706): => []
+  <?xml version="1.0" encoding="UTF-8" ?>
+  <env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:env="http://schemas.xmlsoap.org/soap/envelope/">
+    <env:Body>
+      <n1:GetHistoricalObservationsForMetricResponse xmlns:n1="urn:ActionWebService"
+          env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+        <return n2:arrayType="n1:HistoricalObservation..WsType[0]"
+            xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+            xsi:type="n2:Array">
+        </return>
+      </n1:GetHistoricalObservationsForMetricResponse>
+    </env:Body>
+  </env:Envelope>
+Sending data 
+Rendering /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/templates/scaffolds/layout.html.erb
+Completed in 394ms (View: 2, DB: 0) | 200 OK [http:///ssbe/invocation_submit]
+
+
+Processing SsbeController#invocation_submit (for 127.0.0.1 at 2009-04-30 15:42:05) [POST]
+  Parameters: {"commit"=>"Invoke", "service"=>"ssbe", "method"=>"GetHistoricalObservationsForMetric", "authenticity_token"=>"tu+qf8iTLWR8wmekg0YN4lOhdcFpfrESn2JhwF7b62E=", "protocol"=>"soap", "method_params"=>{"0"=>"http://core.deltaplex.dev.api.local/metrics/10", "1"=>"", "2"=>""}}
+  GET [http://core.deltaplex.dev.api.local/metrics/10]
+Authentication Required. Retrying with auth info
+  -> Returned 200 in 0.0450s
+  GET [http://core.deltaplex.dev.api.local/metrics/10/observations/historical?start=&end=]
+  -> Returned 200 in 0.2151s
+
+Web Service Request: GetHistoricalObservationsForMetric(metric_href=>"http://core.deltaplex.dev.api.local/metrics/10", begin_time=>"", end_time=>"") Entrypoint: invocation_submit
+  <?xml version="1.0" encoding="utf-8" ?>
+  <env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:env="http://schemas.xmlsoap.org/soap/envelope/">
+    <env:Body>
+      <n1:GetHistoricalObservationsForMetric xmlns:n1="urn:ActionWebService"
+          env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+        <metric_href xsi:type="xsd:string">http://core.deltaplex.dev.api.local/metrics/10</metric_href>
+        <begin_time xsi:type="xsd:string"></begin_time>
+        <end_time xsi:type="xsd:string"></end_time>
+      </n1:GetHistoricalObservationsForMetric>
+    </env:Body>
+  </env:Envelope>
+
+Web Service Response (0.268043): => []
+  <?xml version="1.0" encoding="UTF-8" ?>
+  <env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:env="http://schemas.xmlsoap.org/soap/envelope/">
+    <env:Body>
+      <n1:GetHistoricalObservationsForMetricResponse xmlns:n1="urn:ActionWebService"
+          env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+        <return n2:arrayType="n1:HistoricalObservation..WsType[0]"
+            xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+            xsi:type="n2:Array">
+        </return>
+      </n1:GetHistoricalObservationsForMetricResponse>
+    </env:Body>
+  </env:Envelope>
+Sending data 
+Rendering /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/templates/scaffolds/layout.html.erb
+Completed in 311ms (View: 4, DB: 0) | 200 OK [http:///ssbe/invocation_submit]
+
+
+Processing SsbeController#invocation_submit (for 127.0.0.1 at 2009-04-30 15:44:07) [POST]
+  Parameters: {"commit"=>"Invoke", "service"=>"ssbe", "method"=>"GetHistoricalObservationsForMetric", "authenticity_token"=>"tu+qf8iTLWR8wmekg0YN4lOhdcFpfrESn2JhwF7b62E=", "protocol"=>"soap", "method_params"=>{"0"=>"http://core.deltaplex.dev.api.local/metrics/10", "1"=>"", "2"=>""}}
+  GET [http://core.deltaplex.dev.api.local/metrics/10]
+Authentication Required. Retrying with auth info
+  -> Returned 200 in 0.0576s
+  GET [http://core.deltaplex.dev.api.local/metrics/10/observations/historical?start=&end=]
+  -> Returned 200 in 0.2749s
+
+Web Service Request: GetHistoricalObservationsForMetric(metric_href=>"http://core.deltaplex.dev.api.local/metrics/10", begin_time=>"", end_time=>"") Entrypoint: invocation_submit
+  <?xml version="1.0" encoding="utf-8" ?>
+  <env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:env="http://schemas.xmlsoap.org/soap/envelope/">
+    <env:Body>
+      <n1:GetHistoricalObservationsForMetric xmlns:n1="urn:ActionWebService"
+          env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+        <metric_href xsi:type="xsd:string">http://core.deltaplex.dev.api.local/metrics/10</metric_href>
+        <begin_time xsi:type="xsd:string"></begin_time>
+        <end_time xsi:type="xsd:string"></end_time>
+      </n1:GetHistoricalObservationsForMetric>
+    </env:Body>
+  </env:Envelope>
+
+Web Service Response (0.339501): => []
+  <?xml version="1.0" encoding="UTF-8" ?>
+  <env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:env="http://schemas.xmlsoap.org/soap/envelope/">
+    <env:Body>
+      <n1:GetHistoricalObservationsForMetricResponse xmlns:n1="urn:ActionWebService"
+          env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+        <return n2:arrayType="n1:HistoricalObservation..WsType[0]"
+            xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+            xsi:type="n2:Array">
+        </return>
+      </n1:GetHistoricalObservationsForMetricResponse>
+    </env:Body>
+  </env:Envelope>
+Sending data 
+Rendering /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/templates/scaffolds/layout.html.erb
+Completed in 375ms (View: 2, DB: 0) | 200 OK [http:///ssbe/invocation_submit]
+
+
+Processing ApplicationController#invocation_submit (for 127.0.0.1 at 2009-04-30 15:44:52) [POST]
+  Parameters: {"commit"=>"Invoke", "service"=>"ssbe", "method"=>"GetHistoricalObservationsForMetric", "authenticity_token"=>"tu+qf8iTLWR8wmekg0YN4lOhdcFpfrESn2JhwF7b62E=", "protocol"=>"soap", "method_params"=>{"0"=>"http://core.deltaplex.dev.api.local/metrics/10", "1"=>"", "2"=>""}}
+
+SyntaxError (/home/ewc/git/rails-ws/app/controllers/ssbe_controller.rb:37: syntax error, unexpected ','
+...etric(metric_href,begin_time=,end_time)
+                              ^
+/home/ewc/git/rails-ws/app/controllers/ssbe_controller.rb:38: syntax error, unexpected tOP_ASGN, expecting kEND
+    begin_time.empty? ||= (Time.now - 1.week).gmtime.xmlschema
+                         ^
+/home/ewc/git/rails-ws/app/controllers/ssbe_controller.rb:40: syntax error, unexpected tOP_ASGN, expecting kEND
+    end_time.empty?  ||= (Time.now - 1.day).gmtime.xmlschema
+                        ^
+/home/ewc/git/rails-ws/app/controllers/ssbe_controller.rb:46: syntax error, unexpected kEND, expecting $end):
+  
+
+Rendered rescues/_trace (64.7ms)
+Rendered rescues/_request_and_response (2.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#invocation_submit (for 127.0.0.1 at 2009-04-30 15:45:17) [POST]
+  Parameters: {"commit"=>"Invoke", "service"=>"ssbe", "method"=>"GetHistoricalObservationsForMetric", "authenticity_token"=>"tu+qf8iTLWR8wmekg0YN4lOhdcFpfrESn2JhwF7b62E=", "protocol"=>"soap", "method_params"=>{"0"=>"http://core.deltaplex.dev.api.local/metrics/10", "1"=>"", "2"=>""}}
+
+SyntaxError (/home/ewc/git/rails-ws/app/controllers/ssbe_controller.rb:37: syntax error, unexpected ')', expecting '='
+/home/ewc/git/rails-ws/app/controllers/ssbe_controller.rb:38: syntax error, unexpected tOP_ASGN, expecting kEND
+    begin_time.empty? ||= (Time.now - 1.week).gmtime.xmlschema
+                         ^
+/home/ewc/git/rails-ws/app/controllers/ssbe_controller.rb:40: syntax error, unexpected tOP_ASGN, expecting kEND
+    end_time.empty?  ||= (Time.now - 1.day).gmtime.xmlschema
+                        ^
+/home/ewc/git/rails-ws/app/controllers/ssbe_controller.rb:46: syntax error, unexpected kEND, expecting $end):
+  
+
+Rendered rescues/_trace (65.1ms)
+Rendered rescues/_request_and_response (0.8ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#invocation_submit (for 127.0.0.1 at 2009-04-30 15:45:51) [POST]
+  Parameters: {"commit"=>"Invoke", "service"=>"ssbe", "method"=>"GetHistoricalObservationsForMetric", "authenticity_token"=>"tu+qf8iTLWR8wmekg0YN4lOhdcFpfrESn2JhwF7b62E=", "protocol"=>"soap", "method_params"=>{"0"=>"http://core.deltaplex.dev.api.local/metrics/10", "1"=>"", "2"=>""}}
+
+SyntaxError (/home/ewc/git/rails-ws/app/controllers/ssbe_controller.rb:37: syntax error, unexpected ')', expecting '='
+/home/ewc/git/rails-ws/app/controllers/ssbe_controller.rb:46: syntax error, unexpected kEND, expecting $end):
+  
+
+Rendered rescues/_trace (200.6ms)
+Rendered rescues/_request_and_response (0.7ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#invocation_submit (for 127.0.0.1 at 2009-04-30 15:46:30) [POST]
+  Parameters: {"commit"=>"Invoke", "service"=>"ssbe", "method"=>"GetHistoricalObservationsForMetric", "authenticity_token"=>"tu+qf8iTLWR8wmekg0YN4lOhdcFpfrESn2JhwF7b62E=", "protocol"=>"soap", "method_params"=>{"0"=>"http://core.deltaplex.dev.api.local/metrics/10", "1"=>"", "2"=>""}}
+
+SyntaxError (/home/ewc/git/rails-ws/app/controllers/ssbe_controller.rb:37: syntax error, unexpected ')', expecting '='
+/home/ewc/git/rails-ws/app/controllers/ssbe_controller.rb:44: syntax error, unexpected kEND, expecting $end):
+  
+
+Rendered rescues/_trace (63.5ms)
+Rendered rescues/_request_and_response (2.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#invocation_submit (for 127.0.0.1 at 2009-04-30 15:46:55) [POST]
+  Parameters: {"commit"=>"Invoke", "service"=>"ssbe", "method"=>"GetHistoricalObservationsForMetric", "authenticity_token"=>"tu+qf8iTLWR8wmekg0YN4lOhdcFpfrESn2JhwF7b62E=", "protocol"=>"soap", "method_params"=>{"0"=>"http://core.deltaplex.dev.api.local/metrics/10", "1"=>"", "2"=>""}}
+
+SyntaxError (/home/ewc/git/rails-ws/app/controllers/ssbe_controller.rb:37: syntax error, unexpected ')', expecting '='
+/home/ewc/git/rails-ws/app/controllers/ssbe_controller.rb:44: syntax error, unexpected kEND, expecting $end):
+  
+
+Rendered rescues/_trace (64.2ms)
+Rendered rescues/_request_and_response (2.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing SsbeController#invocation_submit (for 127.0.0.1 at 2009-04-30 15:47:22) [POST]
+  Parameters: {"commit"=>"Invoke", "service"=>"ssbe", "method"=>"GetHistoricalObservationsForMetric", "authenticity_token"=>"tu+qf8iTLWR8wmekg0YN4lOhdcFpfrESn2JhwF7b62E=", "protocol"=>"soap", "method_params"=>{"0"=>"http://core.deltaplex.dev.api.local/metrics/10", "1"=>"", "2"=>""}}
+  GET [http://core.deltaplex.dev.api.local/metrics/10]
+Authentication Required. Retrying with auth info
+  -> Returned 200 in 0.0430s
+  GET [http://core.deltaplex.dev.api.local/metrics/10/observations/historical?start=&end=]
+  -> Returned 200 in 0.2263s
+
+Web Service Request: GetHistoricalObservationsForMetric(metric_href=>"http://core.deltaplex.dev.api.local/metrics/10", begin_time=>"", end_time=>"") Entrypoint: invocation_submit
+  <?xml version="1.0" encoding="utf-8" ?>
+  <env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:env="http://schemas.xmlsoap.org/soap/envelope/">
+    <env:Body>
+      <n1:GetHistoricalObservationsForMetric xmlns:n1="urn:ActionWebService"
+          env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+        <metric_href xsi:type="xsd:string">http://core.deltaplex.dev.api.local/metrics/10</metric_href>
+        <begin_time xsi:type="xsd:string"></begin_time>
+        <end_time xsi:type="xsd:string"></end_time>
+      </n1:GetHistoricalObservationsForMetric>
+    </env:Body>
+  </env:Envelope>
+
+Web Service Response (0.275772): => []
+  <?xml version="1.0" encoding="UTF-8" ?>
+  <env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:env="http://schemas.xmlsoap.org/soap/envelope/">
+    <env:Body>
+      <n1:GetHistoricalObservationsForMetricResponse xmlns:n1="urn:ActionWebService"
+          env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+        <return n2:arrayType="n1:HistoricalObservation..WsType[0]"
+            xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+            xsi:type="n2:Array">
+        </return>
+      </n1:GetHistoricalObservationsForMetricResponse>
+    </env:Body>
+  </env:Envelope>
+Sending data 
+Rendering /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/templates/scaffolds/layout.html.erb
+Completed in 312ms (View: 4, DB: 0) | 200 OK [http:///ssbe/invocation_submit]
+
+
+Processing SsbeController#invocation_submit (for 127.0.0.1 at 2009-04-30 15:48:19) [POST]
+  Parameters: {"commit"=>"Invoke", "service"=>"ssbe", "method"=>"GetHistoricalObservationsForMetric", "authenticity_token"=>"tu+qf8iTLWR8wmekg0YN4lOhdcFpfrESn2JhwF7b62E=", "protocol"=>"soap", "method_params"=>{"0"=>"http://core.deltaplex.dev.api.local/metrics/10", "1"=>"", "2"=>""}}
+  GET [http://core.deltaplex.dev.api.local/metrics/10]
+    Retrieved from cache
+    Cache entry is stale
+    Resource not modified
+  -> Returned 200 in 0.0294s
+  GET [http://core.deltaplex.dev.api.local/metrics/10/observations/historical?start=2009-04-23T21:48:19Z&end=]
+  -> Returned 200 in 0.4186s
+
+Web Service Request: GetHistoricalObservationsForMetric(metric_href=>"http://core.deltaplex.dev.api.local/metrics/10", begin_time=>"", end_time=>"") Entrypoint: invocation_submit
+  <?xml version="1.0" encoding="utf-8" ?>
+  <env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:env="http://schemas.xmlsoap.org/soap/envelope/">
+    <env:Body>
+      <n1:GetHistoricalObservationsForMetric xmlns:n1="urn:ActionWebService"
+          env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+        <metric_href xsi:type="xsd:string">http://core.deltaplex.dev.api.local/metrics/10</metric_href>
+        <begin_time xsi:type="xsd:string"></begin_time>
+        <end_time xsi:type="xsd:string"></end_time>
+      </n1:GetHistoricalObservationsForMetric>
+    </env:Body>
+  </env:Envelope>
+
+Web Service Response (1.018498): => [#<HistoricalObservation::WsType:0x7fe09ab2fd18 @min=37.0586, @begin_time=Thu, 23 Apr 2009 22:00:00 +0000, @stdev=0.0776675, @mean=37.0616, @num_points=30, @max=37.0651>, #<HistoricalObservation::WsType:0x7fe09ab2f638 @min=37.0521, @begin_time=Thu, 23 Apr 2009 23:00:00 +0000, @stdev=0.0765958, @mean=37.0555, @num_points=30, @max=37.0586>, #<HistoricalObservation::WsType:0x7fe09ab2ef30 @min=37.0456, @begin_time=Fri, 24 Apr 2009 00:00:00 +0000, @stdev=0.100502, @mean=37.0492, @num_points=30, @max=37.0554>, #<HistoricalObservation::WsType:0x7fe09ab2e788 @min=37.0456, @begin_time=Fri, 24 Apr 2009 01:00:00 +0000, @stdev=0.118091, @mean=37.053, @num_points=30, @max=37.0586>, #<HistoricalObservation::WsType:0x7fe09ab2e378 @min=37.0489, @begin_time=Fri, 24 Apr 2009 02:00:00 +0000, @stdev=0.148668, @mean=37.0535, @num_points=29, @max=37.0586>, #<HistoricalObservation::WsType:0x7fe09ab2df40 @min=37.0423, @begin_time=Fri, 24 Apr 2009 03:00:00 +0000, @stdev=0.126084, @mean=37.0464, @num_points=30, @max=37.0521>, #<HistoricalObservation::WsType:0x7fe09ab2db80 @min=37.0391, @begin_time=Fri, 24 Apr 2009 04:00:00 +0000, @stdev=0.109234, @mean=37.0413, @num_points=30, @max=37.0456>, #<HistoricalObservation::WsType:0x7fe09ab2d978 @min=37.0293, @begin_time=Fri, 24 Apr 2009 05:00:00 +0000, @stdev=0.0303559, @mean=37.0327, @num_points=30, @max=37.0391>, #<HistoricalObservation::WsType:0x7fe09ab2d2e8 @min=37.0228, @begin_time=Fri, 24 Apr 2009 06:00:00 +0000, @stdev=0.0424299, @mean=37.0301, @num_points=30, @max=37.0326>, #<HistoricalObservation::WsType:0x7fe09ab2c320 @min=37.0228, @begin_time=Fri, 24 Apr 2009 07:00:00 +0000, @stdev=0.123383, @mean=37.0373, @num_points=30, @max=37.0391>, #<HistoricalObservation::WsType:0x7fe09ab2bce0 @min=37.0293, @begin_time=Fri, 24 Apr 2009 08:00:00 +0000, @stdev=0.0930091, @mean=37.0336, @num_points=30, @max=37.0391>, #<HistoricalObservation::WsType:0x7fe09ab2b6c8 @min=37.0228, @begin_time=Fri, 24 Apr 2009 09:00:00 +0000, @stdev=0.0698694, @mean=37.0268, @num_points=30, @max=37.0293>, #<HistoricalObservation::WsType:0x7fe09ab2b060 @min=37.0163, @begin_time=Fri, 24 Apr 2009 10:00:00 +0000, @stdev=0.20288, @mean=37.0212, @num_points=30, @max=37.0228>, #<HistoricalObservation::WsType:0x7fe09ab2a778 @min=37.013, @begin_time=Fri, 24 Apr 2009 11:00:00 +0000, @stdev=0.111072, @mean=37.0163, @num_points=29, @max=37.0195>, #<HistoricalObservation::WsType:0x7fe09ab29ee0 @min=37.0065, @begin_time=Fri, 24 Apr 2009 12:00:00 +0000, @stdev=0.170659, @mean=37.0089, @num_points=30, @max=37.013>, #<HistoricalObservation::WsType:0x7fe09ab29aa8 @min=37.0065, @begin_time=Fri, 24 Apr 2009 13:00:00 +0000, @stdev=0.192489, @mean=37.0185, @num_points=30, @max=37.0228>, #<HistoricalObservation::WsType:0x7fe09ab290a8 @min=37.0065, @begin_time=Fri, 24 Apr 2009 14:00:00 +0000, @stdev=0.212397, @mean=37.0102, @num_points=30, @max=37.013>, #<HistoricalObservation::WsType:0x7fe09ab28bf8 @min=37.0033, @begin_time=Fri, 24 Apr 2009 15:00:00 +0000, @stdev=0.0941345, @mean=37.0088, @num_points=30, @max=37.013>, #<HistoricalObservation::WsType:0x7fe09ab289f0 @min=36.9967, @begin_time=Fri, 24 Apr 2009 16:00:00 +0000, @stdev=0.128847, @mean=37.0006, @num_points=30, @max=37.0033>, #<HistoricalObservation::WsType:0x7fe09ab287c0 @min=36.9935, @begin_time=Fri, 24 Apr 2009 17:00:00 +0000, @stdev=0.143488, @mean=36.9964, @num_points=30, @max=37.0>, #<HistoricalObservation::WsType:0x7fe09ab285b8 @min=36.987, @begin_time=Fri, 24 Apr 2009 18:00:00 +0000, @stdev=0.0244132, @mean=36.9916, @num_points=29, @max=37.0>, #<HistoricalObservation::WsType:0x7fe09ab283b0 @min=36.987, @begin_time=Fri, 24 Apr 2009 19:00:00 +0000, @stdev=0.0911899, @mean=36.9952, @num_points=30, @max=37.0033>, #<HistoricalObservation::WsType:0x7fe09ab281a8 @min=36.9902, @begin_time=Fri, 24 Apr 2009 20:00:00 +0000, @stdev=0.10854, @mean=36.9944, @num_points=30, @max=37.0>, #<HistoricalObservation::WsType:0x7fe09ab27fa0 @min=36.987, @begin_time=Fri, 24 Apr 2009 21:00:00 +0000, @stdev=0.117598, @mean=36.9896, @num_points=30, @max=36.9935>, #<HistoricalObservation::WsType:0x7fe09ab27d98 @min=36.9805, @begin_time=Fri, 24 Apr 2009 22:00:00 +0000, @stdev=0.199088, @mean=36.983, @num_points=30, @max=36.987>, #<HistoricalObservation::WsType:0x7fe09ab27b90 @min=36.9772, @begin_time=Fri, 24 Apr 2009 23:00:00 +0000, @stdev=0.0606505, @mean=36.9782, @num_points=30, @max=36.9805>, #<HistoricalObservation::WsType:0x7fe09ab27988 @min=36.9739, @begin_time=Sat, 25 Apr 2009 00:00:00 +0000, @stdev=0.149453, @mean=36.978, @num_points=30, @max=36.9837>, #<HistoricalObservation::WsType:0x7fe09ab27780 @min=36.9739, @begin_time=Sat, 25 Apr 2009 01:00:00 +0000, @stdev=0.174302, @mean=36.9758, @num_points=30, @max=36.9805>, #<HistoricalObservation::WsType:0x7fe09ab27578 @min=36.9544, @begin_time=Sat, 25 Apr 2009 02:00:00 +0000, @stdev=0.0645682, @mean=36.9567, @num_points=29, @max=36.9739>, #<HistoricalObservation::WsType:0x7fe09ab27370 @min=36.9479, @begin_time=Sat, 25 Apr 2009 03:00:00 +0000, @stdev=0.156842, @mean=36.9526, @num_points=30, @max=36.9577>, #<HistoricalObservation::WsType:0x7fe09ab27168 @min=36.9446, @begin_time=Sat, 25 Apr 2009 04:00:00 +0000, @stdev=0.129124, @mean=36.9485, @num_points=30, @max=36.9511>, #<HistoricalObservation::WsType:0x7fe09ab26f60 @min=36.9446, @begin_time=Sat, 25 Apr 2009 05:00:00 +0000, @stdev=0.0771046, @mean=36.9514, @num_points=30, @max=36.9577>, #<HistoricalObservation::WsType:0x7fe09ab26d58 @min=36.9479, @begin_time=Sat, 25 Apr 2009 06:00:00 +0000, @stdev=0.0507746, @mean=36.9513, @num_points=30, @max=36.9544>, #<HistoricalObservation::WsType:0x7fe09ab26b50 @min=36.9479, @begin_time=Sat, 25 Apr 2009 07:00:00 +0000, @stdev=0.12079, @mean=36.9499, @num_points=30, @max=36.9511>, #<HistoricalObservation::WsType:0x7fe09ab26948 @min=36.9414, @begin_time=Sat, 25 Apr 2009 08:00:00 +0000, @stdev=0.120293, @mean=36.9467, @num_points=30, @max=36.9511>, #<HistoricalObservation::WsType:0x7fe09ab26740 @min=36.9316, @begin_time=Sat, 25 Apr 2009 09:00:00 +0000, @stdev=0.00414012, @mean=36.9368, @num_points=30, @max=36.9414>, #<HistoricalObservation::WsType:0x7fe09ab26538 @min=36.9283, @begin_time=Sat, 25 Apr 2009 10:00:00 +0000, @stdev=0.177588, @mean=36.9334, @num_points=29, @max=36.9381>, #<HistoricalObservation::WsType:0x7fe09ab26330 @min=36.9218, @begin_time=Sat, 25 Apr 2009 11:00:00 +0000, @stdev=0.107774, @mean=36.9264, @num_points=30, @max=36.9316>, #<HistoricalObservation::WsType:0x7fe09ab26128 @min=36.9153, @begin_time=Sat, 25 Apr 2009 12:00:00 +0000, @stdev=0.133299, @mean=36.9226, @num_points=30, @max=36.9283>, #<HistoricalObservation::WsType:0x7fe09ab25f20 @min=36.9186, @begin_time=Sat, 25 Apr 2009 13:00:00 +0000, @stdev=0.0791423, @mean=36.9255, @num_points=30, @max=36.9316>, #<HistoricalObservation::WsType:0x7fe09ab25d18 @min=36.9251, @begin_time=Sat, 25 Apr 2009 14:00:00 +0000, @stdev=0.146227, @mean=36.9252, @num_points=30, @max=36.9251>, #<HistoricalObservation::WsType:0x7fe09ab25b10 @min=36.9121, @begin_time=Sat, 25 Apr 2009 15:00:00 +0000, @stdev=0.0374647, @mean=36.9167, @num_points=30, @max=36.9218>, #<HistoricalObservation::WsType:0x7fe09ab25908 @min=36.9088, @begin_time=Sat, 25 Apr 2009 16:00:00 +0000, @stdev=0.15394, @mean=36.911, @num_points=30, @max=36.9153>, #<HistoricalObservation::WsType:0x7fe09ab25700 @min=36.9023, @begin_time=Sat, 25 Apr 2009 17:00:00 +0000, @stdev=0.183574, @mean=36.9062, @num_points=30, @max=36.9088>, #<HistoricalObservation::WsType:0x7fe09ab254f8 @min=36.9023, @begin_time=Sat, 25 Apr 2009 18:00:00 +0000, @stdev=0.129, @mean=36.9046, @num_points=29, @max=36.9153>, #<HistoricalObservation::WsType:0x7fe09ab252c8 @min=36.9088, @begin_time=Sat, 25 Apr 2009 19:00:00 +0000, @stdev=0.0811582, @mean=36.9157, @num_points=30, @max=36.9251>, #<HistoricalObservation::WsType:0x7fe09ab250c0 @min=36.9153, @begin_time=Sat, 25 Apr 2009 20:00:00 +0000, @stdev=0.199542, @mean=36.9185, @num_points=30, @max=36.9218>, #<HistoricalObservation::WsType:0x7fe09ab24eb8 @min=36.9121, @begin_time=Sat, 25 Apr 2009 21:00:00 +0000, @stdev=0.124622, @mean=36.9157, @num_points=30, @max=36.9186>, #<HistoricalObservation::WsType:0x7fe09ab24cb0 @min=36.9023, @begin_time=Sat, 25 Apr 2009 22:00:00 +0000, @stdev=0.140972, @mean=36.9074, @num_points=30, @max=36.9121>, #<HistoricalObservation::WsType:0x7fe09ab24940 @min=36.899, @begin_time=Sat, 25 Apr 2009 23:00:00 +0000, @stdev=0.04701, @mean=36.9006, @num_points=30, @max=36.9023>, #<HistoricalObservation::WsType:0x7fe09ab24648 @min=36.8925, @begin_time=Sun, 26 Apr 2009 00:00:00 +0000, @stdev=0.103765, @mean=36.8996, @num_points=30, @max=36.9088>, #<HistoricalObservation::WsType:0x7fe09ab24440 @min=36.9023, @begin_time=Sun, 26 Apr 2009 01:00:00 +0000, @stdev=0.0974753, @mean=36.9074, @num_points=30, @max=36.9088>, #<HistoricalObservation::WsType:0x7fe09ab24198 @min=36.8925, @begin_time=Sun, 26 Apr 2009 02:00:00 +0000, @stdev=0.0821188, @mean=36.8981, @num_points=30, @max=36.9023>, #<HistoricalObservation::WsType:0x7fe09ab23b80 @min=36.8893, @begin_time=Sun, 26 Apr 2009 03:00:00 +0000, @stdev=0.0903502, @mean=36.8907, @num_points=30, @max=36.8958>, #<HistoricalObservation::WsType:0x7fe09ab23888 @min=36.8827, @begin_time=Sun, 26 Apr 2009 04:00:00 +0000, @stdev=0.0647161, @mean=36.8895, @num_points=29, @max=36.8958>, #<HistoricalObservation::WsType:0x7fe09ab231f8 @min=36.8795, @begin_time=Sun, 26 Apr 2009 05:00:00 +0000, @stdev=0.163324, @mean=36.8833, @num_points=30, @max=36.886>, #<HistoricalObservation::WsType:0x7fe09ab22d48 @min=36.873, @begin_time=Sun, 26 Apr 2009 06:00:00 +0000, @stdev=0.109825, @mean=36.8761, @num_points=30, @max=36.8827>, #<HistoricalObservation::WsType:0x7fe09ab22a00 @min=36.8795, @begin_time=Sun, 26 Apr 2009 07:00:00 +0000, @stdev=0.0768432, @mean=36.8849, @num_points=30, @max=36.8925>, #<HistoricalObservation::WsType:0x7fe09ab22550 @min=36.8762, @begin_time=Sun, 26 Apr 2009 08:00:00 +0000, @stdev=0.124351, @mean=36.8812, @num_points=30, @max=36.886>, #<HistoricalObservation::WsType:0x7fe09ab220c8 @min=36.8697, @begin_time=Sun, 26 Apr 2009 09:00:00 +0000, @stdev=0.073757, @mean=36.8731, @num_points=30, @max=36.8762>, #<HistoricalObservation::WsType:0x7fe09ab21c68 @min=36.8632, @begin_time=Sun, 26 Apr 2009 10:00:00 +0000, @stdev=0.122837, @mean=36.8667, @num_points=30, @max=36.873>, #<HistoricalObservation::WsType:0x7fe09ab21a60 @min=36.8599, @begin_time=Sun, 26 Apr 2009 11:00:00 +0000, @stdev=0.13886, @mean=36.8637, @num_points=30, @max=36.8697>, #<HistoricalObservation::WsType:0x7fe09ab21358 @min=36.8534, @begin_time=Sun, 26 Apr 2009 12:00:00 +0000, @stdev=0.0920774, @mean=36.8569, @num_points=30, @max=36.8665>, #<HistoricalObservation::WsType:0x7fe09ab21010 @min=36.8567, @begin_time=Sun, 26 Apr 2009 13:00:00 +0000, @stdev=0.112464, @mean=36.8633, @num_points=29, @max=36.8697>, #<HistoricalObservation::WsType:0x7fe09ab20e08 @min=36.8567, @begin_time=Sun, 26 Apr 2009 14:00:00 +0000, @stdev=0.152758, @mean=36.8599, @num_points=30, @max=36.8632>, #<HistoricalObservation::WsType:0x7fe09ab20c00 @min=36.8469, @begin_time=Sun, 26 Apr 2009 15:00:00 +0000, @stdev=0.126572, @mean=36.8542, @num_points=30, @max=36.8599>, #<HistoricalObservation::WsType:0x7fe09ab209f8 @min=36.8436, @begin_time=Sun, 26 Apr 2009 16:00:00 +0000, @stdev=0.0616926, @mean=36.8459, @num_points=30, @max=36.8469>, #<HistoricalObservation::WsType:0x7fe09ab207f0 @min=36.8371, @begin_time=Sun, 26 Apr 2009 17:00:00 +0000, @stdev=0.0487726, @mean=36.8416, @num_points=30, @max=36.8436>, #<HistoricalObservation::WsType:0x7fe09ab205e8 @min=36.8339, @begin_time=Sun, 26 Apr 2009 18:00:00 +0000, @stdev=0.0243655, @mean=36.8403, @num_points=30, @max=36.8502>, #<HistoricalObservation::WsType:0x7fe09ab203e0 @min=36.8404, @begin_time=Sun, 26 Apr 2009 19:00:00 +0000, @stdev=0.0803414, @mean=36.8463, @num_points=30, @max=36.8502>, #<HistoricalObservation::WsType:0x7fe09ab201d8 @min=36.8339, @begin_time=Sun, 26 Apr 2009 20:00:00 +0000, @stdev=0.0838258, @mean=36.8371, @num_points=29, @max=36.8404>, #<HistoricalObservation::WsType:0x7fe09ab1ffd0 @min=36.8339, @begin_time=Sun, 26 Apr 2009 21:00:00 +0000, @stdev=0.0280205, @mean=36.8361, @num_points=30, @max=36.8404>, #<HistoricalObservation::WsType:0x7fe09ab1fdc8 @min=36.8241, @begin_time=Sun, 26 Apr 2009 22:00:00 +0000, @stdev=0.0833435, @mean=36.8279, @num_points=30, @max=36.8339>, #<HistoricalObservation::WsType:0x7fe09ab1fbc0 @min=36.8176, @begin_time=Sun, 26 Apr 2009 23:00:00 +0000, @stdev=0.0722784, @mean=36.8227, @num_points=30, @max=36.8274>, #<HistoricalObservation::WsType:0x7fe09ab1f9b8 @min=36.8143, @begin_time=Mon, 27 Apr 2009 00:00:00 +0000, @stdev=0.133003, @mean=36.816, @num_points=30, @max=36.8306>, #<HistoricalObservation::WsType:0x7fe09ab1f7b0 @min=36.8241, @begin_time=Mon, 27 Apr 2009 01:00:00 +0000, @stdev=0.223724, @mean=36.8291, @num_points=30, @max=36.8371>, #<HistoricalObservation::WsType:0x7fe09ab1f5a8 @min=36.8176, @begin_time=Mon, 27 Apr 2009 02:00:00 +0000, @stdev=0.14361, @mean=36.8203, @num_points=30, @max=36.8241>, #<HistoricalObservation::WsType:0x7fe09ab1f3a0 @min=36.8111, @begin_time=Mon, 27 Apr 2009 03:00:00 +0000, @stdev=0.197988, @mean=36.8124, @num_points=30, @max=36.8176>, #<HistoricalObservation::WsType:0x7fe09ab1f198 @min=36.8046, @begin_time=Mon, 27 Apr 2009 04:00:00 +0000, @stdev=0.0989966, @mean=36.8089, @num_points=29, @max=36.8111>, #<HistoricalObservation::WsType:0x7fe09ab1ef90 @min=36.798, @begin_time=Mon, 27 Apr 2009 05:00:00 +0000, @stdev=0.05949, @mean=36.8049, @num_points=30, @max=36.8078>, #<HistoricalObservation::WsType:0x7fe09ab1ed88 @min=36.798, @begin_time=Mon, 27 Apr 2009 06:00:00 +0000, @stdev=0.0145122, @mean=36.8005, @num_points=30, @max=36.8078>, #<HistoricalObservation::WsType:0x7fe09ab1eb80 @min=36.8013, @begin_time=Mon, 27 Apr 2009 07:00:00 +0000, @stdev=0.163306, @mean=36.8057, @num_points=30, @max=36.8078>, #<HistoricalObservation::WsType:0x7fe09ab1e978 @min=36.798, @begin_time=Mon, 27 Apr 2009 08:00:00 +0000, @stdev=0.132876, @mean=36.8023, @num_points=30, @max=36.8078>, #<HistoricalObservation::WsType:0x7fe09ab1e770 @min=36.7948, @begin_time=Mon, 27 Apr 2009 09:00:00 +0000, @stdev=0.0684236, @mean=37.1312, @num_points=30, @max=37.202>, #<HistoricalObservation::WsType:0x7fe09ab1e568 @min=37.1889, @begin_time=Mon, 27 Apr 2009 10:00:00 +0000, @stdev=0.159879, @mean=37.1943, @num_points=30, @max=37.1987>, #<HistoricalObservation::WsType:0x7fe09ab1e360 @min=37.1824, @begin_time=Mon, 27 Apr 2009 11:00:00 +0000, @stdev=0.155121, @mean=37.1869, @num_points=30, @max=37.1889>, #<HistoricalObservation::WsType:0x7fe09ab1e158 @min=37.1792, @begin_time=Mon, 27 Apr 2009 12:00:00 +0000, @stdev=0.0416762, @mean=37.1833, @num_points=30, @max=37.1857>, #<HistoricalObservation::WsType:0x7fe09ab1df50 @min=37.1759, @begin_time=Mon, 27 Apr 2009 13:00:00 +0000, @stdev=0.0733407, @mean=37.1839, @num_points=29, @max=37.1889>, #<HistoricalObservation::WsType:0x7fe09ab1dd48 @min=37.1824, @begin_time=Mon, 27 Apr 2009 14:00:00 +0000, @stdev=0.153065, @mean=37.1877, @num_points=30, @max=37.1954>, #<HistoricalObservation::WsType:0x7fe09ab1db40 @min=37.1759, @begin_time=Mon, 27 Apr 2009 15:00:00 +0000, @stdev=0.142154, @mean=37.1789, @num_points=30, @max=37.1824>, #<HistoricalObservation::WsType:0x7fe09ab1d938 @min=37.1694, @begin_time=Mon, 27 Apr 2009 16:00:00 +0000, @stdev=0.168892, @mean=37.1743, @num_points=30, @max=37.1792>, #<HistoricalObservation::WsType:0x7fe09ab1d730 @min=37.1629, @begin_time=Mon, 27 Apr 2009 17:00:00 +0000, @stdev=0.123883, @mean=37.1676, @num_points=30, @max=37.1694>, #<HistoricalObservation::WsType:0x7fe09ab1d528 @min=37.1596, @begin_time=Mon, 27 Apr 2009 18:00:00 +0000, @stdev=0.112099, @mean=37.1634, @num_points=30, @max=37.1694>, #<HistoricalObservation::WsType:0x7fe09ab1d320 @min=37.1596, @begin_time=Mon, 27 Apr 2009 19:00:00 +0000, @stdev=0.159091, @mean=37.167, @num_points=30, @max=37.1726>, #<HistoricalObservation::WsType:0x7fe09ab1d118 @min=37.1596, @begin_time=Mon, 27 Apr 2009 20:00:00 +0000, @stdev=0.098043, @mean=37.1641, @num_points=30, @max=37.1694>, #<HistoricalObservation::WsType:0x7fe09ab1cf10 @min=37.1564, @begin_time=Mon, 27 Apr 2009 21:00:00 +0000, @stdev=0.167627, @mean=37.1592, @num_points=30, @max=37.1629>, #<HistoricalObservation::WsType:0x7fe09ab1cd08 @min=37.1498, @begin_time=Mon, 27 Apr 2009 22:00:00 +0000, @stdev=0.0439688, @mean=37.1518, @num_points=29, @max=37.1531>, #<HistoricalObservation::WsType:0x7fe09ab1cb00 @min=37.1401, @begin_time=Mon, 27 Apr 2009 23:00:00 +0000, @stdev=0.112109, @mean=37.1457, @num_points=30, @max=37.1531>, #<HistoricalObservation::WsType:0x7fe09ab1c8f8 @min=37.1401, @begin_time=Tue, 28 Apr 2009 00:00:00 +0000, @stdev=0.173483, @mean=37.1513, @num_points=30, @max=37.1564>, #<HistoricalObservation::WsType:0x7fe09ab1c6f0 @min=37.1466, @begin_time=Tue, 28 Apr 2009 01:00:00 +0000, @stdev=0.165531, @mean=37.1577, @num_points=30, @max=37.1661>, #<HistoricalObservation::WsType:0x7fe09ab1c4e8 @min=37.1498, @begin_time=Tue, 28 Apr 2009 02:00:00 +0000, @stdev=0.0985689, @mean=37.1567, @num_points=30, @max=37.1629>, #<HistoricalObservation::WsType:0x7fe09ab1c2e0 @min=37.1466, @begin_time=Tue, 28 Apr 2009 03:00:00 +0000, @stdev=0.100756, @mean=37.1502, @num_points=30, @max=37.1531>, #<HistoricalObservation::WsType:0x7fe09ab1c0d8 @min=37.1368, @begin_time=Tue, 28 Apr 2009 04:00:00 +0000, @stdev=0.157718, @mean=37.1416, @num_points=30, @max=37.1466>, #<HistoricalObservation::WsType:0x7fe09ab1bed0 @min=37.1303, @begin_time=Tue, 28 Apr 2009 05:00:00 +0000, @stdev=0.073655, @mean=37.1353, @num_points=30, @max=37.1401>, #<HistoricalObservation::WsType:0x7fe09ab1bcc8 @min=37.127, @begin_time=Tue, 28 Apr 2009 06:00:00 +0000, @stdev=0.0985616, @mean=37.1331, @num_points=29, @max=37.1401>, #<HistoricalObservation::WsType:0x7fe09ab1bac0 @min=37.1368, @begin_time=Tue, 28 Apr 2009 07:00:00 +0000, @stdev=0.0276405, @mean=37.1416, @num_points=30, @max=37.1433>, #<HistoricalObservation::WsType:0x7fe09ab1b8b8 @min=37.127, @begin_time=Tue, 28 Apr 2009 08:00:00 +0000, @stdev=0.144854, @mean=37.1326, @num_points=30, @max=37.1368>, #<HistoricalObservation::WsType:0x7fe09ab1b6b0 @min=37.1205, @begin_time=Tue, 28 Apr 2009 09:00:00 +0000, @stdev=0.0922686, @mean=37.1264, @num_points=30, @max=37.1303>, #<HistoricalObservation::WsType:0x7fe09ab1b4a8 @min=37.1173, @begin_time=Tue, 28 Apr 2009 10:00:00 +0000, @stdev=0.222536, @mean=37.1199, @num_points=30, @max=37.1205>, #<HistoricalObservation::WsType:0x7fe09ab1b2a0 @min=37.1107, @begin_time=Tue, 28 Apr 2009 11:00:00 +0000, @stdev=0.114457, @mean=37.1137, @num_points=30, @max=37.1173>, #<HistoricalObservation::WsType:0x7fe09ab1b098 @min=37.1042, @begin_time=Tue, 28 Apr 2009 12:00:00 +0000, @stdev=0.190083, @mean=37.1107, @num_points=30, @max=37.1205>, #<HistoricalObservation::WsType:0x7fe09ab1ae90 @min=37.1107, @begin_time=Tue, 28 Apr 2009 13:00:00 +0000, @stdev=0.116549, @mean=37.113, @num_points=30, @max=37.1205>, #<HistoricalObservation::WsType:0x7fe09ab1ac88 @min=37.1042, @begin_time=Tue, 28 Apr 2009 14:00:00 +0000, @stdev=0.197418, @mean=37.1077, @num_points=29, @max=37.114>, #<HistoricalObservation::WsType:0x7fe09ab1aa80 @min=37.0977, @begin_time=Tue, 28 Apr 2009 15:00:00 +0000, @stdev=0.192666, @mean=37.1006, @num_points=30, @max=37.1042>, #<HistoricalObservation::WsType:0x7fe09ab19748 @min=37.0912, @begin_time=Tue, 28 Apr 2009 16:00:00 +0000, @stdev=0.207865, @mean=37.093, @num_points=30, @max=37.0977>, #<HistoricalObservation::WsType:0x7fe09ab19298 @min=37.0847, @begin_time=Tue, 28 Apr 2009 17:00:00 +0000, @stdev=0.22519, @mean=37.0878, @num_points=30, @max=37.0912>, #<HistoricalObservation::WsType:0x7fe09ab19090 @min=37.0912, @begin_time=Tue, 28 Apr 2009 18:00:00 +0000, @stdev=0.112265, @mean=37.0937, @num_points=30, @max=37.0977>, #<HistoricalObservation::WsType:0x7fe09ab18e60 @min=37.0814, @begin_time=Tue, 28 Apr 2009 19:00:00 +0000, @stdev=0.094454, @mean=37.0864, @num_points=30, @max=37.0912>, #<HistoricalObservation::WsType:0x7fe09ab18c58 @min=37.0782, @begin_time=Tue, 28 Apr 2009 20:00:00 +0000, @stdev=0.119103, @mean=37.081, @num_points=30, @max=37.0879>, #<HistoricalObservation::WsType:0x7fe09ab18a50 @min=37.0684, @begin_time=Tue, 28 Apr 2009 21:00:00 +0000, @stdev=0.071179, @mean=37.0763, @num_points=30, @max=37.0814>, #<HistoricalObservation::WsType:0x7fe09ab18848 @min=37.0651, @begin_time=Tue, 28 Apr 2009 22:00:00 +0000, @stdev=0.0551972, @mean=37.0678, @num_points=30, @max=37.0717>, #<HistoricalObservation::WsType:0x7fe09ab18640 @min=37.0619, @begin_time=Tue, 28 Apr 2009 23:00:00 +0000, @stdev=0.143021, @mean=37.0701, @num_points=29, @max=37.0782>, #<HistoricalObservation::WsType:0x7fe09ab18438 @min=37.0651, @begin_time=Wed, 29 Apr 2009 00:00:00 +0000, @stdev=0.0823392, @mean=37.0686, @num_points=30, @max=37.0717>, #<HistoricalObservation::WsType:0x7fe09ab18230 @min=37.0586, @begin_time=Wed, 29 Apr 2009 01:00:00 +0000, @stdev=0.0637253, @mean=37.0637, @num_points=30, @max=37.0684>, #<HistoricalObservation::WsType:0x7fe09ab18028 @min=37.0554, @begin_time=Wed, 29 Apr 2009 02:00:00 +0000, @stdev=0.203149, @mean=37.0586, @num_points=30, @max=37.0619>, #<HistoricalObservation::WsType:0x7fe09ab17e20 @min=37.0521, @begin_time=Wed, 29 Apr 2009 03:00:00 +0000, @stdev=0.118306, @mean=37.0567, @num_points=30, @max=37.0619>, #<HistoricalObservation::WsType:0x7fe09ab17c18 @min=37.0456, @begin_time=Wed, 29 Apr 2009 04:00:00 +0000, @stdev=0.130786, @mean=37.0492, @num_points=30, @max=37.0521>, #<HistoricalObservation::WsType:0x7fe09ab17a10 @min=37.0358, @begin_time=Wed, 29 Apr 2009 05:00:00 +0000, @stdev=0.107578, @mean=37.0389, @num_points=30, @max=37.0456>, #<HistoricalObservation::WsType:0x7fe09ab17808 @min=37.0326, @begin_time=Wed, 29 Apr 2009 06:00:00 +0000, @stdev=0.0753702, @mean=37.0344, @num_points=30, @max=37.0358>, #<HistoricalObservation::WsType:0x7fe09ab17600 @min=37.0326, @begin_time=Wed, 29 Apr 2009 07:00:00 +0000, @stdev=0.0208598, @mean=37.0431, @num_points=29, @max=37.0456>, #<HistoricalObservation::WsType:0x7fe09ab173f8 @min=37.0261, @begin_time=Wed, 29 Apr 2009 08:00:00 +0000, @stdev=0.0639461, @mean=37.0362, @num_points=30, @max=37.0391>, #<HistoricalObservation::WsType:0x7fe09ab171f0 @min=37.0261, @begin_time=Wed, 29 Apr 2009 09:00:00 +0000, @stdev=0.14874, @mean=37.027, @num_points=30, @max=37.0293>, #<HistoricalObservation::WsType:0x7fe09ab16fe8 @min=37.0228, @begin_time=Wed, 29 Apr 2009 10:00:00 +0000, @stdev=0.0635632, @mean=37.0271, @num_points=30, @max=37.0326>, #<HistoricalObservation::WsType:0x7fe09ab16db8 @min=37.0163, @begin_time=Wed, 29 Apr 2009 11:00:00 +0000, @stdev=0.173342, @mean=37.0185, @num_points=30, @max=37.0228>, #<HistoricalObservation::WsType:0x7fe09ab16b88 @min=37.0033, @begin_time=Wed, 29 Apr 2009 12:00:00 +0000, @stdev=0.104212, @mean=37.0124, @num_points=30, @max=37.0163>, #<HistoricalObservation::WsType:0x7fe09ab16908 @min=37.0033, @begin_time=Wed, 29 Apr 2009 13:00:00 +0000, @stdev=0.105862, @mean=37.0065, @num_points=30, @max=37.0163>, #<HistoricalObservation::WsType:0x7fe09ab16700 @min=36.9479, @begin_time=Wed, 29 Apr 2009 14:00:00 +0000, @stdev=0.0434274, @mean=36.9929, @num_points=30, @max=37.0163>]
+  <?xml version="1.0" encoding="UTF-8" ?>
+  <env:Envelope xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:env="http://schemas.xmlsoap.org/soap/envelope/">
+    <env:Body>
+      <n1:GetHistoricalObservationsForMetricResponse xmlns:n1="urn:ActionWebService"
+          env:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+        <return n2:arrayType="n1:HistoricalObservation..WsType[137]"
+            xmlns:n2="http://schemas.xmlsoap.org/soap/encoding/"
+            xsi:type="n2:Array">
+          <item>
+            <min xsi:type="xsd:double">+37.0586</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-23T22:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.0776675</stdev>
+            <mean xsi:type="xsd:double">+37.0616</mean>
+            <num_points xsi:type="xsd:int">30</num_points>
+            <max xsi:type="xsd:double">+37.0651</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+37.0521</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-23T23:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.07659580000000001</stdev>
+            <mean xsi:type="xsd:double">+37.0555</mean>
+            <num_points xsi:type="xsd:int">30</num_points>
+            <max xsi:type="xsd:double">+37.0586</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+37.0456</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-24T00:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.100502</stdev>
+            <mean xsi:type="xsd:double">+37.0492</mean>
+            <num_points xsi:type="xsd:int">30</num_points>
+            <max xsi:type="xsd:double">+37.0554</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+37.0456</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-24T01:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.118091</stdev>
+            <mean xsi:type="xsd:double">+37.053</mean>
+            <num_points xsi:type="xsd:int">30</num_points>
+            <max xsi:type="xsd:double">+37.0586</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+37.0489</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-24T02:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.148668</stdev>
+            <mean xsi:type="xsd:double">+37.0535</mean>
+            <num_points xsi:type="xsd:int">29</num_points>
+            <max xsi:type="xsd:double">+37.0586</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+37.0423</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-24T03:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.126084</stdev>
+            <mean xsi:type="xsd:double">+37.0464</mean>
+            <num_points xsi:type="xsd:int">30</num_points>
+            <max xsi:type="xsd:double">+37.0521</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+37.0391</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-24T04:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.109234</stdev>
+            <mean xsi:type="xsd:double">+37.0413</mean>
+            <num_points xsi:type="xsd:int">30</num_points>
+            <max xsi:type="xsd:double">+37.0456</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+37.0293</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-24T05:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.0303559</stdev>
+            <mean xsi:type="xsd:double">+37.0327</mean>
+            <num_points xsi:type="xsd:int">30</num_points>
+            <max xsi:type="xsd:double">+37.0391</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+37.0228</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-24T06:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.0424299</stdev>
+            <mean xsi:type="xsd:double">+37.0301</mean>
+            <num_points xsi:type="xsd:int">30</num_points>
+            <max xsi:type="xsd:double">+37.0326</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+37.0228</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-24T07:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.123383</stdev>
+            <mean xsi:type="xsd:double">+37.0373</mean>
+            <num_points xsi:type="xsd:int">30</num_points>
+            <max xsi:type="xsd:double">+37.0391</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+37.0293</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-24T08:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.0930091</stdev>
+            <mean xsi:type="xsd:double">+37.0336</mean>
+            <num_points xsi:type="xsd:int">30</num_points>
+            <max xsi:type="xsd:double">+37.0391</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+37.0228</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-24T09:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.0698694</stdev>
+            <mean xsi:type="xsd:double">+37.0268</mean>
+            <num_points xsi:type="xsd:int">30</num_points>
+            <max xsi:type="xsd:double">+37.0293</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+37.0163</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-24T10:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.20288</stdev>
+            <mean xsi:type="xsd:double">+37.0212</mean>
+            <num_points xsi:type="xsd:int">30</num_points>
+            <max xsi:type="xsd:double">+37.0228</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+37.013</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-24T11:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.111072</stdev>
+            <mean xsi:type="xsd:double">+37.0163</mean>
+            <num_points xsi:type="xsd:int">29</num_points>
+            <max xsi:type="xsd:double">+37.0195</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+37.0065</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-24T12:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.170659</stdev>
+            <mean xsi:type="xsd:double">+37.0089</mean>
+            <num_points xsi:type="xsd:int">30</num_points>
+            <max xsi:type="xsd:double">+37.013</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+37.0065</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-24T13:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.192489</stdev>
+            <mean xsi:type="xsd:double">+37.0185</mean>
+            <num_points xsi:type="xsd:int">30</num_points>
+            <max xsi:type="xsd:double">+37.0228</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+37.0065</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-24T14:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.212397</stdev>
+            <mean xsi:type="xsd:double">+37.0102</mean>
+            <num_points xsi:type="xsd:int">30</num_points>
+            <max xsi:type="xsd:double">+37.013</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+37.0033</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-24T15:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.0941345</stdev>
+            <mean xsi:type="xsd:double">+37.0088</mean>
+            <num_points xsi:type="xsd:int">30</num_points>
+            <max xsi:type="xsd:double">+37.013</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+36.9967</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-24T16:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.128847</stdev>
+            <mean xsi:type="xsd:double">+37.0006</mean>
+            <num_points xsi:type="xsd:int">30</num_points>
+            <max xsi:type="xsd:double">+37.0033</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+36.9935</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-24T17:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.143488</stdev>
+            <mean xsi:type="xsd:double">+36.9964</mean>
+            <num_points xsi:type="xsd:int">30</num_points>
+            <max xsi:type="xsd:double">+37</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+36.987</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-24T18:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.0244132</stdev>
+            <mean xsi:type="xsd:double">+36.9916</mean>
+            <num_points xsi:type="xsd:int">29</num_points>
+            <max xsi:type="xsd:double">+37</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+36.987</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-24T19:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.0911899</stdev>
+            <mean xsi:type="xsd:double">+36.9952</mean>
+            <num_points xsi:type="xsd:int">30</num_points>
+            <max xsi:type="xsd:double">+37.0033</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+36.9902</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-24T20:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.10854</stdev>
+            <mean xsi:type="xsd:double">+36.9944</mean>
+            <num_points xsi:type="xsd:int">30</num_points>
+            <max xsi:type="xsd:double">+37</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+36.987</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-24T21:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.117598</stdev>
+            <mean xsi:type="xsd:double">+36.9896</mean>
+            <num_points xsi:type="xsd:int">30</num_points>
+            <max xsi:type="xsd:double">+36.9935</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+36.9805</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-24T22:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.199088</stdev>
+            <mean xsi:type="xsd:double">+36.983</mean>
+            <num_points xsi:type="xsd:int">30</num_points>
+            <max xsi:type="xsd:double">+36.987</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+36.9772</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-24T23:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.0606505</stdev>
+            <mean xsi:type="xsd:double">+36.9782</mean>
+            <num_points xsi:type="xsd:int">30</num_points>
+            <max xsi:type="xsd:double">+36.9805</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+36.9739</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-25T00:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.149453</stdev>
+            <mean xsi:type="xsd:double">+36.978</mean>
+            <num_points xsi:type="xsd:int">30</num_points>
+            <max xsi:type="xsd:double">+36.9837</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+36.9739</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-25T01:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.174302</stdev>
+            <mean xsi:type="xsd:double">+36.9758</mean>
+            <num_points xsi:type="xsd:int">30</num_points>
+            <max xsi:type="xsd:double">+36.9805</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+36.9544</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-25T02:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.06456820000000001</stdev>
+            <mean xsi:type="xsd:double">+36.9567</mean>
+            <num_points xsi:type="xsd:int">29</num_points>
+            <max xsi:type="xsd:double">+36.9739</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+36.9479</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-25T03:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.156842</stdev>
+            <mean xsi:type="xsd:double">+36.9526</mean>
+            <num_points xsi:type="xsd:int">30</num_points>
+            <max xsi:type="xsd:double">+36.9577</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+36.9446</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-25T04:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.129124</stdev>
+            <mean xsi:type="xsd:double">+36.9485</mean>
+            <num_points xsi:type="xsd:int">30</num_points>
+            <max xsi:type="xsd:double">+36.9511</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+36.9446</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-25T05:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.0771046</stdev>
+            <mean xsi:type="xsd:double">+36.9514</mean>
+            <num_points xsi:type="xsd:int">30</num_points>
+            <max xsi:type="xsd:double">+36.9577</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+36.9479</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-25T06:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.0507746</stdev>
+            <mean xsi:type="xsd:double">+36.9513</mean>
+            <num_points xsi:type="xsd:int">30</num_points>
+            <max xsi:type="xsd:double">+36.9544</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+36.9479</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-25T07:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.12079</stdev>
+            <mean xsi:type="xsd:double">+36.9499</mean>
+            <num_points xsi:type="xsd:int">30</num_points>
+            <max xsi:type="xsd:double">+36.9511</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+36.9414</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-25T08:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.120293</stdev>
+            <mean xsi:type="xsd:double">+36.9467</mean>
+            <num_points xsi:type="xsd:int">30</num_points>
+            <max xsi:type="xsd:double">+36.9511</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+36.9316</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-25T09:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.00414012</stdev>
+            <mean xsi:type="xsd:double">+36.9368</mean>
+            <num_points xsi:type="xsd:int">30</num_points>
+            <max xsi:type="xsd:double">+36.9414</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+36.9283</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-25T10:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.177588</stdev>
+            <mean xsi:type="xsd:double">+36.9334</mean>
+            <num_points xsi:type="xsd:int">29</num_points>
+            <max xsi:type="xsd:double">+36.9381</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+36.9218</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-25T11:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.107774</stdev>
+            <mean xsi:type="xsd:double">+36.9264</mean>
+            <num_points xsi:type="xsd:int">30</num_points>
+            <max xsi:type="xsd:double">+36.9316</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+36.9153</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-25T12:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.133299</stdev>
+            <mean xsi:type="xsd:double">+36.9226</mean>
+            <num_points xsi:type="xsd:int">30</num_points>
+            <max xsi:type="xsd:double">+36.9283</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+36.9186</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-25T13:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.0791423</stdev>
+            <mean xsi:type="xsd:double">+36.9255</mean>
+            <num_points xsi:type="xsd:int">30</num_points>
+            <max xsi:type="xsd:double">+36.9316</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+36.9251</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-25T14:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.146227</stdev>
+            <mean xsi:type="xsd:double">+36.9252</mean>
+            <num_points xsi:type="xsd:int">30</num_points>
+            <max xsi:type="xsd:double">+36.9251</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+36.9121</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-25T15:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.0374647</stdev>
+            <mean xsi:type="xsd:double">+36.9167</mean>
+            <num_points xsi:type="xsd:int">30</num_points>
+            <max xsi:type="xsd:double">+36.9218</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+36.9088</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-25T16:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.15394</stdev>
+            <mean xsi:type="xsd:double">+36.911</mean>
+            <num_points xsi:type="xsd:int">30</num_points>
+            <max xsi:type="xsd:double">+36.9153</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+36.9023</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-25T17:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.183574</stdev>
+            <mean xsi:type="xsd:double">+36.9062</mean>
+            <num_points xsi:type="xsd:int">30</num_points>
+            <max xsi:type="xsd:double">+36.9088</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+36.9023</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-25T18:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.129</stdev>
+            <mean xsi:type="xsd:double">+36.9046</mean>
+            <num_points xsi:type="xsd:int">29</num_points>
+            <max xsi:type="xsd:double">+36.9153</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+36.9088</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-25T19:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.0811582</stdev>
+            <mean xsi:type="xsd:double">+36.9157</mean>
+            <num_points xsi:type="xsd:int">30</num_points>
+            <max xsi:type="xsd:double">+36.9251</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+36.9153</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-25T20:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.199542</stdev>
+            <mean xsi:type="xsd:double">+36.9185</mean>
+            <num_points xsi:type="xsd:int">30</num_points>
+            <max xsi:type="xsd:double">+36.9218</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+36.9121</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-25T21:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.124622</stdev>
+            <mean xsi:type="xsd:double">+36.9157</mean>
+            <num_points xsi:type="xsd:int">30</num_points>
+            <max xsi:type="xsd:double">+36.9186</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+36.9023</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-25T22:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.140972</stdev>
+            <mean xsi:type="xsd:double">+36.9074</mean>
+            <num_points xsi:type="xsd:int">30</num_points>
+            <max xsi:type="xsd:double">+36.9121</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+36.899</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-25T23:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.04701</stdev>
+            <mean xsi:type="xsd:double">+36.9006</mean>
+            <num_points xsi:type="xsd:int">30</num_points>
+            <max xsi:type="xsd:double">+36.9023</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+36.8925</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-26T00:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.103765</stdev>
+            <mean xsi:type="xsd:double">+36.8996</mean>
+            <num_points xsi:type="xsd:int">30</num_points>
+            <max xsi:type="xsd:double">+36.9088</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+36.9023</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-26T01:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.0974753</stdev>
+            <mean xsi:type="xsd:double">+36.9074</mean>
+            <num_points xsi:type="xsd:int">30</num_points>
+            <max xsi:type="xsd:double">+36.9088</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+36.8925</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-26T02:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.08211880000000001</stdev>
+            <mean xsi:type="xsd:double">+36.8981</mean>
+            <num_points xsi:type="xsd:int">30</num_points>
+            <max xsi:type="xsd:double">+36.9023</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+36.8893</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-26T03:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.09035020000000001</stdev>
+            <mean xsi:type="xsd:double">+36.8907</mean>
+            <num_points xsi:type="xsd:int">30</num_points>
+            <max xsi:type="xsd:double">+36.8958</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+36.8827</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-26T04:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.0647161</stdev>
+            <mean xsi:type="xsd:double">+36.8895</mean>
+            <num_points xsi:type="xsd:int">29</num_points>
+            <max xsi:type="xsd:double">+36.8958</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+36.8795</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-26T05:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.163324</stdev>
+            <mean xsi:type="xsd:double">+36.8833</mean>
+            <num_points xsi:type="xsd:int">30</num_points>
+            <max xsi:type="xsd:double">+36.886</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+36.873</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-26T06:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.109825</stdev>
+            <mean xsi:type="xsd:double">+36.8761</mean>
+            <num_points xsi:type="xsd:int">30</num_points>
+            <max xsi:type="xsd:double">+36.8827</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+36.8795</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-26T07:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.0768432</stdev>
+            <mean xsi:type="xsd:double">+36.8849</mean>
+            <num_points xsi:type="xsd:int">30</num_points>
+            <max xsi:type="xsd:double">+36.8925</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+36.8762</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-26T08:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.124351</stdev>
+            <mean xsi:type="xsd:double">+36.8812</mean>
+            <num_points xsi:type="xsd:int">30</num_points>
+            <max xsi:type="xsd:double">+36.886</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+36.8697</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-26T09:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.073757</stdev>
+            <mean xsi:type="xsd:double">+36.8731</mean>
+            <num_points xsi:type="xsd:int">30</num_points>
+            <max xsi:type="xsd:double">+36.8762</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+36.8632</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-26T10:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.122837</stdev>
+            <mean xsi:type="xsd:double">+36.8667</mean>
+            <num_points xsi:type="xsd:int">30</num_points>
+            <max xsi:type="xsd:double">+36.873</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+36.8599</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-26T11:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.13886</stdev>
+            <mean xsi:type="xsd:double">+36.8637</mean>
+            <num_points xsi:type="xsd:int">30</num_points>
+            <max xsi:type="xsd:double">+36.8697</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+36.8534</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-26T12:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.0920774</stdev>
+            <mean xsi:type="xsd:double">+36.8569</mean>
+            <num_points xsi:type="xsd:int">30</num_points>
+            <max xsi:type="xsd:double">+36.8665</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+36.8567</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-26T13:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.112464</stdev>
+            <mean xsi:type="xsd:double">+36.8633</mean>
+            <num_points xsi:type="xsd:int">29</num_points>
+            <max xsi:type="xsd:double">+36.8697</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+36.8567</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-26T14:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.152758</stdev>
+            <mean xsi:type="xsd:double">+36.8599</mean>
+            <num_points xsi:type="xsd:int">30</num_points>
+            <max xsi:type="xsd:double">+36.8632</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+36.8469</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-26T15:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.126572</stdev>
+            <mean xsi:type="xsd:double">+36.8542</mean>
+            <num_points xsi:type="xsd:int">30</num_points>
+            <max xsi:type="xsd:double">+36.8599</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+36.8436</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-26T16:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.0616926</stdev>
+            <mean xsi:type="xsd:double">+36.8459</mean>
+            <num_points xsi:type="xsd:int">30</num_points>
+            <max xsi:type="xsd:double">+36.8469</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+36.8371</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-26T17:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.0487726</stdev>
+            <mean xsi:type="xsd:double">+36.8416</mean>
+            <num_points xsi:type="xsd:int">30</num_points>
+            <max xsi:type="xsd:double">+36.8436</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+36.8339</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-26T18:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.0243655</stdev>
+            <mean xsi:type="xsd:double">+36.8403</mean>
+            <num_points xsi:type="xsd:int">30</num_points>
+            <max xsi:type="xsd:double">+36.8502</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+36.8404</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-26T19:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.08034139999999999</stdev>
+            <mean xsi:type="xsd:double">+36.8463</mean>
+            <num_points xsi:type="xsd:int">30</num_points>
+            <max xsi:type="xsd:double">+36.8502</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+36.8339</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-26T20:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.08382580000000001</stdev>
+            <mean xsi:type="xsd:double">+36.8371</mean>
+            <num_points xsi:type="xsd:int">29</num_points>
+            <max xsi:type="xsd:double">+36.8404</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+36.8339</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-26T21:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.0280205</stdev>
+            <mean xsi:type="xsd:double">+36.8361</mean>
+            <num_points xsi:type="xsd:int">30</num_points>
+            <max xsi:type="xsd:double">+36.8404</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+36.8241</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-26T22:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.0833435</stdev>
+            <mean xsi:type="xsd:double">+36.8279</mean>
+            <num_points xsi:type="xsd:int">30</num_points>
+            <max xsi:type="xsd:double">+36.8339</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+36.8176</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-26T23:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.07227840000000001</stdev>
+            <mean xsi:type="xsd:double">+36.8227</mean>
+            <num_points xsi:type="xsd:int">30</num_points>
+            <max xsi:type="xsd:double">+36.8274</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+36.8143</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-27T00:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.133003</stdev>
+            <mean xsi:type="xsd:double">+36.816</mean>
+            <num_points xsi:type="xsd:int">30</num_points>
+            <max xsi:type="xsd:double">+36.8306</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+36.8241</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-27T01:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.223724</stdev>
+            <mean xsi:type="xsd:double">+36.8291</mean>
+            <num_points xsi:type="xsd:int">30</num_points>
+            <max xsi:type="xsd:double">+36.8371</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+36.8176</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-27T02:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.14361</stdev>
+            <mean xsi:type="xsd:double">+36.8203</mean>
+            <num_points xsi:type="xsd:int">30</num_points>
+            <max xsi:type="xsd:double">+36.8241</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+36.8111</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-27T03:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.197988</stdev>
+            <mean xsi:type="xsd:double">+36.8124</mean>
+            <num_points xsi:type="xsd:int">30</num_points>
+            <max xsi:type="xsd:double">+36.8176</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+36.8046</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-27T04:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.0989966</stdev>
+            <mean xsi:type="xsd:double">+36.8089</mean>
+            <num_points xsi:type="xsd:int">29</num_points>
+            <max xsi:type="xsd:double">+36.8111</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+36.798</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-27T05:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.05949</stdev>
+            <mean xsi:type="xsd:double">+36.8049</mean>
+            <num_points xsi:type="xsd:int">30</num_points>
+            <max xsi:type="xsd:double">+36.8078</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+36.798</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-27T06:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.0145122</stdev>
+            <mean xsi:type="xsd:double">+36.8005</mean>
+            <num_points xsi:type="xsd:int">30</num_points>
+            <max xsi:type="xsd:double">+36.8078</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+36.8013</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-27T07:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.163306</stdev>
+            <mean xsi:type="xsd:double">+36.8057</mean>
+            <num_points xsi:type="xsd:int">30</num_points>
+            <max xsi:type="xsd:double">+36.8078</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+36.798</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-27T08:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.132876</stdev>
+            <mean xsi:type="xsd:double">+36.8023</mean>
+            <num_points xsi:type="xsd:int">30</num_points>
+            <max xsi:type="xsd:double">+36.8078</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+36.7948</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-27T09:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.0684236</stdev>
+            <mean xsi:type="xsd:double">+37.1312</mean>
+            <num_points xsi:type="xsd:int">30</num_points>
+            <max xsi:type="xsd:double">+37.202</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+37.1889</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-27T10:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.159879</stdev>
+            <mean xsi:type="xsd:double">+37.1943</mean>
+            <num_points xsi:type="xsd:int">30</num_points>
+            <max xsi:type="xsd:double">+37.1987</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+37.1824</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-27T11:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.155121</stdev>
+            <mean xsi:type="xsd:double">+37.1869</mean>
+            <num_points xsi:type="xsd:int">30</num_points>
+            <max xsi:type="xsd:double">+37.1889</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+37.1792</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-27T12:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.0416762</stdev>
+            <mean xsi:type="xsd:double">+37.1833</mean>
+            <num_points xsi:type="xsd:int">30</num_points>
+            <max xsi:type="xsd:double">+37.1857</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+37.1759</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-27T13:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.07334069999999999</stdev>
+            <mean xsi:type="xsd:double">+37.1839</mean>
+            <num_points xsi:type="xsd:int">29</num_points>
+            <max xsi:type="xsd:double">+37.1889</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+37.1824</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-27T14:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.153065</stdev>
+            <mean xsi:type="xsd:double">+37.1877</mean>
+            <num_points xsi:type="xsd:int">30</num_points>
+            <max xsi:type="xsd:double">+37.1954</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+37.1759</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-27T15:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.142154</stdev>
+            <mean xsi:type="xsd:double">+37.1789</mean>
+            <num_points xsi:type="xsd:int">30</num_points>
+            <max xsi:type="xsd:double">+37.1824</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+37.1694</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-27T16:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.168892</stdev>
+            <mean xsi:type="xsd:double">+37.1743</mean>
+            <num_points xsi:type="xsd:int">30</num_points>
+            <max xsi:type="xsd:double">+37.1792</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+37.1629</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-27T17:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.123883</stdev>
+            <mean xsi:type="xsd:double">+37.1676</mean>
+            <num_points xsi:type="xsd:int">30</num_points>
+            <max xsi:type="xsd:double">+37.1694</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+37.1596</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-27T18:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.112099</stdev>
+            <mean xsi:type="xsd:double">+37.1634</mean>
+            <num_points xsi:type="xsd:int">30</num_points>
+            <max xsi:type="xsd:double">+37.1694</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+37.1596</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-27T19:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.159091</stdev>
+            <mean xsi:type="xsd:double">+37.167</mean>
+            <num_points xsi:type="xsd:int">30</num_points>
+            <max xsi:type="xsd:double">+37.1726</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+37.1596</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-27T20:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.09804300000000001</stdev>
+            <mean xsi:type="xsd:double">+37.1641</mean>
+            <num_points xsi:type="xsd:int">30</num_points>
+            <max xsi:type="xsd:double">+37.1694</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+37.1564</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-27T21:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.167627</stdev>
+            <mean xsi:type="xsd:double">+37.1592</mean>
+            <num_points xsi:type="xsd:int">30</num_points>
+            <max xsi:type="xsd:double">+37.1629</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+37.1498</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-27T22:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.0439688</stdev>
+            <mean xsi:type="xsd:double">+37.1518</mean>
+            <num_points xsi:type="xsd:int">29</num_points>
+            <max xsi:type="xsd:double">+37.1531</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+37.1401</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-27T23:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.112109</stdev>
+            <mean xsi:type="xsd:double">+37.1457</mean>
+            <num_points xsi:type="xsd:int">30</num_points>
+            <max xsi:type="xsd:double">+37.1531</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+37.1401</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-28T00:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.173483</stdev>
+            <mean xsi:type="xsd:double">+37.1513</mean>
+            <num_points xsi:type="xsd:int">30</num_points>
+            <max xsi:type="xsd:double">+37.1564</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+37.1466</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-28T01:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.165531</stdev>
+            <mean xsi:type="xsd:double">+37.1577</mean>
+            <num_points xsi:type="xsd:int">30</num_points>
+            <max xsi:type="xsd:double">+37.1661</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+37.1498</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-28T02:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.0985689</stdev>
+            <mean xsi:type="xsd:double">+37.1567</mean>
+            <num_points xsi:type="xsd:int">30</num_points>
+            <max xsi:type="xsd:double">+37.1629</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+37.1466</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-28T03:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.100756</stdev>
+            <mean xsi:type="xsd:double">+37.1502</mean>
+            <num_points xsi:type="xsd:int">30</num_points>
+            <max xsi:type="xsd:double">+37.1531</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+37.1368</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-28T04:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.157718</stdev>
+            <mean xsi:type="xsd:double">+37.1416</mean>
+            <num_points xsi:type="xsd:int">30</num_points>
+            <max xsi:type="xsd:double">+37.1466</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+37.1303</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-28T05:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.073655</stdev>
+            <mean xsi:type="xsd:double">+37.1353</mean>
+            <num_points xsi:type="xsd:int">30</num_points>
+            <max xsi:type="xsd:double">+37.1401</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+37.127</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-28T06:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.0985616</stdev>
+            <mean xsi:type="xsd:double">+37.1331</mean>
+            <num_points xsi:type="xsd:int">29</num_points>
+            <max xsi:type="xsd:double">+37.1401</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+37.1368</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-28T07:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.0276405</stdev>
+            <mean xsi:type="xsd:double">+37.1416</mean>
+            <num_points xsi:type="xsd:int">30</num_points>
+            <max xsi:type="xsd:double">+37.1433</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+37.127</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-28T08:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.144854</stdev>
+            <mean xsi:type="xsd:double">+37.1326</mean>
+            <num_points xsi:type="xsd:int">30</num_points>
+            <max xsi:type="xsd:double">+37.1368</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+37.1205</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-28T09:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.09226860000000001</stdev>
+            <mean xsi:type="xsd:double">+37.1264</mean>
+            <num_points xsi:type="xsd:int">30</num_points>
+            <max xsi:type="xsd:double">+37.1303</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+37.1173</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-28T10:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.222536</stdev>
+            <mean xsi:type="xsd:double">+37.1199</mean>
+            <num_points xsi:type="xsd:int">30</num_points>
+            <max xsi:type="xsd:double">+37.1205</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+37.1107</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-28T11:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.114457</stdev>
+            <mean xsi:type="xsd:double">+37.1137</mean>
+            <num_points xsi:type="xsd:int">30</num_points>
+            <max xsi:type="xsd:double">+37.1173</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+37.1042</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-28T12:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.190083</stdev>
+            <mean xsi:type="xsd:double">+37.1107</mean>
+            <num_points xsi:type="xsd:int">30</num_points>
+            <max xsi:type="xsd:double">+37.1205</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+37.1107</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-28T13:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.116549</stdev>
+            <mean xsi:type="xsd:double">+37.113</mean>
+            <num_points xsi:type="xsd:int">30</num_points>
+            <max xsi:type="xsd:double">+37.1205</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+37.1042</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-28T14:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.197418</stdev>
+            <mean xsi:type="xsd:double">+37.1077</mean>
+            <num_points xsi:type="xsd:int">29</num_points>
+            <max xsi:type="xsd:double">+37.114</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+37.0977</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-28T15:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.192666</stdev>
+            <mean xsi:type="xsd:double">+37.1006</mean>
+            <num_points xsi:type="xsd:int">30</num_points>
+            <max xsi:type="xsd:double">+37.1042</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+37.0912</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-28T16:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.207865</stdev>
+            <mean xsi:type="xsd:double">+37.093</mean>
+            <num_points xsi:type="xsd:int">30</num_points>
+            <max xsi:type="xsd:double">+37.0977</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+37.0847</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-28T17:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.22519</stdev>
+            <mean xsi:type="xsd:double">+37.0878</mean>
+            <num_points xsi:type="xsd:int">30</num_points>
+            <max xsi:type="xsd:double">+37.0912</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+37.0912</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-28T18:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.112265</stdev>
+            <mean xsi:type="xsd:double">+37.0937</mean>
+            <num_points xsi:type="xsd:int">30</num_points>
+            <max xsi:type="xsd:double">+37.0977</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+37.0814</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-28T19:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.094454</stdev>
+            <mean xsi:type="xsd:double">+37.0864</mean>
+            <num_points xsi:type="xsd:int">30</num_points>
+            <max xsi:type="xsd:double">+37.0912</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+37.0782</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-28T20:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.119103</stdev>
+            <mean xsi:type="xsd:double">+37.081</mean>
+            <num_points xsi:type="xsd:int">30</num_points>
+            <max xsi:type="xsd:double">+37.0879</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+37.0684</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-28T21:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.07117900000000001</stdev>
+            <mean xsi:type="xsd:double">+37.0763</mean>
+            <num_points xsi:type="xsd:int">30</num_points>
+            <max xsi:type="xsd:double">+37.0814</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+37.0651</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-28T22:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.0551972</stdev>
+            <mean xsi:type="xsd:double">+37.0678</mean>
+            <num_points xsi:type="xsd:int">30</num_points>
+            <max xsi:type="xsd:double">+37.0717</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+37.0619</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-28T23:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.143021</stdev>
+            <mean xsi:type="xsd:double">+37.0701</mean>
+            <num_points xsi:type="xsd:int">29</num_points>
+            <max xsi:type="xsd:double">+37.0782</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+37.0651</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-29T00:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.0823392</stdev>
+            <mean xsi:type="xsd:double">+37.0686</mean>
+            <num_points xsi:type="xsd:int">30</num_points>
+            <max xsi:type="xsd:double">+37.0717</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+37.0586</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-29T01:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.0637253</stdev>
+            <mean xsi:type="xsd:double">+37.0637</mean>
+            <num_points xsi:type="xsd:int">30</num_points>
+            <max xsi:type="xsd:double">+37.0684</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+37.0554</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-29T02:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.203149</stdev>
+            <mean xsi:type="xsd:double">+37.0586</mean>
+            <num_points xsi:type="xsd:int">30</num_points>
+            <max xsi:type="xsd:double">+37.0619</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+37.0521</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-29T03:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.118306</stdev>
+            <mean xsi:type="xsd:double">+37.0567</mean>
+            <num_points xsi:type="xsd:int">30</num_points>
+            <max xsi:type="xsd:double">+37.0619</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+37.0456</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-29T04:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.130786</stdev>
+            <mean xsi:type="xsd:double">+37.0492</mean>
+            <num_points xsi:type="xsd:int">30</num_points>
+            <max xsi:type="xsd:double">+37.0521</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+37.0358</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-29T05:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.107578</stdev>
+            <mean xsi:type="xsd:double">+37.0389</mean>
+            <num_points xsi:type="xsd:int">30</num_points>
+            <max xsi:type="xsd:double">+37.0456</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+37.0326</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-29T06:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.0753702</stdev>
+            <mean xsi:type="xsd:double">+37.0344</mean>
+            <num_points xsi:type="xsd:int">30</num_points>
+            <max xsi:type="xsd:double">+37.0358</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+37.0326</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-29T07:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.0208598</stdev>
+            <mean xsi:type="xsd:double">+37.0431</mean>
+            <num_points xsi:type="xsd:int">29</num_points>
+            <max xsi:type="xsd:double">+37.0456</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+37.0261</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-29T08:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.06394610000000001</stdev>
+            <mean xsi:type="xsd:double">+37.0362</mean>
+            <num_points xsi:type="xsd:int">30</num_points>
+            <max xsi:type="xsd:double">+37.0391</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+37.0261</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-29T09:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.14874</stdev>
+            <mean xsi:type="xsd:double">+37.027</mean>
+            <num_points xsi:type="xsd:int">30</num_points>
+            <max xsi:type="xsd:double">+37.0293</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+37.0228</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-29T10:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.0635632</stdev>
+            <mean xsi:type="xsd:double">+37.0271</mean>
+            <num_points xsi:type="xsd:int">30</num_points>
+            <max xsi:type="xsd:double">+37.0326</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+37.0163</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-29T11:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.173342</stdev>
+            <mean xsi:type="xsd:double">+37.0185</mean>
+            <num_points xsi:type="xsd:int">30</num_points>
+            <max xsi:type="xsd:double">+37.0228</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+37.0033</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-29T12:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.104212</stdev>
+            <mean xsi:type="xsd:double">+37.0124</mean>
+            <num_points xsi:type="xsd:int">30</num_points>
+            <max xsi:type="xsd:double">+37.0163</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+37.0033</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-29T13:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.105862</stdev>
+            <mean xsi:type="xsd:double">+37.0065</mean>
+            <num_points xsi:type="xsd:int">30</num_points>
+            <max xsi:type="xsd:double">+37.0163</max>
+          </item>
+          <item>
+            <min xsi:type="xsd:double">+36.9479</min>
+            <begin_time xsi:type="xsd:dateTime">2009-04-29T14:00:00Z</begin_time>
+            <stdev xsi:type="xsd:double">+0.0434274</stdev>
+            <mean xsi:type="xsd:double">+36.9929</mean>
+            <num_points xsi:type="xsd:int">30</num_points>
+            <max xsi:type="xsd:double">+37.0163</max>
+          </item>
+        </return>
+      </n1:GetHistoricalObservationsForMetricResponse>
+    </env:Body>
+  </env:Envelope>
+Sending data 
+Rendering /usr/lib/ruby/gems/1.8/gems/datanoise-actionwebservice-2.3.2/lib/action_web_service/templates/scaffolds/layout.html.erb
+Completed in 2178ms (View: 2, DB: 0) | 200 OK [http:///ssbe/invocation_submit]

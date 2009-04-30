@@ -25,13 +25,29 @@ class SsbeController < ApplicationController
     Metric.send("get_every",h.metrics_href).map{|m| m.to_ws}
   end
 
-  def get_observations_for_metric(metric_href)
+  def get_observations_for_metric(metric_href,begin_time, end_time)
+    if begin_time.empty? 
+      begin_time = (Time.now - 1.week).gmtime.xmlschema
+    end
+    if end_time.empty? 
+      end_time = (Time.now - 1.day).gmtime.xmlschema
+    end
+
     m = Metric.get(metric_href)
-    Observation.send("get_every",m.observations_href).map{|o| o.to_ws}
+    href=m.observations_href + "?start=#{begin_time}&end=#{end_time}"
+    Observation.send("get_every",href).map{|o| o.to_ws}
   end
 
-  def get_historical_observations_for_metric(metric_href)
+  def get_historical_observations_for_metric(metric_href,begin_time,end_time)
+    if begin_time.empty? 
+      begin_time = (Time.now - 1.week).gmtime.xmlschema
+    end
+    if end_time.empty? 
+      end_time = (Time.now - 1.day).gmtime.xmlschema
+    end
+
     m = Metric.get(metric_href)
-    HistoricalObservation.send("get_every",m.historical_observations_href).map{|o| o.to_ws}
+    href=m.historical_observations_href + "?start=#{begin_time}&end=#{end_time}"
+    HistoricalObservation.send("get_every",href).map{|o| o.to_ws}
   end
 end
