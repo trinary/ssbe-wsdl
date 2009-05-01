@@ -3,7 +3,7 @@ class Observation < ActiveRest::Model
 
   class WsType < ActionWebService::Struct
       member :value,:float
-      member :recorded_at,:datetime
+      member :recorded_at,:string
       member :status, :string
   end
   def to_s
