@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <title>Class: Enumerable::Enumerator</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+
+    <script language="JavaScript" type="text/javascript">
+    // <![CDATA[
+
+        function toggleSource( id )
+        {
+          var elem
+          var link
+
+          if( document.getElementById )
+          {
+            elem = document.getElementById( id )
+            link = document.getElementById( "l_" + id )
+          }
+          else if ( document.all )
+          {
+            elem = eval( "document.all." + id )
+            link = eval( "document.all.l_" + id )
+          }
+          else
+            return false;
+
+          if( elem.style.display == "block" )
+          {
+            elem.style.display = "none"
+            link.innerHTML = "+"
+          }
+          else
+          {
+            elem.style.display = "block"
+            link.innerHTML = "-"
+          }
+        }
+
+        function openCode( url )
+        {
+          window.open( url, "SOURCE_CODE", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=480,width=750" ).focus();
+        }
+      // ]]>
+    </script>
+  </head>
+
+  <body>
+  <table width="100%" border='0' cellpadding='0' cellspacing='0' class='banner'><tr>
+  <td class="file-title"><span class="file-title-prefix">Class</span><br />Enumerable::Enumerator</td>
+  <td align="right">
+    <table cellspacing="0" cellpadding="2">
+      <tr valign="top">
+        <td>In:</td>
+        <td>
+<a href="../../files/lib/core/facets/to_hash_rb.html">lib/core/facets/to_hash.rb</a>
+        </td>
+      </tr>
+    <tr>
+      <td>Parent:</td>
+      <td>
+        <a href="../Object.html">
+Object
+         </a>
+     </td>
+   </tr>
+         </table>
+        </td>
+        </tr>
+      </table>
+ <!-- banner header -->
+
+  <div id="bodyContent">
+      <div id="content">
+
+
+
+
+  <div class="sectiontitle">Methods</div>
+  <span style="padding-right: 5px;"><a href="#M000458">to_h</a></span>
+
+
+
+
+
+
+<div class="sectiontitle">Public Instance methods</div>
+<div class="method">
+  <div class="title">
+    <a name="M000458"></a><b>to_h</b>(mode=nil)
+  </div>
+  <div class="description">
+  <p>
+Convert an <a href="Enumerator.html">Enumerable::Enumerator</a> object
+directly into a hash.
+</p>
+<pre>
+  e = [1,2,3,4,5].to_enum
+  e.to_h  #=&gt; {5=&gt;nil, 1=&gt;2, 3=&gt;4}
+  e2 = [1,2,1,3,1,5].to_enum
+  e2.to_h #=&gt; {1=&gt;5}
+  e3 = [[1,:a],[2,:b],[3,:c]].to_enum
+  e3.to_h #=&gt; { 1=&gt;:a, 2=&gt;:b, 3=&gt;:c }
+</pre>
+<p>
+CREDIT: Sandor Szücs
+</p>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000458_source')" id="l_M000458_source">+</a> ]</p>
+  <div id="M000458_source" class="dyn-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/to_hash.rb, line 304</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_h</span>(<span class="ruby-identifier">mode</span>=<span class="ruby-keyword kw">nil</span>)
+      <span class="ruby-identifier">to_a</span>.<span class="ruby-identifier">to_h</span>(<span class="ruby-identifier">mode</span>)
+    <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+</div>
+
+  </div>
+
+    </body>
+</html>

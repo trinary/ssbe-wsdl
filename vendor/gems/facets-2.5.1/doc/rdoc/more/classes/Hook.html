@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <title>Module: Hook</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <link rel="stylesheet" href=".././rdoc-style.css" type="text/css" media="screen" />
+
+    <script language="JavaScript" type="text/javascript">
+    // <![CDATA[
+
+        function toggleSource( id )
+        {
+          var elem
+          var link
+
+          if( document.getElementById )
+          {
+            elem = document.getElementById( id )
+            link = document.getElementById( "l_" + id )
+          }
+          else if ( document.all )
+          {
+            elem = eval( "document.all." + id )
+            link = eval( "document.all.l_" + id )
+          }
+          else
+            return false;
+
+          if( elem.style.display == "block" )
+          {
+            elem.style.display = "none"
+            link.innerHTML = "+"
+          }
+          else
+          {
+            elem.style.display = "block"
+            link.innerHTML = "-"
+          }
+        }
+
+        function openCode( url )
+        {
+          window.open( url, "SOURCE_CODE", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=480,width=750" ).focus();
+        }
+      // ]]>
+    </script>
+  </head>
+
+  <body>
+  <table width="100%" border='0' cellpadding='0' cellspacing='0' class='banner'><tr>
+  <td class="file-title"><span class="file-title-prefix">Module</span><br />Hook</td>
+  <td align="right">
+    <table cellspacing="0" cellpadding="2">
+      <tr valign="top">
+        <td>In:</td>
+        <td>
+<a href="../files/lib/more/facets/hook_rb.html">lib/more/facets/hook.rb</a>
+        </td>
+      </tr>
+         </table>
+        </td>
+        </tr>
+      </table>
+ <!-- banner header -->
+
+  <div id="bodyContent">
+      <div id="content">
+
+  <div class="description"><p>
+TODO: <a href="Hook.html#M000830">hooks</a> should be an inheritor
+</p>
+</div>
+
+
+
+  <div class="sectiontitle">Methods</div>
+  <span style="padding-right: 5px;"><a href="#M000829">append_features</a></span>
+  <span style="padding-right: 5px;"><a href="#M000831">hook</a></span>
+  <span style="padding-right: 5px;"><a href="#M000830">hooks</a></span>
+
+
+
+
+
+
+<div class="sectiontitle">Public Class methods</div>
+<div class="method">
+  <div class="title">
+    <a name="M000829"></a><b>append_features</b>(base)
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000829_source')" id="l_M000829_source">+</a> ]</p>
+  <div id="M000829_source" class="dyn-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/more/facets/hook.rb, line 6</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">append_features</span>(<span class="ruby-identifier">base</span>)
+    <span class="ruby-identifier">base</span>.<span class="ruby-identifier">extend</span> <span class="ruby-keyword kw">self</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="sectiontitle">Public Instance methods</div>
+<div class="method">
+  <div class="title">
+    <a name="M000831"></a><b>hook</b>(name)
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000831_source')" id="l_M000831_source">+</a> ]</p>
+  <div id="M000831_source" class="dyn-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/more/facets/hook.rb, line 14</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">hook</span>(<span class="ruby-identifier">name</span>)
+    <span class="ruby-identifier">name</span> = <span class="ruby-identifier">name</span>.<span class="ruby-identifier">to_sym</span>
+
+    (<span class="ruby-keyword kw">class</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-keyword kw">self</span>; <span class="ruby-keyword kw">self</span>; <span class="ruby-keyword kw">end</span>).<span class="ruby-identifier">class_eval</span> <span class="ruby-node">%{
+      def #{name}(meth=nil, &amp;blk)
+        hooks[:#{name}] &lt;&lt; (meth || blk)
+      end
+    }</span>
+
+    <span class="ruby-identifier">module_eval</span> <span class="ruby-node">%{
+      def #{name}(*args)
+        self.class.hooks[:#{name}].each do |blk|
+          if Proc === blk
+            blk.call(:#{name}, *args)
+          else
+            __send__(blk, :#{name}, *args)
+          end
+        end
+      end
+    }</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000830"></a><b>hooks</b>()
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000830_source')" id="l_M000830_source">+</a> ]</p>
+  <div id="M000830_source" class="dyn-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/more/facets/hook.rb, line 10</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">hooks</span>
+    <span class="ruby-ivar">@hooks</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>{ <span class="ruby-operator">|</span><span class="ruby-identifier">h</span>,<span class="ruby-identifier">k</span><span class="ruby-operator">|</span> <span class="ruby-identifier">h</span>[<span class="ruby-identifier">k</span>] = [] }
+  <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+</div>
+
+  </div>
+
+    </body>
+</html>

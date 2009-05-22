@@ -7,7 +7,14 @@ RAILS_GEM_VERSION = '2.3.2' unless defined? RAILS_GEM_VERSION
 require File.join(File.dirname(__FILE__), 'boot')
 
 Rails::Initializer.run do |config|
-  config.gem 'datanoise-actionwebservice', :lib => 'actionwebservice'
+  config.gem 'andand', :version => '1.3.1'
+  config.gem 'addressable', :lib => 'addressable/uri', :version => '2.0.2'
+  config.gem 'datanoise-actionwebservice', :lib => 'actionwebservice', :version => '2.3.2', :source => 'http://gems.github.com/'
+  config.gem 'facets', :lib => 'core/facets/kernel/returning', :version => '2.5.1'
+  config.gem 'resourceful', :version => '0.3.1'
+  config.gem 'httpauth', :version => '0.1'
+  config.gem 'validatable', :version => '1.6.7'
+  config.gem 'json', :version => '1.1.3'
   # Settings in config/environments/* take precedence over those specified here.
   # Application configuration should go into files in config/initializers
   # -- all .rb files in that directory are automatically loaded.
@@ -27,7 +34,7 @@ Rails::Initializer.run do |config|
 
   # Skip frameworks you're not going to use. To use Rails without a database,
   # you must remove the Active Record framework.
-  # config.frameworks -= [ :active_record, :active_resource, :action_mailer ]
+  config.frameworks -= [ :active_record, :active_resource, :action_mailer ]
 
   # Activate observers that should always be running
   # config.active_record.observers = :cacher, :garbage_collector, :forum_observer

@@ -1,0 +1,1208 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <title>Class: Array</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <link rel="stylesheet" href=".././rdoc-style.css" type="text/css" media="screen" />
+
+    <script language="JavaScript" type="text/javascript">
+    // <![CDATA[
+
+        function toggleSource( id )
+        {
+          var elem
+          var link
+
+          if( document.getElementById )
+          {
+            elem = document.getElementById( id )
+            link = document.getElementById( "l_" + id )
+          }
+          else if ( document.all )
+          {
+            elem = eval( "document.all." + id )
+            link = eval( "document.all.l_" + id )
+          }
+          else
+            return false;
+
+          if( elem.style.display == "block" )
+          {
+            elem.style.display = "none"
+            link.innerHTML = "+"
+          }
+          else
+          {
+            elem.style.display = "block"
+            link.innerHTML = "-"
+          }
+        }
+
+        function openCode( url )
+        {
+          window.open( url, "SOURCE_CODE", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=480,width=750" ).focus();
+        }
+      // ]]>
+    </script>
+  </head>
+
+  <body>
+  <table width="100%" border='0' cellpadding='0' cellspacing='0' class='banner'><tr>
+  <td class="file-title"><span class="file-title-prefix">Class</span><br />Array</td>
+  <td align="right">
+    <table cellspacing="0" cellpadding="2">
+      <tr valign="top">
+        <td>In:</td>
+        <td>
+<a href="../files/lib/core/facets/to_hash_rb.html">lib/core/facets/to_hash.rb</a>
+<a href="../files/lib/core/facets/boolean_rb.html">lib/core/facets/boolean.rb</a>
+<a href="../files/lib/core/facets/string/contains_rb.html">lib/core/facets/string/contains.rb</a>
+<a href="../files/lib/core/facets/array/product_rb.html">lib/core/facets/array/product.rb</a>
+<a href="../files/lib/core/facets/array/recursively_rb.html">lib/core/facets/array/recursively.rb</a>
+<a href="../files/lib/core/facets/array/not_empty_rb.html">lib/core/facets/array/not_empty.rb</a>
+<a href="../files/lib/core/facets/array/delete_unless_rb.html">lib/core/facets/array/delete_unless.rb</a>
+<a href="../files/lib/core/facets/array/rotate_rb.html">lib/core/facets/array/rotate.rb</a>
+<a href="../files/lib/core/facets/array/conjoin_rb.html">lib/core/facets/array/conjoin.rb</a>
+<a href="../files/lib/core/facets/array/indexable_rb.html">lib/core/facets/array/indexable.rb</a>
+<a href="../files/lib/core/facets/array/merge_rb.html">lib/core/facets/array/merge.rb</a>
+<a href="../files/lib/core/facets/array/traverse_rb.html">lib/core/facets/array/traverse.rb</a>
+<a href="../files/lib/core/facets/array/permutation_rb.html">lib/core/facets/array/permutation.rb</a>
+<a href="../files/lib/core/facets/array/select_rb.html">lib/core/facets/array/select.rb</a>
+<a href="../files/lib/core/facets/array/index_rb.html">lib/core/facets/array/index.rb</a>
+<a href="../files/lib/core/facets/array/only_rb.html">lib/core/facets/array/only.rb</a>
+<a href="../files/lib/core/facets/array/combination_rb.html">lib/core/facets/array/combination.rb</a>
+<a href="../files/lib/core/facets/array/delete_values_rb.html">lib/core/facets/array/delete_values.rb</a>
+<a href="../files/lib/core/facets/array/splice_rb.html">lib/core/facets/array/splice.rb</a>
+<a href="../files/lib/core/facets/array/stackable_rb.html">lib/core/facets/array/stackable.rb</a>
+<a href="../files/lib/core/facets/array/pad_rb.html">lib/core/facets/array/pad.rb</a>
+<a href="../files/lib/core/facets/blank_rb.html">lib/core/facets/blank.rb</a>
+        </td>
+      </tr>
+    <tr>
+      <td>Parent:</td>
+      <td>
+        <a href="Object.html">
+Object
+         </a>
+     </td>
+   </tr>
+         </table>
+        </td>
+        </tr>
+      </table>
+ <!-- banner header -->
+
+  <div id="bodyContent">
+      <div id="content">
+
+
+
+
+  <div class="sectiontitle">Methods</div>
+  <span style="padding-right: 5px;"><a href="#M000083">**</a></span>
+  <span style="padding-right: 5px;"><a href="#M000098">combination</a></span>
+  <span style="padding-right: 5px;"><a href="#M000090">conjoin</a></span>
+  <span style="padding-right: 5px;"><a href="#M000087">delete_unless</a></span>
+  <span style="padding-right: 5px;"><a href="#M000099">delete_values</a></span>
+  <span style="padding-right: 5px;"><a href="#M000100">delete_values_at</a></span>
+  <span style="padding-right: 5px;"><a href="#M000096">index</a></span>
+  <span style="padding-right: 5px;"><a href="#M000091">merge!</a></span>
+  <span style="padding-right: 5px;"><a href="#M000086">not_empty?</a></span>
+  <span style="padding-right: 5px;"><a href="#M000097">only</a></span>
+  <span style="padding-right: 5px;"><a href="#M000102">pad</a></span>
+  <span style="padding-right: 5px;"><a href="#M000103">pad!</a></span>
+  <span style="padding-right: 5px;"><a href="#M000094">permutation</a></span>
+  <span style="padding-right: 5px;"><a href="#M000082">product</a></span>
+  <span style="padding-right: 5px;"><a href="#M000084">recursively</a></span>
+  <span style="padding-right: 5px;"><a href="#M000085">recursively!</a></span>
+  <span style="padding-right: 5px;"><a href="#M000088">rotate</a></span>
+  <span style="padding-right: 5px;"><a href="#M000089">rotate!</a></span>
+  <span style="padding-right: 5px;"><a href="#M000095">select!</a></span>
+  <span style="padding-right: 5px;"><a href="#M000101">splice</a></span>
+  <span style="padding-right: 5px;"><a href="#M000081">to_b</a></span>
+  <span style="padding-right: 5px;"><a href="#M000075">to_h</a></span>
+  <span style="padding-right: 5px;"><a href="#M000079">to_h_assoc</a></span>
+  <span style="padding-right: 5px;"><a href="#M000076">to_h_auto</a></span>
+  <span style="padding-right: 5px;"><a href="#M000078">to_h_flat</a></span>
+  <span style="padding-right: 5px;"><a href="#M000080">to_h_multi</a></span>
+  <span style="padding-right: 5px;"><a href="#M000077">to_h_splat</a></span>
+  <span style="padding-right: 5px;"><a href="#M000092">traverse</a></span>
+  <span style="padding-right: 5px;"><a href="#M000093">traverse!</a></span>
+
+<div class="sectiontitle">Included Modules</div>
+<ul>
+  <li><a href="Indexable.html">Indexable</a></li>
+  <li><a href="Stackable.html">Stackable</a></li>
+</ul>
+
+
+
+
+
+<div class="sectiontitle">Public Instance methods</div>
+<div class="method">
+  <div class="title">
+    <a name="M000083"></a><b>**</b>(*enums)
+  </div>
+  <div class="description">
+  <p>
+Alias for <a href="Array.html#M000082">product</a>
+</p>
+  </div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000098"></a><b>combination</b>(k=2) {|s.values_at(*idx)| ...}
+  </div>
+  <div class="description">
+  <p>
+Yields the block to each unique <a
+href="Array.html#M000098">combination</a> of <em>n</em> elements.
+</p>
+<pre>
+  a = %w|a b c d|
+  a.combination(3)
+</pre>
+<p>
+produces
+</p>
+<pre>
+  [[&quot;a&quot;, &quot;b&quot;, &quot;c&quot;],
+   [&quot;a&quot;, &quot;b&quot;, &quot;d&quot;],
+   [&quot;a&quot;, &quot;c&quot;, &quot;d&quot;],
+   [&quot;b&quot;, &quot;c&quot;, &quot;d&quot;]]
+</pre>
+<p>
+CREDIT: Florian Gross
+</p>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000098_source')" id="l_M000098_source">+</a> ]</p>
+  <div id="M000098_source" class="dyn-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/array/combination.rb, line 21</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">combination</span>(<span class="ruby-identifier">k</span>=<span class="ruby-value">2</span>)
+      <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">block_given?</span>
+        <span class="ruby-identifier">s</span> = <span class="ruby-identifier">to_a</span>
+        <span class="ruby-identifier">n</span> = <span class="ruby-identifier">s</span>.<span class="ruby-identifier">size</span>
+        <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">unless</span> (<span class="ruby-value">1</span><span class="ruby-operator">..</span><span class="ruby-identifier">n</span>) <span class="ruby-operator">===</span> <span class="ruby-identifier">k</span>
+        <span class="ruby-identifier">idx</span> = (<span class="ruby-value">0</span><span class="ruby-operator">...</span><span class="ruby-identifier">k</span>).<span class="ruby-identifier">to_a</span>
+        <span class="ruby-identifier">loop</span> <span class="ruby-keyword kw">do</span>
+          <span class="ruby-keyword kw">yield</span> <span class="ruby-identifier">s</span>.<span class="ruby-identifier">values_at</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">idx</span>)
+          <span class="ruby-identifier">i</span> = <span class="ruby-identifier">k</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>
+          <span class="ruby-identifier">i</span> <span class="ruby-operator">-=</span> <span class="ruby-value">1</span> <span class="ruby-keyword kw">while</span> <span class="ruby-identifier">idx</span>[<span class="ruby-identifier">i</span>] <span class="ruby-operator">==</span> <span class="ruby-identifier">n</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">k</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">i</span>
+          <span class="ruby-keyword kw">break</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">i</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">0</span>
+          <span class="ruby-identifier">idx</span>[<span class="ruby-identifier">i</span>] <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+          (<span class="ruby-identifier">i</span> <span class="ruby-operator">+</span> <span class="ruby-value">1</span> <span class="ruby-operator">...</span> <span class="ruby-identifier">k</span>).<span class="ruby-identifier">each</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">j</span><span class="ruby-operator">|</span> <span class="ruby-identifier">idx</span>[<span class="ruby-identifier">j</span>] = <span class="ruby-identifier">idx</span>[<span class="ruby-identifier">i</span>] <span class="ruby-operator">+</span> <span class="ruby-identifier">j</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">i</span>}
+        <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">else</span>
+        <span class="ruby-identifier">to_enum</span>(<span class="ruby-identifier">:combination</span>, <span class="ruby-identifier">k</span>)
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000090"></a><b>conjoin</b>(*args) {|i, *slice(i,2)| ...}
+  </div>
+  <div class="description">
+  <p>
+This is more advnaced form of join. It allows for fine control of
+separators.
+</p>
+<p>
+NOTE: The old version used to default it&#8216;s separator to &quot;,
+&quot; and default the terminating separator to &quot; and &quot;. This is
+no longer the case. You must specifically provide these parameters.
+</p>
+<pre>
+  [1,2,3].conjoin
+  =&gt; &quot;123&quot;
+
+  [1,2,3].conjoin(', ', ' and ')
+  =&gt; &quot;1, 2 and 3
+
+  [1,2,3].conjoin(', ', :last =&gt; ' or ')
+  =&gt; &quot;1, 2 or 3
+
+  [1,2,3].conjoin('; ', -1 =&gt; ' &amp; ')
+  =&gt; &quot;1; 2 &amp; 3
+
+  [1,2,3,4].conjoin{ |i, a, b| i % 2 == 0 ? '.' : '-' }
+  =&gt; &quot;1.2-3.4&quot;
+
+  [1,1,2,2].conjoin{ |i, a, b| a == b ? '=' : '!=' }
+  =&gt; &quot;1=1!=2=2&quot;
+</pre>
+<p>
+CREDIT: Trans
+</p>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000090_source')" id="l_M000090_source">+</a> ]</p>
+  <div id="M000090_source" class="dyn-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/array/conjoin.rb, line 30</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">conjoin</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+    <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">first</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">size</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">2</span>
+
+    <span class="ruby-identifier">sep</span> = []
+
+    <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">block_given?</span>
+      (<span class="ruby-identifier">size</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>).<span class="ruby-identifier">times</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">sep</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-keyword kw">yield</span>(<span class="ruby-identifier">i</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">slice</span>(<span class="ruby-identifier">i</span>,<span class="ruby-value">2</span>))
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">else</span>
+      <span class="ruby-identifier">options</span>   = (<span class="ruby-constant">Hash</span><span class="ruby-operator">===</span><span class="ruby-identifier">args</span>.<span class="ruby-identifier">last</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">pop</span> <span class="ruby-operator">:</span> {}
+      <span class="ruby-identifier">separator</span> = <span class="ruby-identifier">args</span>.<span class="ruby-identifier">shift</span> <span class="ruby-operator">||</span> <span class="ruby-value str">&quot;&quot;</span>
+      <span class="ruby-identifier">options</span>[<span class="ruby-value">-1</span>] = <span class="ruby-identifier">args</span>.<span class="ruby-identifier">shift</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">empty?</span>
+
+      <span class="ruby-identifier">sep</span> = [<span class="ruby-identifier">separator</span>] <span class="ruby-operator">*</span> (<span class="ruby-identifier">size</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>)
+
+      <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">options</span>.<span class="ruby-identifier">key?</span>(<span class="ruby-identifier">:last</span>)
+        <span class="ruby-identifier">options</span>[<span class="ruby-value">-1</span>] = <span class="ruby-identifier">options</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">:last</span>)
+      <span class="ruby-keyword kw">end</span>
+
+      <span class="ruby-identifier">options</span>[<span class="ruby-value">-1</span>] <span class="ruby-operator">||=</span> <span class="ruby-value str">&quot; and &quot;</span>
+
+      <span class="ruby-identifier">options</span>.<span class="ruby-identifier">each</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">i</span>, <span class="ruby-identifier">s</span><span class="ruby-operator">|</span> <span class="ruby-identifier">sep</span>[<span class="ruby-identifier">i</span>] = <span class="ruby-identifier">s</span>}
+    <span class="ruby-keyword kw">end</span>
+    <span class="ruby-identifier">zip</span>(<span class="ruby-identifier">sep</span>).<span class="ruby-identifier">join</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000087"></a><b>delete_unless</b>(&amp;block)
+  </div>
+  <div class="description">
+  <p>
+Inverse of delete_if.
+</p>
+<pre>
+  [1,2,3].delete_unless{ |x| x &lt; 2 }
+  =&gt; [1,2]
+</pre>
+<p>
+CREDIT: Daniel Schierbeck
+</p>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000087_source')" id="l_M000087_source">+</a> ]</p>
+  <div id="M000087_source" class="dyn-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/array/delete_unless.rb, line 10</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">delete_unless</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+    <span class="ruby-identifier">delete_if</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">element</span><span class="ruby-operator">|</span> <span class="ruby-keyword kw">not</span> <span class="ruby-identifier">block</span>.<span class="ruby-identifier">call</span>(<span class="ruby-identifier">element</span>) }
+  <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000099"></a><b>delete_values</b>(*values)
+  </div>
+  <div class="description">
+  <p>
+Delete multiple values from array.
+</p>
+<pre>
+  a = [1,2,3,4]
+  a.delete_values(1,2)   #=&gt; [1,2]
+  a                      #=&gt; [3,4]
+</pre>
+<p>
+CREDIT: Trans
+</p>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000099_source')" id="l_M000099_source">+</a> ]</p>
+  <div id="M000099_source" class="dyn-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/array/delete_values.rb, line 11</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">delete_values</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">values</span>)
+    <span class="ruby-identifier">d</span> = []
+    <span class="ruby-identifier">values</span>.<span class="ruby-identifier">each</span>{ <span class="ruby-operator">|</span><span class="ruby-identifier">v</span><span class="ruby-operator">|</span> <span class="ruby-identifier">d</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">delete</span>(<span class="ruby-identifier">v</span>) }
+    <span class="ruby-identifier">d</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000100"></a><b>delete_values_at</b>(*selectors)
+  </div>
+  <div class="description">
+  <p>
+Delete multiple values from array given indexes or <a
+href="Array.html#M000096">index</a> range.
+</p>
+<pre>
+  a = [1,2,3,4]
+  a.delete_values_at(1,2)   #=&gt; [2,3]
+  a                         #=&gt; [1,4]
+  a = [1,2,3,4]
+  a.delete_values_at(0..2)  #=&gt; [1,2,3]
+  a                         #=&gt; [4]
+</pre>
+<p>
+NOTE: It would be nice to see delete_at incorporate this funcitonaility.
+</p>
+<p>
+CREDIT: Trans
+</p>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000100_source')" id="l_M000100_source">+</a> ]</p>
+  <div id="M000100_source" class="dyn-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/array/delete_values.rb, line 32</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">delete_values_at</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">selectors</span>)
+    <span class="ruby-identifier">idx</span> = []
+    <span class="ruby-identifier">selectors</span>.<span class="ruby-identifier">each</span>{ <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
+      <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">i</span>
+      <span class="ruby-keyword kw">when</span> <span class="ruby-constant">Range</span>
+        <span class="ruby-identifier">idx</span>.<span class="ruby-identifier">concat</span>( <span class="ruby-identifier">i</span>.<span class="ruby-identifier">to_a</span> )
+      <span class="ruby-keyword kw">else</span>
+        <span class="ruby-identifier">idx</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">i</span>.<span class="ruby-identifier">to_i</span>
+      <span class="ruby-keyword kw">end</span>
+    }
+    <span class="ruby-identifier">idx</span>.<span class="ruby-identifier">uniq!</span>
+    <span class="ruby-identifier">dvals</span> = <span class="ruby-identifier">values_at</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">idx</span>)
+    <span class="ruby-identifier">idx</span> = (<span class="ruby-value">0</span><span class="ruby-operator">...</span><span class="ruby-identifier">size</span>).<span class="ruby-identifier">to_a</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">idx</span>
+    <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">replace</span>( <span class="ruby-identifier">values_at</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">idx</span>) )
+    <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">dvals</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000096"></a><b>index</b>(obj=nil, &amp;block)
+  </div>
+  <div class="description">
+  <p>
+Allows <a href="Array.html#M000096">index</a> to accept a block.
+</p>
+<p>
+OVERRIDE! This is one of the bery few core overrides in Facets.
+</p>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000096_source')" id="l_M000096_source">+</a> ]</p>
+  <div id="M000096_source" class="dyn-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/array/index.rb, line 12</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">index</span>(<span class="ruby-identifier">obj</span>=<span class="ruby-keyword kw">nil</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+      <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">block_given?</span>
+        <span class="ruby-identifier">_facets_index</span>(<span class="ruby-identifier">find</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>))
+      <span class="ruby-keyword kw">else</span>
+        <span class="ruby-identifier">_facets_index</span>(<span class="ruby-identifier">obj</span>)
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000091"></a><b>merge!</b>( other )
+  </div>
+  <div class="description">
+  <p>
+In place merge.
+</p>
+<pre>
+  a = [1,2]
+  a.merge! [2,3]
+  a =&gt; [1,2,3]
+</pre>
+<p>
+CREDIT: Trans
+</p>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000091_source')" id="l_M000091_source">+</a> ]</p>
+  <div id="M000091_source" class="dyn-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/array/merge.rb, line 11</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">merge!</span>( <span class="ruby-identifier">other</span> )
+    <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">replace</span>(<span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">other</span>))
+  <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000086"></a><b>not_empty?</b>()
+  </div>
+  <div class="description">
+  <p>
+Not empty?
+</p>
+<pre>
+  [].not_empty?     #=&gt; false
+  [1,2].not_empty?  #=&gt; true
+</pre>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000086_source')" id="l_M000086_source">+</a> ]</p>
+  <div id="M000086_source" class="dyn-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/array/not_empty.rb, line 8</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">not_empty?</span>
+    <span class="ruby-operator">!</span><span class="ruby-identifier">empty?</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000097"></a><b>only</b>()
+  </div>
+  <div class="description">
+  <p>
+Returns the <em><a href="Array.html#M000097">only</a></em> element in the
+array. Raises an IndexError if the array&#8216;s size is not 1.
+</p>
+<pre>
+  [5].only      # -&gt; 5
+  [1,2,3].only  # -&gt; IndexError
+  [].only       # -&gt; IndexError
+</pre>
+<p>
+CREDIT: Gavin Sinclair, Noah Gibbs
+</p>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000097_source')" id="l_M000097_source">+</a> ]</p>
+  <div id="M000097_source" class="dyn-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/array/only.rb, line 12</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">only</span>
+    <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">size</span> <span class="ruby-operator">==</span> <span class="ruby-value">1</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">IndexError</span>, <span class="ruby-value str">&quot;Array#only called on non-single-element array&quot;</span>
+    <span class="ruby-keyword kw">end</span>
+    <span class="ruby-identifier">first</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000102"></a><b>pad</b>(len, val=nil)
+  </div>
+  <div class="description">
+  <p>
+Pad an array with a given <tt>value</tt> upto a given <tt>length</tt>.
+</p>
+<pre>
+  [0,1,2].pad(6,&quot;a&quot;)  #=&gt; [0,1,2,&quot;a&quot;,&quot;a&quot;,&quot;a&quot;]
+</pre>
+<p>
+If <tt>length</tt> is a negative number padding will be added to the
+beginning of the array.
+</p>
+<pre>
+  [0,1,2].pad(-6,&quot;a&quot;)  #=&gt; [&quot;a&quot;,&quot;a&quot;,&quot;a&quot;,0,1,2]
+</pre>
+<p>
+CREDIT: Richard Laugesen
+</p>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000102_source')" id="l_M000102_source">+</a> ]</p>
+  <div id="M000102_source" class="dyn-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/array/pad.rb, line 14</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">pad</span>(<span class="ruby-identifier">len</span>, <span class="ruby-identifier">val</span>=<span class="ruby-keyword kw">nil</span>)
+    <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">dup</span> <span class="ruby-keyword kw">if</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-identifier">len</span>.<span class="ruby-identifier">abs</span>
+    <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">len</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">0</span>
+      <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>((<span class="ruby-identifier">len</span><span class="ruby-operator">+</span><span class="ruby-identifier">size</span>).<span class="ruby-identifier">abs</span>,<span class="ruby-identifier">val</span>) <span class="ruby-operator">+</span> <span class="ruby-keyword kw">self</span>
+    <span class="ruby-keyword kw">else</span>
+      <span class="ruby-keyword kw">self</span> <span class="ruby-operator">+</span> <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">len</span><span class="ruby-operator">-</span><span class="ruby-identifier">size</span>,<span class="ruby-identifier">val</span>)
+    <span class="ruby-keyword kw">end</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000103"></a><b>pad!</b>(len, val=nil)
+  </div>
+  <div class="description">
+  <p>
+Like <a href="Array.html#M000102">pad</a> but changes the array in place.
+</p>
+<pre>
+   a = [0,1,2]
+   a.pad!(6,&quot;x&quot;)
+   a  #=&gt; [0,1,2,&quot;x&quot;,&quot;x&quot;,&quot;x&quot;]
+</pre>
+<p>
+CREDIT: Richard Laugesen
+</p>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000103_source')" id="l_M000103_source">+</a> ]</p>
+  <div id="M000103_source" class="dyn-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/array/pad.rb, line 31</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">pad!</span>(<span class="ruby-identifier">len</span>, <span class="ruby-identifier">val</span>=<span class="ruby-keyword kw">nil</span>)
+    <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">self</span> <span class="ruby-keyword kw">if</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-identifier">len</span>.<span class="ruby-identifier">abs</span>
+    <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">len</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">0</span>
+      <span class="ruby-identifier">replace</span> <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>((<span class="ruby-identifier">len</span><span class="ruby-operator">+</span><span class="ruby-identifier">size</span>).<span class="ruby-identifier">abs</span>,<span class="ruby-identifier">val</span>) <span class="ruby-operator">+</span> <span class="ruby-keyword kw">self</span>
+    <span class="ruby-keyword kw">else</span>
+      <span class="ruby-identifier">concat</span> <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">len</span><span class="ruby-operator">-</span><span class="ruby-identifier">size</span>,<span class="ruby-identifier">val</span>)
+    <span class="ruby-keyword kw">end</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000094"></a><b>permutation</b>(n=size) {|[]| ...}
+  </div>
+  <div class="description">
+  <p>
+Permutation provids the possible orders of an enumerable. Each is indexed
+by a <a href="Array.html#M000094">permutation</a> number. The maximum
+number of arrangements is the factorial of the size of the array.
+</p>
+<p>
+CREDIT: Shin-ichiro Hara
+</p>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000094_source')" id="l_M000094_source">+</a> ]</p>
+  <div id="M000094_source" class="dyn-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/array/permutation.rb, line 11</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">permutation</span>(<span class="ruby-identifier">n</span>=<span class="ruby-identifier">size</span>)
+      <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">size</span> <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">n</span> <span class="ruby-keyword kw">or</span> <span class="ruby-identifier">n</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">0</span>
+      <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">n</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>
+        <span class="ruby-keyword kw">yield</span>([])
+      <span class="ruby-keyword kw">else</span>
+        <span class="ruby-keyword kw">self</span>[<span class="ruby-value">1</span><span class="ruby-operator">..</span><span class="ruby-value">-1</span>].<span class="ruby-identifier">permutation</span>(<span class="ruby-identifier">n</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span>
+          (<span class="ruby-value">0</span><span class="ruby-operator">...</span><span class="ruby-identifier">n</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
+            <span class="ruby-keyword kw">yield</span>(<span class="ruby-identifier">x</span>[<span class="ruby-value">0</span><span class="ruby-operator">...</span><span class="ruby-identifier">i</span>] <span class="ruby-operator">+</span> [<span class="ruby-identifier">first</span>] <span class="ruby-operator">+</span> <span class="ruby-identifier">x</span>[<span class="ruby-identifier">i</span><span class="ruby-operator">..</span><span class="ruby-value">-1</span>])
+          <span class="ruby-keyword kw">end</span>
+        <span class="ruby-keyword kw">end</span>
+        <span class="ruby-keyword kw">self</span>[<span class="ruby-value">1</span><span class="ruby-operator">..</span><span class="ruby-value">-1</span>].<span class="ruby-identifier">permutation</span>(<span class="ruby-identifier">n</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span>
+          <span class="ruby-keyword kw">yield</span>(<span class="ruby-identifier">x</span>)
+        <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000082"></a><b>product</b>(*enums)
+  </div>
+  <div class="description">
+  <p>
+Provides the cartesian <a href="Array.html#M000082">product</a> of two or
+more arrays.
+</p>
+<pre>
+  a = []
+  [1,2].product([4,5])
+  a  #=&gt; [[1, 4],[1, 5],[2, 4],[2, 5]]
+</pre>
+<p>
+CREDIT: Thomas Hafner
+</p>
+  </div>
+<div class="aka">
+  This method is also aliased as
+  <a href="Array.html#M000083">**</a>
+</div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000082_source')" id="l_M000082_source">+</a> ]</p>
+  <div id="M000082_source" class="dyn-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/array/product.rb, line 13</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">product</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">enums</span>)
+      <span class="ruby-identifier">enums</span>.<span class="ruby-identifier">unshift</span> <span class="ruby-keyword kw">self</span>
+      <span class="ruby-identifier">result</span> = [[]]
+      <span class="ruby-keyword kw">while</span> [] <span class="ruby-operator">!=</span> <span class="ruby-identifier">enums</span>
+        <span class="ruby-identifier">t</span>, <span class="ruby-identifier">result</span> = <span class="ruby-identifier">result</span>, []
+        <span class="ruby-identifier">b</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">enums</span> = <span class="ruby-identifier">enums</span>
+        <span class="ruby-identifier">t</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">a</span><span class="ruby-operator">|</span>
+          <span class="ruby-identifier">b</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">n</span><span class="ruby-operator">|</span>
+            <span class="ruby-identifier">result</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">a</span> <span class="ruby-operator">+</span> [<span class="ruby-identifier">n</span>]
+          <span class="ruby-keyword kw">end</span>
+        <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">end</span>
+      <span class="ruby-identifier">result</span>
+    <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000084"></a><b>recursively</b>() {|a| ...}
+  </div>
+  <div class="description">
+  <p>
+Apply a block to hash, and <a href="Array.html#M000084">recursively</a>
+apply that block to each subhash.
+</p>
+<pre>
+  arr = [&quot;a&quot;, [&quot;b&quot;, &quot;c&quot;, nil], nil]
+  arr.recursively{|a| a.compact! }
+  =&gt; [&quot;a&quot;, [&quot;b&quot;, &quot;c&quot;]]
+</pre>
+<p>
+TODO: Can this be generalized in Enumerbale?
+</p>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000084_source')" id="l_M000084_source">+</a> ]</p>
+  <div id="M000084_source" class="dyn-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/array/recursively.rb, line 12</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">recursively</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+    <span class="ruby-identifier">a</span> = <span class="ruby-identifier">inject</span>([]) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">array</span>, <span class="ruby-identifier">value</span><span class="ruby-operator">|</span>
+      <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Array</span>)
+        <span class="ruby-identifier">array</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">recursively</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+      <span class="ruby-keyword kw">else</span>
+        <span class="ruby-identifier">array</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">value</span>
+      <span class="ruby-keyword kw">end</span>
+      <span class="ruby-identifier">array</span>
+    <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">yield</span> <span class="ruby-identifier">a</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000085"></a><b>recursively!</b>(&amp;block)
+  </div>
+  <div class="description">
+  <p>
+In place form of <a href="Array.html#M000084">recursively</a>.
+</p>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000085_source')" id="l_M000085_source">+</a> ]</p>
+  <div id="M000085_source" class="dyn-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/array/recursively.rb, line 26</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">recursively!</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+    <span class="ruby-identifier">replace</span>(<span class="ruby-identifier">recursively</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>))
+  <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000088"></a><b>rotate</b>(n=1)
+  </div>
+  <div class="description">
+  <p>
+Rotates an array&#8216;s elements from back to front n times.
+</p>
+<pre>
+  [1,2,3].rotate      #=&gt; [3,1,2]
+  [3,1,2].rotate      #=&gt; [2,3,1]
+  [3,1,2].rotate      #=&gt; [1,2,3]
+  [1,2,3].rotate(3)   #=&gt; [1,2,3]
+</pre>
+<p>
+A negative parameter reverses the order from front to back.
+</p>
+<pre>
+  [1,2,3].rotate(-1)  #=&gt; [2,3,1]
+</pre>
+<p>
+CREDIT: Florian Gross, Thomas Sawyer
+</p>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000088_source')" id="l_M000088_source">+</a> ]</p>
+  <div id="M000088_source" class="dyn-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/array/rotate.rb, line 16</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">rotate</span>(<span class="ruby-identifier">n</span>=<span class="ruby-value">1</span>)
+    <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">dup</span>.<span class="ruby-identifier">rotate!</span>(<span class="ruby-identifier">n</span>)
+  <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000089"></a><b>rotate!</b>(n=1)
+  </div>
+  <div class="description">
+  <p>
+Same as <a href="Array.html#M000088">rotate</a>, but acts in place.
+</p>
+<pre>
+  a = [1,2,3]
+  a.rotate!
+  a  #=&gt; [3,1,2]
+</pre>
+<p>
+CREDIT: Florian Gross, Thomas Sawyer
+</p>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000089_source')" id="l_M000089_source">+</a> ]</p>
+  <div id="M000089_source" class="dyn-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/array/rotate.rb, line 28</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">rotate!</span>(<span class="ruby-identifier">n</span>=<span class="ruby-value">1</span>)
+    <span class="ruby-identifier">n</span> = <span class="ruby-identifier">n</span>.<span class="ruby-identifier">to_int</span>
+    <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">self</span> <span class="ruby-keyword kw">if</span> (<span class="ruby-identifier">n</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span> <span class="ruby-keyword kw">or</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">empty?</span>)
+    <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">n</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>
+      <span class="ruby-identifier">n</span>.<span class="ruby-identifier">abs</span>.<span class="ruby-identifier">times</span>{ <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">unshift</span>( <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">pop</span> ) }
+    <span class="ruby-keyword kw">else</span>
+      <span class="ruby-identifier">n</span>.<span class="ruby-identifier">abs</span>.<span class="ruby-identifier">times</span>{ <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">push</span>( <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">shift</span> ) }
+    <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">self</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000095"></a><b>select!</b>( {|| ...}
+  </div>
+  <div class="description">
+  <p>
+As with select but modifies the <a href="Array.html">Array</a> in place.
+</p>
+<pre>
+  a = [1,2,3,4,5,6,7,8,9,10]
+  a.select!{ |e| e % 2 == 0 }
+  a  #=&gt; [2,4,6,8,10]
+</pre>
+<p>
+CREDIT: Gavin Sinclair
+</p>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000095_source')" id="l_M000095_source">+</a> ]</p>
+  <div id="M000095_source" class="dyn-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/array/select.rb, line 11</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">select!</span>  <span class="ruby-comment cmt"># :yield:</span>
+    <span class="ruby-identifier">reject!</span>{ <span class="ruby-operator">|</span><span class="ruby-identifier">e</span><span class="ruby-operator">|</span> <span class="ruby-keyword kw">not</span> <span class="ruby-keyword kw">yield</span>(<span class="ruby-identifier">e</span>) }
+  <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000101"></a><b>splice</b>(*args)
+  </div>
+  <div class="description">
+  <p>
+Splice acts a <a href="Array.html#M000098">combination</a> of slice! and
+store. If two arguments are given it calls store. If a single argument is
+give it calls slice!.
+</p>
+<pre>
+  a = [1,2,3]
+  a.splice(1)    #=&gt; 2
+  a              #=&gt; [1,3]
+
+  a = [1,2,3]
+  a.splice(1,4)  #=&gt; 4
+  a              #=&gt;[1,4,3]
+</pre>
+<p>
+CREDIT: Trans
+</p>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000101_source')" id="l_M000101_source">+</a> ]</p>
+  <div id="M000101_source" class="dyn-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/array/splice.rb, line 17</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">splice</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+    <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">==</span> <span class="ruby-value">1</span>
+      <span class="ruby-identifier">slice!</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+    <span class="ruby-keyword kw">else</span>
+      <span class="ruby-identifier">store</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+    <span class="ruby-keyword kw">end</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000081"></a><b>to_b</b>()
+  </div>
+  <div class="description">
+  <p>
+Boolean conversion for not empty?
+</p>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000081_source')" id="l_M000081_source">+</a> ]</p>
+  <div id="M000081_source" class="dyn-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/boolean.rb, line 60</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_b</span>
+    <span class="ruby-operator">!</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">empty?</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000075"></a><b>to_h</b>(mode=nil)
+  </div>
+  <div class="description">
+  <p>
+Converts an array into a hash. Converting an array into a hash is not a
+one-to-one conversion, for this reason <a
+href="Array.html#M000075">to_h</a> examines at the array being converted
+and then dispatches the conversion to the most sutiable specialized
+function. There are three possiblities for this.
+</p>
+<p>
+If the array is a collection of perfect pairs, like that which Hash#to_a
+generates, then conversion is handled by <a
+href="Array.html#M000078">to_h_flat</a>.
+</p>
+<pre>
+  a = [ [:a,1], [:b,2] ]
+  a.to_h  #=&gt; { :a=&gt;1, :b=&gt;2 }
+</pre>
+<p>
+If the array contains <a href="Array.html#M000097">only</a> arrays, but are
+not perfect pairs, then <a href="Array.html#M000080">to_h_multi</a> is
+called.
+</p>
+<pre>
+  a = [ [:a,1,2], [:b,2], [:c], [:d] ]
+  a.to_h  #=&gt; { :a=&gt;[1,2], :b=&gt;[2], :c=&gt;[], :d=&gt;[] }
+</pre>
+<p>
+If the array contians objects other then arrays then the <a
+href="Array.html#M000077">to_h_splat</a> method is called.
+</p>
+<pre>
+  a = [ [:a,1,2], 2, :b, [:c,3], 9 ]
+  a.to_h  #=&gt; { [:a,1,2]=&gt;2, :b=&gt;[:c,3], 9=&gt;nil }
+</pre>
+<p>
+Finally, a particular dispatch can be forced by specifying the
+<tt>mode</tt> of conversion, eg. +:multi+, +:splat+, +:flat+, +:assoc+,
+etc.
+</p>
+<p>
+Setting <tt>mode</tt> to <tt>true</tt> is the same as setting it +:multi+.
+This has been left in for backward compatability.
+</p>
+<p>
+NOTE: The use of a <tt>values</tt> parameter has been deprecated because
+that functionality is as simple as:
+</p>
+<pre>
+  array1.zip(array2).to_h
+</pre>
+<p>
+CREDIT: Robert Klemme CREDIT: Trans
+</p>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000075_source')" id="l_M000075_source">+</a> ]</p>
+  <div id="M000075_source" class="dyn-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/to_hash.rb, line 98</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_h</span>(<span class="ruby-identifier">mode</span>=<span class="ruby-keyword kw">nil</span>)
+    <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">mode</span>
+    <span class="ruby-keyword kw">when</span> <span class="ruby-identifier">:splat</span>
+      <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">to_h_splat</span>
+    <span class="ruby-keyword kw">when</span> <span class="ruby-identifier">:flat</span>
+      <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">to_h_flat</span>
+    <span class="ruby-keyword kw">when</span> <span class="ruby-identifier">:multi</span>, <span class="ruby-keyword kw">true</span>
+      <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">to_h_multi</span>
+    <span class="ruby-keyword kw">when</span> <span class="ruby-identifier">:assoc</span>
+      <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">to_h_assoc</span>
+    <span class="ruby-keyword kw">else</span>
+      <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">to_h_auto</span>
+    <span class="ruby-keyword kw">end</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000079"></a><b>to_h_assoc</b>()
+  </div>
+  <div class="description">
+  <p>
+When a mixed or multi-element accociative array is used, the result is as
+follows:
+</p>
+<pre>
+  a = [ [:a,1,2], [:b,2], [:c], :d ]
+  a.to_h  #=&gt; { :a=&gt;[1,2], :b=&gt;[2], :c=&gt;[], :d=&gt;[] }
+</pre>
+<p>
+If the fist entry of any subelements are the same, then the value will be
+set to the last occuring value.
+</p>
+<pre>
+  a = [ :x, [:x], [:x,1,2], [:x,3], [:x,4] ]
+  a.to_h_assoc  #=&gt; { :x=&gt;4 }
+</pre>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000079_source')" id="l_M000079_source">+</a> ]</p>
+  <div id="M000079_source" class="dyn-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/to_hash.rb, line 202</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_h_assoc</span>
+    <span class="ruby-identifier">h</span> = {}
+    <span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>,<span class="ruby-operator">*</span><span class="ruby-identifier">v</span><span class="ruby-operator">|</span> 
+      <span class="ruby-identifier">h</span>[<span class="ruby-identifier">k</span>] = <span class="ruby-identifier">v</span>
+    <span class="ruby-keyword kw">end</span>
+    <span class="ruby-identifier">h</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000076"></a><b>to_h_auto</b>()
+  </div>
+  <div class="description">
+  <p>
+Converts an array into a hash. Converting an array into a hash is not a
+one-to-one conversion, for this reason <a
+href="Array.html#M000075">to_h</a> examines at the array being converted
+and then dispatches the conversion to the most sutiable specialized
+function. There are three possiblities for this.
+</p>
+<p>
+If the array is a collection of perfect pairs, like that which Hash#to_a
+generates, then conversion is handled by <a
+href="Array.html#M000078">to_h_flat</a>.
+</p>
+<pre>
+  a = [ [:a,1], [:b,2] ]
+  a.to_h  #=&gt; { :a=&gt;1, :b=&gt;2 }
+</pre>
+<p>
+If the array contains <a href="Array.html#M000097">only</a> arrays, but are
+not perfect pairs, then <a href="Array.html#M000080">to_h_multi</a> is
+called.
+</p>
+<pre>
+  a = [ [:a,1,2], [:b,2], [:c], [:d] ]
+  a.to_h  #=&gt; { :a=&gt;[1,2], :b=&gt;[2], :c=&gt;[], :d=&gt;[] }
+</pre>
+<p>
+If the array contians objects other then arrays then the <a
+href="Array.html#M000077">to_h_splat</a> method is called.
+</p>
+<pre>
+  a = [ [:a,1,2], 2, :b, [:c,3], 9 ]
+  a.to_h  #=&gt; { [:a,1,2]=&gt;2, :b=&gt;[:c,3], 9=&gt;nil }
+</pre>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000076_source')" id="l_M000076_source">+</a> ]</p>
+  <div id="M000076_source" class="dyn-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/to_hash.rb, line 138</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_h_auto</span>
+    <span class="ruby-identifier">pairs</span> = <span class="ruby-keyword kw">true</span>
+    <span class="ruby-identifier">mixed</span> = <span class="ruby-keyword kw">false</span>
+
+    <span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">e</span><span class="ruby-operator">|</span>
+      <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">e</span>
+      <span class="ruby-keyword kw">when</span> <span class="ruby-constant">Array</span>
+        <span class="ruby-identifier">pairs</span> = <span class="ruby-keyword kw">false</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">2</span>
+      <span class="ruby-keyword kw">else</span>
+        <span class="ruby-identifier">mixed</span> = <span class="ruby-keyword kw">true</span>
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span>
+
+    <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">mixed</span>
+      <span class="ruby-identifier">to_h_splat</span>
+    <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">pairs</span>
+      <span class="ruby-identifier">to_h_flat</span>
+    <span class="ruby-keyword kw">else</span>
+      <span class="ruby-identifier">to_h_multi</span>
+    <span class="ruby-keyword kw">end</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000078"></a><b>to_h_flat</b>()
+  </div>
+  <div class="description">
+  <p>
+This is equivalent to <a href="http://*array.flatten">Hash</a>, but it will
+<a href="Array.html#M000102">pad</a> the array with a <tt>nil</tt> object
+if there are not an even number of elements.
+</p>
+<pre>
+  a = [:a,1,[:b,2,:c]]
+  a.to_h_flat  #=&gt; { :a=&gt;1, :b=&gt;2, :c=&gt;nil }
+</pre>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000078_source')" id="l_M000078_source">+</a> ]</p>
+  <div id="M000078_source" class="dyn-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/to_hash.rb, line 180</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_h_flat</span>
+    <span class="ruby-identifier">a</span> = <span class="ruby-identifier">flatten</span>
+    <span class="ruby-identifier">a</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-keyword kw">nil</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">a</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">%</span> <span class="ruby-value">2</span> <span class="ruby-operator">==</span> <span class="ruby-value">1</span>
+    <span class="ruby-constant">Hash</span>[<span class="ruby-operator">*</span><span class="ruby-identifier">a</span>]
+  <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000080"></a><b>to_h_multi</b>()
+  </div>
+  <div class="description">
+  <p>
+When a mixed or multi-element accociative array is used, the result is as
+follows:
+</p>
+<pre>
+  a = [ [:a,1,2], [:b,2], [:c], :d ]
+  a.to_h  #=&gt; { :a=&gt;[1,2], :b=&gt;[2], :c=&gt;[], :d=&gt;[] }
+</pre>
+<p>
+If the fist entry of the subelements is the same, then the values will be
+merged using concat.
+</p>
+<pre>
+  a = [ [:a,1,2], [:a,3], [:a,4], [:a], :a ]
+  a.to_h_multi  #=&gt; { :a=&gt;[1,2,3,4,nil,nil] }
+</pre>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000080_source')" id="l_M000080_source">+</a> ]</p>
+  <div id="M000080_source" class="dyn-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/to_hash.rb, line 222</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_h_multi</span>
+    <span class="ruby-identifier">h</span> = {}
+    <span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>,<span class="ruby-operator">*</span><span class="ruby-identifier">v</span><span class="ruby-operator">|</span> 
+      <span class="ruby-identifier">h</span>[<span class="ruby-identifier">k</span>] <span class="ruby-operator">||=</span> []
+      <span class="ruby-identifier">h</span>[<span class="ruby-identifier">k</span>].<span class="ruby-identifier">concat</span>(<span class="ruby-identifier">v</span>)
+    <span class="ruby-keyword kw">end</span>
+    <span class="ruby-identifier">h</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000077"></a><b>to_h_splat</b>()
+  </div>
+  <div class="description">
+  <p>
+This is equivalent to <a href="Hash.html">Hash</a>[*array], but it will <a
+href="Array.html#M000102">pad</a> the array with a <tt>nil</tt> object if
+there are not an even number of elements.
+</p>
+<pre>
+  a = [:a,1,:b,2,:c]
+  a.to_h_splat  #=&gt; { :a=&gt;1, :b=&gt;2, :c=&gt;nil }
+</pre>
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000077_source')" id="l_M000077_source">+</a> ]</p>
+  <div id="M000077_source" class="dyn-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/to_hash.rb, line 167</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_h_splat</span>
+    <span class="ruby-identifier">a</span> = <span class="ruby-identifier">dup</span>
+    <span class="ruby-identifier">a</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-keyword kw">nil</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">a</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">%</span> <span class="ruby-value">2</span> <span class="ruby-operator">==</span> <span class="ruby-value">1</span>
+    <span class="ruby-constant">Hash</span>[<span class="ruby-operator">*</span><span class="ruby-identifier">a</span>]
+  <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000092"></a><b>traverse</b>() {|item| ...}
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000092_source')" id="l_M000092_source">+</a> ]</p>
+  <div id="M000092_source" class="dyn-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/array/traverse.rb, line 5</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">traverse</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+    <span class="ruby-identifier">map</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">item</span><span class="ruby-operator">|</span>
+      <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">item</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>)
+        <span class="ruby-identifier">item</span>.<span class="ruby-identifier">traverse</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+      <span class="ruby-keyword kw">else</span>
+        <span class="ruby-keyword kw">yield</span> <span class="ruby-identifier">item</span>
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+<div class="method">
+  <div class="title">
+    <a name="M000093"></a><b>traverse!</b>(&amp;block)
+  </div>
+<div class="sourcecode">
+  <p class="source-link">[ <a href="javascript:toggleSource('M000093_source')" id="l_M000093_source">+</a> ]</p>
+  <div id="M000093_source" class="dyn-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/core/facets/array/traverse.rb, line 17</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">traverse!</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+    <span class="ruby-identifier">replace</span>(<span class="ruby-identifier">traverse</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>))
+  <span class="ruby-keyword kw">end</span>
+</pre>
+  </div>
+</div>
+</div>
+</div>
+
+  </div>
+
+    </body>
+</html>
