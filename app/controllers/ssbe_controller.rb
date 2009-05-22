@@ -1,7 +1,7 @@
 class SsbeController < ApplicationController
   wsdl_service_name 'Ssbe'
   web_service_api SsbeApi
-  web_service_scaffold :invocation if Rails.env == 'development'
+  web_service_scaffold :invocation #if Rails.env == 'development'
 
   def get_clients
     Client.get(:all).map{|c| c.to_ws}
