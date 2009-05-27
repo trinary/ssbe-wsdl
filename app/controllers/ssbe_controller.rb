@@ -70,7 +70,7 @@ class SsbeController < ApplicationController
 
     counter = Time.parse(begin_time)
     to_roll = []
-    summ = []
+    summary = []
 
     obs = Observation.send("get_every",href)
     obs.sort! {|a,b| Time.parse(a.recorded_at) <=> Time.parse(b.recorded_at)}
@@ -79,21 +79,51 @@ class SsbeController < ApplicationController
         to_roll  << o
       else
         counter += frequency_minutes.minutes
-        summ <<  summarize(to_roll)
+        summary <<  summarize(to_roll)
         to_roll = []
         to_roll << o
       end
     end
 
-    summ
+    summary
+  end
+
+  def get_historical_observations_summary (metric_href,frequency_hours, begin_time, end_time)
+    if begin_time.empty?
+      begin_time = Time.now.gmtime - 30.days
+    end
+    if end_time.empty?
+      end_time = Time.now.gmtime - 1.day
+    end
+    
+    counter = Time.parse(begin_time)
+    to_roll = []
+    summary = []
+
+    href = Metric.get(metric_href).historical_observations_href + "?start=#{begin_time}&end=#{end_time}"
+    hobs = HistoricalObservation.send("get_every",href)
+
+    hobs.sort!{|a,b| Time.parse(a.begin_time) <=> Time.parse(b.begin_time)}
+
+    hobs.each do |o|
+      if Time.parse(o.begin_time) < counter + frequency_hours.hours
+        to_roll << o
+      else
+        counter += frequency_hours.hours
+        summary << hist_summarize(to_roll)
+        to_roll = []
+        to_roll << o
+      end
+    end
+    summary
   end
 
   private
 
   def summarize(obs_list)
     s = 0.0
-    max = 0.0
-    min = 0.0
+    max=obs_list.first.value
+    min=obs_list.first.value
     obs_list.each do |o|
       s += o.value
       max = o.value if o.value > max
@@ -103,4 +133,24 @@ class SsbeController < ApplicationController
     ObservationSummary.new({:num_points => obs_list.size, :max => max, :min => min, :mean => mean, :begin_time => obs_list.first.recorded_at }).to_ws
   end
 
+  def hist_summarize(obs_list)
+    s=0.0
+    stdev_s=0.0
+    max = obs_list.first.max
+    min = obs_list.first.min
+    mean=0.0
+    num=0
+
+    obs_list.each do |o|
+      num += o.num_points
+      s += o.mean
+      stdev_s += o.stdev
+      max = o.max if o.max > max
+      min = o.min if o.min < min
+    end
+    mean = s/obs_list.size
+    stdev_mean = stdev_s/obs_list.size
+
+    HistoricalObservationSummary.new({:begin_time => obs_list.first.begin_time, :num_points => num, :min => min, :max => max, :mean => mean, :mean_std_dev => stdev_mean}).to_ws
+  end
 end
