@@ -1,5 +1,5 @@
 class Metric < ActiveRest::Model
-  properties :metric_type,:observations,:historical_observations,:status
+  properties :metric_type,:observations,:historical_observations
 
   class WsType < ActionWebService::Struct
       member :id,:string
