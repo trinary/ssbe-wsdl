@@ -79,7 +79,7 @@ class SsbeController < ApplicationController
         to_roll  << o
       else
         counter += frequency_minutes.minutes
-        summary <<  summarize(to_roll)
+        summary <<  summarize(to_roll, counter.xmlschema)
         to_roll = []
         to_roll << o
       end
@@ -103,43 +103,52 @@ class SsbeController < ApplicationController
     href = Metric.get(metric_href).historical_observations_href + "?start=#{begin_time}&end=#{end_time}"
     hobs = HistoricalObservation.send("get_every",href)
 
-    hobs.sort!{|a,b| Time.parse(a.begin_time) <=> Time.parse(b.begin_time)}
+#    hobs.sort!{|a,b| Time.parse(a.begin_time) <=> Time.parse(b.begin_time)}
 
-    hobs.each do |o|
-      if Time.parse(o.begin_time) < counter + frequency_hours.hours
-        to_roll << o
-      else
-        counter += frequency_hours.hours
-        summary << hist_summarize(to_roll)
-        to_roll = []
-        to_roll << o
-      end
+    while counter < Time.parse(end_time) do
+      summary << hist_summarize(hobs.find_all{|o| Time.parse(o.begin_time) > counter && Time.parse(o.begin_time) < counter + frequency_hours.hours}, counter)
+      counter += frequency_hours.hours
     end
+
+#    hobs.each do |o|
+#      if Time.parse(o.begin_time) < counter + frequency_hours.hours
+#        to_roll << o
+#      else
+#        counter += frequency_hours.hours
+#        summary << hist_summarize(to_roll, counter.xmlschema)
+#        to_roll = []
+#        to_roll << o
+#      end
+#    end
     summary
   end
 
   private
 
-  def summarize(obs_list)
+  def summarize(obs_list, begin_time)
     s = 0.0
-    max=obs_list.first.value
-    min=obs_list.first.value
+    mean = 0.0
+    max= obs_list.empty? ? 0.0 : -99999999999.0
+    min= obs_list.empty? ? 0.0 : 99999999999.0
     obs_list.each do |o|
       s += o.value
       max = o.value if o.value > max
-      max = o.value if o.value < min
+      min = o.value if o.value < min
     end
-    mean = s/obs_list.size
-    ObservationSummary.new({:num_points => obs_list.size, :max => max, :min => min, :mean => mean, :begin_time => obs_list.first.recorded_at }).to_ws
+    mean = s/obs_list.size unless obs_list.empty?
+    ObservationSummary.new({:num_points => obs_list.size, :max => max, :min => min, :mean => mean, :begin_time => begin_time }).to_ws
   end
 
-  def hist_summarize(obs_list)
+  def hist_summarize(obs_list, begin_time)
+
+    puts obs_list.inspect
     s=0.0
     stdev_s=0.0
-    max = obs_list.first.max
-    min = obs_list.first.min
+    max= obs_list.empty? ? 0.0 : -99999999999.0
+    min= obs_list.empty? ? 0.0 : 99999999999.0
     mean=0.0
     num=0
+    stdev_mean = 0.0
 
     obs_list.each do |o|
       num += o.num_points
@@ -148,9 +157,9 @@ class SsbeController < ApplicationController
       max = o.max if o.max > max
       min = o.min if o.min < min
     end
-    mean = s/obs_list.size
-    stdev_mean = stdev_s/obs_list.size
+    mean = s/obs_list.size unless obs_list.empty?
+    stdev_mean = stdev_s/obs_list.size unless obs_list.empty?
 
-    HistoricalObservationSummary.new({:begin_time => obs_list.first.begin_time, :num_points => num, :min => min, :max => max, :mean => mean, :mean_std_dev => stdev_mean}).to_ws
+    HistoricalObservationSummary.new({:begin_time => begin_time, :num_points => num, :min => min, :max => max, :mean => mean, :mean_std_dev => stdev_mean}).to_ws
   end
 end
