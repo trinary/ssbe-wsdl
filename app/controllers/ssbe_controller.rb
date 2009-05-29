@@ -128,8 +128,8 @@ class SsbeController < ApplicationController
   def summarize(obs_list, begin_time)
     s = 0.0
     mean = 0.0
-    max= obs_list.empty? ? 0.0 : -99999999999.0
-    min= obs_list.empty? ? 0.0 : 99999999999.0
+    max= obs_list.empty? ? 0.0 : Float::MIN
+    min= obs_list.empty? ? 0.0 : Float::MAX
     obs_list.each do |o|
       s += o.value
       max = o.value if o.value > max
@@ -140,12 +140,10 @@ class SsbeController < ApplicationController
   end
 
   def hist_summarize(obs_list, begin_time)
-
-    puts obs_list.inspect
     s=0.0
     stdev_s=0.0
-    max= obs_list.empty? ? 0.0 : -99999999999.0
-    min= obs_list.empty? ? 0.0 : 99999999999.0
+    max= obs_list.empty? ? 0.0 : Float::MIN
+    min= obs_list.empty? ? 0.0 : Float::MAX
     mean=0.0
     num=0
     stdev_mean = 0.0
