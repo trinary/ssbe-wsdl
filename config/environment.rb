@@ -15,6 +15,10 @@ Rails::Initializer.run do |config|
   config.gem 'httpauth', :version => '0.1'
   config.gem 'validatable', :version => '1.6.7'
   config.gem 'json', :version => '1.1.3'
+
+
+  config.middleware.use Rack::ContentLength
+
   # Settings in config/environments/* take precedence over those specified here.
   # Application configuration should go into files in config/initializers
   # -- all .rb files in that directory are automatically loaded.
