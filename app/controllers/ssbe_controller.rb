@@ -51,8 +51,9 @@ class SsbeController < ApplicationController
     HistoricalObservation.send("get_every",href).map{|o| o.to_ws}
   end
 
-  def get_metric_status(metric_status_href)
-    MetricStatus.get(metric_status_href).to_ws
+  def get_metric_status(metric_href)
+    href=Metric.get(metric_href).status_href
+    MetricStatus.get(href).to_ws
   end
 
   def get_observation_summary(metric_href,frequency_minutes, duration_hours)
