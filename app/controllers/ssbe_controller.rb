@@ -104,25 +104,40 @@ class SsbeController < ApplicationController
     href = Metric.get(metric_href).historical_observations_href + "?start=#{begin_time}&end=#{end_time}"
     hobs = HistoricalObservation.send("get_every",href)
 
-#    hobs.sort!{|a,b| Time.parse(a.begin_time) <=> Time.parse(b.begin_time)}
-
     while counter < Time.parse(end_time) do
       summary << hist_summarize(hobs.find_all{|o| Time.parse(o.begin_time) > counter && Time.parse(o.begin_time) < counter + frequency_hours.hours}, counter)
       counter += frequency_hours.hours
     end
 
-#    hobs.each do |o|
-#      if Time.parse(o.begin_time) < counter + frequency_hours.hours
-#        to_roll << o
-#      else
-#        counter += frequency_hours.hours
-#        summary << hist_summarize(to_roll, counter.xmlschema)
-#        to_roll = []
-#        to_roll << o
-#      end
-#    end
     summary
   end
+
+  def find_metrics_status(client_regex,host_regex,metric_regex)
+    if client_regex.blank?
+      client_regex = ".*"
+    end
+    if host_regex.blank?
+      host_regex = ".*"
+    end
+    if metric_regex.blank?
+      metric_regex = ".*"
+    end
+
+    clients = hosts = metrics = statuses = []
+    clients = Client.get(:all).select {|c| c.name =~ /#{client_regex}/ }
+    clients.each do |c|
+      hosts   += Host.send("get_every",c.hosts_href).select { |h| h.hostname =~ /#{host_regex}/}
+    end
+    hosts.each do |h|
+      metrics += Metric.send("get_every",h.metrics_href).select { |m| m.metric_type["path"] =~ /#{metric_regex}/}
+    end
+    metrics.each do |m|
+      statuses << get_metric_status(m.href) 
+    end
+    statuses
+  end
+
+
 
   private
 
