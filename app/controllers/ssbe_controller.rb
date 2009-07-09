@@ -1,6 +1,7 @@
 class SsbeController < ApplicationController
   wsdl_service_name 'Ssbe'
   web_service_api SsbeApi
+  wsdl_namespace 'http://absolute-performance.com/wsdl'
   web_service_scaffold :invocation #if Rails.env == 'development'
 
   def get_clients
@@ -124,17 +125,18 @@ class SsbeController < ApplicationController
     end
 
     clients = hosts = metrics = statuses = []
-    Client.get(:all).select {|c| c.name =~ /#{client_regex}/ }.each do |c|
-      Host.send("get_every",c.hosts_href).select { |h| h.hostname =~ /#{host_regex}/}.each do |h|
-        Metric.send("get_every",h.metrics_href).select { |m| m.metric_type["path"] =~ /#{metric_regex}/}.each do |m|
-          statuses << get_metric_status(m.href) 
-        end
-      end
+    clients += Client.get(:all).select {|c| c.name =~ /#{client_regex}/ }
+    clients.each do |c|
+      hosts += Host.send("get_every",c.hosts_href).select { |h| h.hostname =~ /#{host_regex}/}
+    end
+    hosts.each do |h|
+      metrics += Metric.send("get_every",h.metrics_href).select { |m| m.metric_type["path"] =~ /#{metric_regex}/}
+    end
+    metrics.each do |m|
+      statuses << get_metric_status(m.href)
     end
     statuses
   end
-
-
 
   private
 
