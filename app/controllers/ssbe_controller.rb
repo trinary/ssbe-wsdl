@@ -114,17 +114,30 @@ class SsbeController < ApplicationController
   end
 
   def find_metrics_status(client_regex,host_regex,metric_regex)
-    if client_regex.blank?
-      client_regex = ".*"
+    metrics = find_metrics(client_regex,host_regex,metric_regex)
+    metrics.each do |m|
+      statuses << get_metric_status(m.href)
     end
-    if host_regex.blank?
-      host_regex = ".*"
-    end
-    if metric_regex.blank?
-      metric_regex = ".*"
-    end
+    statuses
+  end
 
-    clients = hosts = metrics = statuses = []
+  def find_metrics_summary(client_regex,host_regex,metric_regex,duration,percentile)
+    metrics = find_metrics(client_regex,host_regex,metric_regex)
+    summaries = []
+    metrics.each do |m|
+      ms=MetricSummary.get(m.status["href"])
+      ms.begin_time = (Time.now.gmtime - duration.minutes).xmlschema
+      ms.end_time   = Time.now.gmtime.xmlschema
+      ms.percentile = percentile
+      summaries << ms.to_ws
+    end
+    summaries
+  end
+
+  private
+
+  def find_metrics(client_regex=".*", host_regex=".*", metric_regex=".*")
+    clients = hosts = metrics = []
     clients += Client.get(:all).select {|c| c.name =~ /#{client_regex}/ }
     clients.each do |c|
       hosts += Host.send("get_every",c.hosts_href).select { |h| h.hostname =~ /#{host_regex}/}
@@ -132,13 +145,8 @@ class SsbeController < ApplicationController
     hosts.each do |h|
       metrics += Metric.send("get_every",h.metrics_href).select { |m| m.metric_type["path"] =~ /#{metric_regex}/}
     end
-    metrics.each do |m|
-      statuses << get_metric_status(m.href)
-    end
-    statuses
+    metrics
   end
-
-  private
 
   def summarize(obs_list, begin_time)
     s = 0.0
