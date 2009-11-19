@@ -81,7 +81,7 @@ class SsbeController < ApplicationController
         to_roll  << o
       else
         counter += frequency_minutes.minutes
-        summary <<  summarize(to_roll, counter.xmlschema)
+        summary <<  summarize(to_roll, counter.xmlschema) unless to_roll.size == 0
         to_roll = []
         to_roll << o
       end
