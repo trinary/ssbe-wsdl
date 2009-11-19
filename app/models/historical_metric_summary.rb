@@ -52,7 +52,6 @@ class HistoricalMetricSummary < ActiveRest::Model
     r.hostname = host.hostname
     r.metric_type = met.metric_type["path"]
     obs = get_obs
-    puts obs
 
     r.href = href
     r.mean = calc_mean(obs)
