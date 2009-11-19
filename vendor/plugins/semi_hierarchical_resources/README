@@ -1,0 +1,61 @@
+SemiHierarchicalRoutes
+======================
+
+This plugin provides support for semi hierarchical resources.  Semi
+hierarchical resources have the collection and new URIs below the URI
+of a resource of a different type, but the member resources themselves
+are located at the top level.  For example,
+
+    http://example.com/user/42/address
+    http://example.com/address/24b
+
+The first URI references a collection of all the address belonging to
+user 42 and the second references a specific address.
+
+Semi hierarchical resources are specified using the
+`:partition_collection_by` option to #resources method.  The value of
+the `:partition_collection_by` option may be
+
+ * a symbol that matches a existing named route
+ * an array of symbols each of which matches a named route
+ * a hash of collection resource options keyed on symbols, each of
+   which matches a named route.
+
+The following collection resource options are supported
+
+ `:no_create`
+ : prevents the creation of routes involved in creating member
+   resources for the collection for which this option is specified
+
+The routes create for partitioned collections call action methods
+named `index_by_<partition_criterion>`,
+`create_by_<partition_criterion>` and `new_by_<partition_criterion>`,
+rather than the plain index, create and new methods.
+
+
+Example
+=======
+
+    ActionController::Routing::Routes.draw do |map|
+      map.resources :genders
+      map.resources :universities
+      map.resources :people, :partition_collection_by=>[:gender, :university]
+      map.resources :books, :partition_collection_by=>{:person=>{:no_create}}
+    end
+
+Produces the normal routes for genders, universities, individual
+people and individual books.  Additionally, it produces routes for
+gender and university specific people collections, and people specific
+book collections.  The people specific book collections do not have
+route for new or create actions.
+
+    GET, POST  http://.../genders/:gender_id/people
+    GET        http://.../genders/:gender_id/people/new
+    GET, POST  http://.../universities/:university_id/people
+    GET        http://.../universities/:university_id/people/new
+    GET        http://.../person/:person_id/books
+
+
+
+
+Copyright (c) 2007 [name of plugin creator], released under the MIT license
