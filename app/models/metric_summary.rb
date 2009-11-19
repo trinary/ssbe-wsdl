@@ -18,16 +18,16 @@ class MetricSummary < ActiveRest::Model
     metric_status_href
   end
 
-  def calc_percentile(pct)
+  def get_obs
     obs_href = Metric.get(metric["href"]).observations["href"] + "?start=#{begin_time}&end=#{end_time}"
-    obs = Observation.send("get_every",obs_href)
+    Observation.send("get_every",obs_href)
+  end
+
+  def calc_percentile(pct,obs)
     return 0 if obs.empty?
     obs.map(&:value).sort[(pct*obs.length).ceil-1]
   end
-  def calc_mean
-    sum = 0
-    obs_href = Metric.get(metric["href"]).observations["href"] + "?start=#{begin_time}&end=#{end_time}"
-    obs = Observation.send("get_every",obs_href)
+  def calc_mean(obs)
     return 0 if obs.empty?
     obs.map(&:value).map {|i| sum += i}
     sum / obs.size
@@ -38,6 +38,7 @@ class MetricSummary < ActiveRest::Model
     met = Metric.get(metric["href"])
     host = Host.get(met.host["href"])
     client = Client.get(host.client["href"])
+    obs=get_obs
     r.client = client.name
     r.hostname = host.hostname
     r.metric_type = met.metric_type["path"]
@@ -47,8 +48,8 @@ class MetricSummary < ActiveRest::Model
     r.value = value
     r.last_updated = last_updated
     r.last_change = last_change
-    r.percentile_value = calc_percentile(percentile)
-    r.mean = calc_mean
+    r.percentile_value = calc_percentile(percentile,obs)
+    r.mean = calc_mean(obs)
     r
   end
 end

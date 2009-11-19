@@ -56,4 +56,13 @@ class SsbeApi < ActionWebService::API::Base
                  {:metric_regex => :string},
                  {:duration => :int},
                  {:percentile => :float}]
+
+  api_method :find_historical_metrics_summary, 
+    :returns => [[HistoricalMetricSummary::WsType]], 
+    :expects => [{:client_regex => :string},
+                 {:host_regex => :string}, 
+                 {:metric_regex => :string},
+                 {:start_date => :string},
+                 {:end_date => :string},
+                 {:percentile => :float}]
 end

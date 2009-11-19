@@ -134,6 +134,18 @@ class SsbeController < ApplicationController
     summaries
   end
 
+  def find_historical_metrics_summary(client_regex,host_regex,metric_regex,start_time,end_time,percentile)
+    metrics = find_metrics(client_regex,host_regex,metric_regex)
+    summaries = []
+    metrics.each do |m|
+      ms=HistoricalMetricSummary.get(m.status["href"])
+      ms.begin_time = start_time
+      ms.end_time   = end_time
+      summaries << ms.to_ws
+    end
+    summaries
+  end
+
   private
 
   def find_metrics(client_regex=".*", host_regex=".*", metric_regex=".*")
