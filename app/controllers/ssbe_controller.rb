@@ -114,6 +114,7 @@ class SsbeController < ApplicationController
   end
 
   def find_metrics_status(client_regex,host_regex,metric_regex)
+    statuses = []
     metrics = find_metrics(client_regex,host_regex,metric_regex)
     metrics.each do |m|
       statuses << get_metric_status(m.href)
