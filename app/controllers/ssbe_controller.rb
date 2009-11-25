@@ -106,7 +106,7 @@ class SsbeController < ApplicationController
     hobs = HistoricalObservation.send("get_every",href)
 
     while counter < Time.parse(end_time) do
-      summary << hist_summarize(hobs.find_all{|o| Time.parse(o.begin_time) > counter && Time.parse(o.begin_time) < counter + frequency_hours.hours}, counter)
+      summary << hist_summarize(hobs.find_all{|o| Time.parse(o.begin_time) > counter && Time.parse(o.begin_time) < counter + frequency_hours.hours}, counter.xmlschema)
       counter += frequency_hours.hours
     end
 

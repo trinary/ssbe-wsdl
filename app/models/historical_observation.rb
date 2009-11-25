@@ -3,7 +3,7 @@ class HistoricalObservation < ActiveRest::Model
 
   class WsType < ActionWebService::Struct
     member :max,:float
-    member :begin_time, :datetime
+    member :begin_time, :string
     member :num_points, :int
     member :mean,:float
     member :stdev,:float
