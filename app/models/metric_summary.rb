@@ -29,8 +29,7 @@ class MetricSummary < ActiveRest::Model
   end
   def calc_mean(obs)
     return 0 if obs.empty?
-    obs.map(&:value).map {|i| sum += i}
-    sum / obs.size
+    obs.map(&:value).sum / obs.size
   end
 
   def to_ws
