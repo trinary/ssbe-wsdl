@@ -1,8 +1,5 @@
 #SYSSHEP_BACKEND_DOMAIN_NAME = '@@FQDN@@'.sub(/@@.*@@/, 'ssbe.localhost') # the fully qualified domain name of the SystemShepherdBackEnd, or localhost if haven't been given the domain name
 
-#CORE_FQDN  = "core.#{SYSSHEP_BACKEND_DOMAIN_NAME}"
-#ALARM_FQDN = "alarm.#{SYSSHEP_BACKEND_DOMAIN_NAME}"
-#
 CORE_FQDN=ENV['CORE_FQDN']
 ALARM_FQDN=ENV['ALARM_FQDN']
 SSBE_USER=ENV['SSBE_USER']

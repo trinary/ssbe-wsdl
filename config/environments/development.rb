@@ -16,4 +16,4 @@ config.action_controller.perform_caching             = false
 # Don't care if the mailer can't send
 config.action_mailer.raise_delivery_errors = false
 
-CORE_FQDN='core.ssbe.localhost'
+#CORE_FQDN='core.ssbe.localhost'
