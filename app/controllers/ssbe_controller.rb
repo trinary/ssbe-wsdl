@@ -108,29 +108,21 @@ class SsbeController < ApplicationController
     pend= Time.parse(end_time)
 
     obs_start = hobs.first
-    puts obs_start
 
-    while counter < pend do
-      obs_list = []
-      hobs.each do |i|
-        t1 = Time.now()
-        obs_list << i
-
-        puts obs_list
-        if i.begin_time > Time.parse(counter + frequench_hours.hours) 
-          cur_summary = hist_summarize(obs_list, counter.xmlschema)
-          puts cur_summary
-          summary << cur_summary if cur_summary.num_points > 0
-          obs_list = []
-          obs_list << i
-          counter  = counter + frequency_hours.hours
-        end
-        t2 = Time.now() - t1
-        puts "\tsummarize: t1 to t2: #{t2}"
+    while hobs.size > 0
+      i = hobs.pop
+      it= Time.parse(i.begin_time)
+      cur_summary = nil
+      if it < counter + frequency_hours.hours
+        to_roll << i
+      else
+        cur_summary = hist_summarize(to_roll,counter.xmlschema)
+        summary << cur_summary if cur_summary.num_points > 0
+        counter += frequency_hours.hours
+        to_roll = []
+        to_roll << i
       end
     end
-
-    puts "Time in controller method #{Time.now - start}"
     summary
   end
 
