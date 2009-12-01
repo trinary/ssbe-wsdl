@@ -91,6 +91,7 @@ class SsbeController < ApplicationController
   end
 
   def get_historical_observations_summary (metric_href,frequency_hours, begin_time, end_time)
+    start=Time.now
     if begin_time.empty?
       begin_time = Time.now.gmtime - 30.days
     end
@@ -103,14 +104,33 @@ class SsbeController < ApplicationController
     summary = []
 
     href = Metric.get(metric_href).historical_observations_href + "?start=#{begin_time}&end=#{end_time}"
-    hobs = HistoricalObservation.send("get_every",href)
+    hobs = HistoricalObservation.send("get_every",href).sort_by{|o| Time.parse(o.begin_time)}
+    pend= Time.parse(end_time)
 
-    while counter < Time.parse(end_time) do
-      cur_summary = hist_summarize(hobs.find_all{|o| Time.parse(o.begin_time) >= counter && Time.parse(o.begin_time) < counter + frequency_hours.hours}, counter.xmlschema)
-      summary << cur_summary if cur_summary.num_points > 0
-      counter += frequency_hours.hours
+    obs_start = hobs.first
+    puts obs_start
+
+    while counter < pend do
+      obs_list = []
+      hobs.each do |i|
+        t1 = Time.now()
+        obs_list << i
+
+        puts obs_list
+        if i.begin_time > Time.parse(counter + frequench_hours.hours) 
+          cur_summary = hist_summarize(obs_list, counter.xmlschema)
+          puts cur_summary
+          summary << cur_summary if cur_summary.num_points > 0
+          obs_list = []
+          obs_list << i
+          counter  = counter + frequency_hours.hours
+        end
+        t2 = Time.now() - t1
+        puts "\tsummarize: t1 to t2: #{t2}"
+      end
     end
 
+    puts "Time in controller method #{Time.now - start}"
     summary
   end
 
@@ -195,6 +215,9 @@ class SsbeController < ApplicationController
     mean = s/obs_list.size unless obs_list.empty?
     stdev_mean = stdev_s/obs_list.size unless obs_list.empty?
 
-    HistoricalObservationSummary.new({:begin_time => begin_time, :num_points => num, :min => min, :max => max, :mean => mean, :mean_std_dev => stdev_mean}).to_ws
+    t3 = Time.now()
+    h=HistoricalObservationSummary.new({:begin_time => begin_time, :num_points => num, :min => min, :max => max, :mean => mean, :mean_std_dev => stdev_mean}).to_ws
+    puts "\t\tt3 to t4, HOS.new.to_ws: #{Time.now() - t3}"
+    h
   end
 end
