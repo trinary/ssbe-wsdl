@@ -160,6 +160,10 @@ class SsbeController < ApplicationController
     summaries
   end
 
+  def current_time
+    return Time.now.gmtime.to_s
+  end
+
   private
 
   def find_metrics(client_regex=".*", host_regex=".*", metric_regex=".*")
