@@ -16,6 +16,7 @@ Rails::Initializer.run do |config|
   config.gem 'httpauth', :version => '0.1'
   config.gem 'validatable', :version => '1.6.7'
   config.gem 'json', :version => '1.1.3'
+  config.gem 'tzinfo', :version => '0.3.13'
 
 
   config.middleware.use Rack::ContentLength

@@ -137,6 +137,7 @@ rdoc_options:
 - --line-numbers
 require_paths: 
 - bin
+- bin
 - ext/json/ext
 - ext
 - lib

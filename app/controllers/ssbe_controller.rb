@@ -160,8 +160,8 @@ class SsbeController < ApplicationController
     summaries
   end
 
-  def current_time
-    return Time.now.gmtime.to_s
+  def current_time(tz)
+    return TZInfo::Timezone.get(tz).utc_to_local(Time.now.gmtime).xmlschema
   end
 
   private
@@ -213,7 +213,6 @@ class SsbeController < ApplicationController
 
     t3 = Time.now()
     h=HistoricalObservationSummary.new({:begin_time => begin_time, :num_points => num, :min => min, :max => max, :mean => mean, :mean_std_dev => stdev_mean}).to_ws
-    puts "\t\tt3 to t4, HOS.new.to_ws: #{Time.now() - t3}"
     h
   end
 end

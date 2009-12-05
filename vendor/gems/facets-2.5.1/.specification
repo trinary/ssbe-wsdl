@@ -1688,6 +1688,7 @@ rdoc_options:
 - README
 require_paths: 
 - bin
+- bin
 - lib/core
 - lib/lore
 - lib/more

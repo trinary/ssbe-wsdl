@@ -66,5 +66,7 @@ class SsbeApi < ActionWebService::API::Base
                  {:end_date => :string},
                  {:percentile => :float}]
   api_method :current_time,
-    :returns => [:string]
+    :returns => [:string],
+    :expects => [{:tz => :string}]
+
 end
