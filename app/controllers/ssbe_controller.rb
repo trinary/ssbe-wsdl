@@ -91,13 +91,9 @@ class SsbeController < ApplicationController
   end
 
   def get_historical_observations_summary (metric_href,frequency_hours, begin_time, end_time)
-    start=Time.now
-    if begin_time.empty?
-      begin_time = Time.now.gmtime - 30.days
-    end
-    if end_time.empty?
-      end_time = Time.now.gmtime - 1.day
-    end
+
+    begin_time = Time.now.gmtime - 30.days if begin_time.empty?
+    end_time = Time.now.gmtime - 1.day if end_time.empty?
 
     counter = Time.parse(begin_time)
     to_roll = []
@@ -113,12 +109,20 @@ class SsbeController < ApplicationController
       if it < counter + frequency_hours.hours
         to_roll << i
       else
-        cur_summary = hist_summarize(to_roll,counter.xmlschema)
-        summary << cur_summary if cur_summary.num_points > 0
-        counter += frequency_hours.hours
-        to_roll = []
-        to_roll << i
+        unless to_roll.empty?
+          cur_summary = hist_summarize(to_roll,counter.xmlschema)
+          summary << cur_summary if cur_summary.num_points > 0
+        end
+
+        begin
+          counter += frequency_hours.hours
+        end while it >= counter + frequency_hours.hours
+        to_roll = [i]
       end
+    end
+    unless to_roll.empty?
+      cur_summary = hist_summarize(to_roll,counter.xmlschema)
+      summary << cur_summary if cur_summary.num_points > 0
     end
     summary
   end
@@ -208,7 +212,6 @@ class SsbeController < ApplicationController
     mean = s/obs_list.size unless obs_list.empty?
     stdev_mean = stdev_s/obs_list.size unless obs_list.empty?
 
-    t3 = Time.now()
     h=HistoricalObservationSummary.new({:begin_time => begin_time, :num_points => num, :min => min, :max => max, :mean => mean, :mean_std_dev => stdev_mean}).to_ws
     h
   end
