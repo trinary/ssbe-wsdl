@@ -98,7 +98,7 @@ class SsbeController < ApplicationController
     if end_time.empty?
       end_time = Time.now.gmtime - 1.day
     end
-    
+
     counter = Time.parse(begin_time)
     to_roll = []
     summary = []
@@ -107,10 +107,7 @@ class SsbeController < ApplicationController
     hobs = HistoricalObservation.send("get_every",href).sort_by{|o| Time.parse(o.begin_time)}
     pend= Time.parse(end_time)
 
-    obs_start = hobs.first
-
-    while hobs.size > 0
-      i = hobs.pop
+    hobs.each do |i|
       it= Time.parse(i.begin_time)
       cur_summary = nil
       if it < counter + frequency_hours.hours
