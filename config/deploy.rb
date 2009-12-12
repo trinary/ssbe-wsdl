@@ -12,7 +12,9 @@ set :use_sudo, false
 #role :db,  "your primary db-server here", :primary => true # This is where Rails migrations will run
 #role :db,  "your slave db-server here"
 #
-server "qa-ssdp02-proc01.boulder.api.local", :app
+#server "qa-ssdp02-proc01.boulder.api.local", :app
+server "ssint2-proc01.fortrust.api.local", :app
+server "ssint2-proc02.fortrust.api.local", :app
 
 # If you are using Passenger mod_rails uncomment this:
 # if you're still using the script/reapear helper you will need
