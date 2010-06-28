@@ -1,2 +1,23 @@
-.*.swp
+log/*.log
+tmp/**/*
+doc/api
+doc/app
 *.log
+config/database.yml
+
+# emacs and vim tmpfiles
+\#*#
+.#*
+*~
+.*.swp
+
+# Bundler
+.bundle/environment.rb
+
+db/schema.rb
+db/*.sql
+app/stylesheets/.sass-cache
+
+mkmf.log
+webrat-*.html
+
