@@ -13,8 +13,17 @@ set :use_sudo, false
 #role :db,  "your slave db-server here"
 #
 #server "qa-ssdp02-proc01.boulder.api.local", :app
-server "ssint2-proc01.fortrust.api.local", :app
-server "ssint2-proc02.fortrust.api.local", :app
+
+task :staging do 
+  server "staging-proc01", :app
+  server "staging-proc02", :app
+  server "staging-proc03", :app
+end
+
+task :ssint2 do
+  server "ssint2-proc01.fortrust.api.local", :app
+  server "ssint2-proc02.fortrust.api.local", :app
+end
 
 # If you are using Passenger mod_rails uncomment this:
 # if you're still using the script/reapear helper you will need
