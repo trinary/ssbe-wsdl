@@ -27,10 +27,10 @@ class SsbeController < ApplicationController
   end
 
   def get_observations_for_metric(metric_href,begin_time, end_time)
-    if begin_time.empty? 
+    if begin_time.empty?
       begin_time = (Time.now - 1.week).gmtime.xmlschema
     end
-    if end_time.empty? 
+    if end_time.empty?
       end_time = (Time.now - 1.day).gmtime.xmlschema
     end
 
@@ -40,10 +40,10 @@ class SsbeController < ApplicationController
   end
 
   def get_historical_observations_for_metric(metric_href,begin_time,end_time)
-    if begin_time.empty? 
+    if begin_time.empty?
       begin_time = (Time.now - 1.week).gmtime.xmlschema
     end
-    if end_time.empty? 
+    if end_time.empty?
       end_time = (Time.now - 1.day).gmtime.xmlschema
     end
 
@@ -90,7 +90,7 @@ class SsbeController < ApplicationController
     summary
   end
 
-  def get_historical_observations_summary (metric_href,frequency_hours, begin_time, end_time)
+  def get_rollup_observations_summary (metric_href,frequency_hours, begin_time, end_time)
 
     begin_time = Time.now.gmtime - 30.days if begin_time.empty?
     end_time = Time.now.gmtime - 1.day if end_time.empty?
@@ -125,6 +125,21 @@ class SsbeController < ApplicationController
       summary << cur_summary if cur_summary.num_points > 0
     end
     summary
+  end
+
+  def get_historical_observations_summary (metric_href,frequency, begin_time, end_time)
+    begin_time = Time.now.gmtime - 30.days if begin_time.empty?
+    end_time = Time.now.gmtime - 1.day if end_time.empty?
+    begin_time_parsed = Time.parse(begin_time)
+    end_time_parsed = Time.parse(end_time)
+
+    if begin_time_parsed < HISTORICAL_CUTOFF_TIME && end_time_parsed < HISTORICAL_CUTOFF_TIME
+      return get_rollup_observations_summary(metric_href,frequency,begin_time,end_time)
+    elsif begin_time_parsed > HISTORICAL_CUTOFF_TIME && end_time_parsed > HISTORICAL_CUTOFF_TIME
+      return get_observation_summary(metric_href,frequency,begin_time,end_time)
+    else
+      return [get_historical_observations_summary(metric_href,frequency,begin_time, Time.at(HISTORICAL_CUTOFF_TIME).httpdate),get_observation_summary(metric_href,frequency,Time.at(HISTORICAL_CUTOFF_TIME).httpdate,end_time) ].flatten
+    end
   end
 
   def find_metrics_status(client_regex,host_regex,metric_regex)
