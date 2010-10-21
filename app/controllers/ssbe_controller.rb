@@ -138,7 +138,7 @@ class SsbeController < ApplicationController
     elsif begin_time_parsed > HISTORICAL_CUTOFF_TIME && end_time_parsed > HISTORICAL_CUTOFF_TIME
       return get_observation_summary(metric_href,frequency,begin_time,end_time)
     else
-      return [get_historical_observations_summary(metric_href,frequency,begin_time, Time.at(HISTORICAL_CUTOFF_TIME).httpdate),get_observation_summary(metric_href,frequency,Time.at(HISTORICAL_CUTOFF_TIME).httpdate,end_time) ].flatten
+      return [get_rollup_observations_summary(metric_href,frequency,begin_time, Time.at(HISTORICAL_CUTOFF_TIME).httpdate),get_observation_summary(metric_href,frequency,Time.at(HISTORICAL_CUTOFF_TIME).httpdate,end_time) ].flatten
     end
   end
 
