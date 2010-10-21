@@ -134,10 +134,13 @@ class SsbeController < ApplicationController
     end_time_parsed = Time.parse(end_time)
 
     if begin_time_parsed < HISTORICAL_CUTOFF_TIME && end_time_parsed < HISTORICAL_CUTOFF_TIME
+      p "Begin and end before cutoff."
       return get_rollup_observations_summary(metric_href,frequency,begin_time,end_time)
     elsif begin_time_parsed > HISTORICAL_CUTOFF_TIME && end_time_parsed > HISTORICAL_CUTOFF_TIME
+      p "Begin and end after cutoff."
       return get_observation_summary(metric_href,frequency,begin_time,end_time)
     else
+      p "Begin and end across cutoff."
       return [get_rollup_observations_summary(metric_href,frequency,begin_time, Time.at(HISTORICAL_CUTOFF_TIME).httpdate),get_observation_summary(metric_href,frequency,Time.at(HISTORICAL_CUTOFF_TIME).httpdate,end_time) ].flatten
     end
   end
