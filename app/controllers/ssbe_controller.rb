@@ -57,6 +57,34 @@ class SsbeController < ApplicationController
     MetricStatus.get(href).to_ws
   end
 
+  def get_observation_summary_for_range(metric_href,frequency_minutes, begin_time, end_time)
+    if frequency_minutes.nil?
+      frequency_minutes = 60
+    end
+
+    m = Metric.get(metric_href)
+    href = m.observations_href + "?start=#{begin_time}&end=#{end_time}"
+
+    counter = Time.parse(begin_time)
+    to_roll = []
+    summary = []
+
+    obs = Observation.send("get_every",href)
+    obs.sort! {|a,b| Time.parse(a.recorded_at) <=> Time.parse(b.recorded_at)}
+    obs.each do |o|
+      if Time.parse(o.recorded_at) < counter + frequency_minutes.minutes
+        to_roll  << o
+      else
+        counter += frequency_minutes.minutes
+        summary <<  summarize(to_roll, counter.xmlschema) unless to_roll.size == 0
+        to_roll = []
+        to_roll << o
+      end
+    end
+
+    summary
+  end
+
   def get_observation_summary(metric_href,frequency_minutes, duration_hours)
     if frequency_minutes.nil?
       frequency_minutes = 60
@@ -141,7 +169,7 @@ class SsbeController < ApplicationController
       return get_observation_summary(metric_href,frequency,begin_time,end_time)
     else
       p "Begin and end across cutoff."
-      return [get_rollup_observations_summary(metric_href,frequency,begin_time, Time.at(HISTORICAL_CUTOFF_TIME).httpdate),get_observation_summary(metric_href,frequency,Time.at(HISTORICAL_CUTOFF_TIME).httpdate,end_time) ].flatten
+      return [get_rollup_observations_summary(metric_href,frequency,begin_time, Time.at(HISTORICAL_CUTOFF_TIME).httpdate),get_observation_summary_for_range(metric_href,frequency*60,Time.at(HISTORICAL_CUTOFF_TIME).httpdate,end_time) ].flatten
     end
   end
 
