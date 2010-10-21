@@ -166,10 +166,16 @@ class SsbeController < ApplicationController
       return get_rollup_observations_summary(metric_href,frequency,begin_time,end_time)
     elsif begin_time_parsed > HISTORICAL_CUTOFF_TIME && end_time_parsed > HISTORICAL_CUTOFF_TIME
       p "Begin and end after cutoff."
-      return get_observation_summary(metric_href,frequency,begin_time,end_time)
+      return get_observation_summary_for_range(metric_href,frequency*60,begin_time,end_time)
     else
       p "Begin and end across cutoff."
-      return [get_rollup_observations_summary(metric_href,frequency,begin_time, Time.at(HISTORICAL_CUTOFF_TIME).xmlschema),get_observation_summary_for_range(metric_href,frequency*60,Time.at(HISTORICAL_CUTOFF_TIME).xmlschema,end_time) ].flatten
+      return [get_rollup_observations_summary(metric_href,
+                                              frequency,
+                                              begin_time,
+                                              Time.at(HISTORICAL_CUTOFF_TIME).xmlschema),
+              get_observation_summary_for_range(metric_href,frequency*60,
+                                                Time.at(HISTORICAL_CUTOFF_TIME).xmlschema,
+                                                end_time) ].flatten
     end
   end
 
