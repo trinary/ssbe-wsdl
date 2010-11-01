@@ -27,10 +27,10 @@ class SsbeController < ApplicationController
   end
 
   def get_observations_for_metric(metric_href,begin_time, end_time)
-    if begin_time.empty? 
+    if begin_time.empty?
       begin_time = (Time.now - 1.week).gmtime.xmlschema
     end
-    if end_time.empty? 
+    if end_time.empty?
       end_time = (Time.now - 1.day).gmtime.xmlschema
     end
 
@@ -40,10 +40,10 @@ class SsbeController < ApplicationController
   end
 
   def get_historical_observations_for_metric(metric_href,begin_time,end_time)
-    if begin_time.empty? 
+    if begin_time.empty?
       begin_time = (Time.now - 1.week).gmtime.xmlschema
     end
-    if end_time.empty? 
+    if end_time.empty?
       end_time = (Time.now - 1.day).gmtime.xmlschema
     end
 
@@ -55,6 +55,34 @@ class SsbeController < ApplicationController
   def get_metric_status(metric_href)
     href=Metric.get(metric_href).status_href
     MetricStatus.get(href).to_ws
+  end
+
+  def get_observation_summary_for_range(metric_href,frequency_minutes, begin_time, end_time)
+    if frequency_minutes.nil?
+      frequency_minutes = 60
+    end
+
+    m = Metric.get(metric_href)
+    href = m.observations_href + "?start=#{begin_time}&end=#{end_time}"
+
+    counter = Time.parse(begin_time)
+    to_roll = []
+    summary = []
+
+    obs = Observation.send("get_every",href)
+    obs.sort! {|a,b| Time.parse(a.recorded_at) <=> Time.parse(b.recorded_at)}
+    obs.each do |o|
+      if Time.parse(o.recorded_at) < counter + frequency_minutes.minutes
+        to_roll  << o
+      else
+        counter += frequency_minutes.minutes
+        summary <<  summarize(to_roll, counter.xmlschema) unless to_roll.size == 0
+        to_roll = []
+        to_roll << o
+      end
+    end
+
+    summary
   end
 
   def get_observation_summary(metric_href,frequency_minutes, duration_hours)
@@ -90,7 +118,7 @@ class SsbeController < ApplicationController
     summary
   end
 
-  def get_historical_observations_summary (metric_href,frequency_hours, begin_time, end_time)
+  def get_rollup_observations_summary (metric_href,frequency_hours, begin_time, end_time)
 
     begin_time = Time.now.gmtime - 30.days if begin_time.empty?
     end_time = Time.now.gmtime - 1.day if end_time.empty?
@@ -125,6 +153,30 @@ class SsbeController < ApplicationController
       summary << cur_summary if cur_summary.num_points > 0
     end
     summary
+  end
+
+  def get_historical_observations_summary (metric_href,frequency, begin_time, end_time)
+    begin_time = Time.now.gmtime - 30.days if begin_time.empty?
+    end_time = Time.now.gmtime - 1.day if end_time.empty?
+    begin_time_parsed = Time.parse(begin_time)
+    end_time_parsed = Time.parse(end_time)
+
+    if begin_time_parsed < HISTORICAL_CUTOFF_TIME && end_time_parsed < HISTORICAL_CUTOFF_TIME
+      p "Begin and end before cutoff."
+      return get_rollup_observations_summary(metric_href,frequency,begin_time,end_time)
+    elsif begin_time_parsed > HISTORICAL_CUTOFF_TIME && end_time_parsed > HISTORICAL_CUTOFF_TIME
+      p "Begin and end after cutoff."
+      return get_observation_summary_for_range(metric_href,frequency*60,begin_time,end_time)
+    else
+      p "Begin and end across cutoff."
+      return [get_rollup_observations_summary(metric_href,
+                                              frequency,
+                                              begin_time,
+                                              Time.at(HISTORICAL_CUTOFF_TIME).xmlschema),
+              get_observation_summary_for_range(metric_href,frequency*60,
+                                                Time.at(HISTORICAL_CUTOFF_TIME).xmlschema,
+                                                end_time) ].flatten
+    end
   end
 
   def find_metrics_status(client_regex,host_regex,metric_regex)

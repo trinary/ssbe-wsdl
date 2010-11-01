@@ -1,10 +1,9 @@
 class Observation < ActiveRest::Model
-  properties :status,:value,:recorded_at
+  properties :value,:recorded_at
 
   class WsType < ActionWebService::Struct
       member :value,:float
       member :recorded_at,:string
-      member :status, :string
   end
   def to_s
     "#{value},#{timestamp}"
@@ -13,7 +12,6 @@ class Observation < ActiveRest::Model
     r = Observation::WsType.new
     r.value = value
     r.recorded_at = recorded_at
-    r.status = status
     r
   end
 end
